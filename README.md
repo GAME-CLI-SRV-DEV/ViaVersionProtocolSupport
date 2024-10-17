@@ -3,7 +3,7 @@
 
 add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do.
 
-# Protocol Allows:
+# ViaVersionProtocolSupport Allows:
 ViaPS allows 1.4.6-1.6.4.
 For c0.0.15-1.0.0, Click the Icon.
 |Version|Classic|Alpha|Beta|1.0.0-1.4.6|1.4.6-1.6.4|
@@ -13,6 +13,15 @@ For c0.0.15-1.0.0, Click the Icon.
 |Beta|[🔙](https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport-HyperRewind)|[🔄](https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport-SuperRewind)|✔️|✔️|✔️|
 |Alpha|[🔙](https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport-HyperRewind)|✔️|✔️|✔️|✔️|
 |Classic|✔️|✔️|✔️|✔️|✔️|
+
+|MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
+|--|--|
+|1.7.2->1.6.4|10%|
+|1.6.4->1.6.2|Implemented in ViaLegacy|
+|1.6.2->1.6.1|0%|
+|1.6.1->1.5.2|0%|
+|1.5.0/1|Implemented in ViaLegacy|
+|1.5.0->1.4.7/6|0%|
 
 # Standalone Usage
 ### Using ViaVersionProtocolSupportNetwork:
