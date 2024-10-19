@@ -10,7 +10,7 @@ import me.falixsrv.approximasteranarchy2004.VVPSPlatform;
 
 public class ViaVersionProtocolSupport {
 public static void init(VVPSPlatform platform, VVPSConfig config) {
-        Preconditions.checkArgument(VVPS.platform == null, "ViaVersionProtocolSupport is already initialized!");
+        Preconditions.checkArgument(ViaVersionProtocolSupport.platform == null, "ViaVersionProtocolSupport is already initialized!");
 
         ViaVersionProtocolSupport.platform = platform;
         ViaBackwards.config = config;
