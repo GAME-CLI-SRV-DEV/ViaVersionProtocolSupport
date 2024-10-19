@@ -1,4 +1,4 @@
-package 
+package me.falixsrv.approximasteranarchy2004;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -6,26 +6,21 @@ import java.text.MessageFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import me.falixsrv.approximasteranarchy2004.VVPSPlatform;
 
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;
+public class ViaVersionProtocolSupport {
+public static void init(VVPSPlatform platform, VVPSConfig config) {
+        Preconditions.checkArgument(VVPS.platform == null, "ViaVersionProtocolSupport is already initialized!");
 
-public class ViaVersionProtocolSupport extends JavaPlugin {
+        ViaVersionProtocolSupport.platform = platform;
+        ViaBackwards.config = config;
+    }
 
+    public static ViaBackwardsPlatform getPlatform() {
+        return platform;
+    }
 
-	@Override
-	public void onLoad() {
-    Logger logger = getLogger();
-		logger.severe("╔══════════════════════════════════════════════════════════════════╗");
-		logger.severe("║                               WARNING                             ");
-		logger.severe("║                                                                   ");
-		logger.severe("║                                                                   ");
-		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
-		logger.severe("║                                                                   ");
-		logger.severe("║                                                                   ");
-		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
-		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
-            }
-	
+    public static ViaBackwardsConfig getConfig() {
+        return config;
+    }
 }
