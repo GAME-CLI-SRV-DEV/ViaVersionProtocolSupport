@@ -1,4 +1,4 @@
-package 
+package me.falixsrv.approximasteranarchy2004;
 
 import java.io.IOException;
 import java.io.Reader;
