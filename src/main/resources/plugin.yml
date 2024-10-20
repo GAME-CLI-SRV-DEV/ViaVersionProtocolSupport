@@ -1,9 +1,5 @@
 name: ViaVersionProtocolSupport
-version: 4.28-1.12.2-BETA-SNAPSHOT-767-340
+version: 8.55-1.21.1-5.0.0
 main: 
 description: This is a sample plugin.
 author: YourName
-commands:
-  mycommand:
-    description: This is a sample command.
-    usage: /<command>
