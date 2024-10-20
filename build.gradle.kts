@@ -11,6 +11,6 @@ repositories {
 }
 
 	dependencies {
-	      compileOnly("com.viaversion:ViaVersion:5.0.4")
+	      compileOnly("com.viaversion:viaversion-common:5.0.4")
               api("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT")
 	}
