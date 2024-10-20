@@ -27,6 +27,12 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
             }
+	@Override
+	public void onEnable() {
+	     if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
+            // Enable in the next tick
+            Via.getPlatform().runSync(::enable, 1);
+	}
 	
 }
 
