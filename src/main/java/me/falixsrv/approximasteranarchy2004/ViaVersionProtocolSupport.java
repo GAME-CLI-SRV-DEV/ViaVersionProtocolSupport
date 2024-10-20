@@ -13,14 +13,14 @@ public static void init(VVPSPlatform platform, VVPSConfig config) {
         Preconditions.checkArgument(ViaVersionProtocolSupport.platform == null, "ViaVersionProtocolSupport is already initialized!");
 
         ViaVersionProtocolSupport.platform = platform;
-        ViaBackwards.config = config;
+        ViaVersionProtocolSupport.config = config;
     }
 
-    public static ViaBackwardsPlatform getPlatform() {
+    public static VVPSPlatform getPlatform() {
         return platform;
     }
 
-    public static ViaBackwardsConfig getConfig() {
+    public static VVPSConfig getConfig() {
         return config;
     }
 }
