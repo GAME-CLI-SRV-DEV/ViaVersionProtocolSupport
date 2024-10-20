@@ -1,7 +1,7 @@
 repositories {
     mavenCentral()
     maven {
-    url = "https://repo.viaversion.com/"
+    url = uri("https://repo.viaversion.com/")
 
     }
 }
