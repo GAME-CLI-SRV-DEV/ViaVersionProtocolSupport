@@ -10,8 +10,8 @@ import com.viaversion.viaversion.api.protocol.packet.provider.PacketTypesProvide
 import com.viaversion.viaversion.api.protocol.packet.provider.SimplePacketTypesProvider;
 import com.viaversion.viaversion.data.entity.EntityTrackerBase;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ClientboundPackets1_6_4;
-import com.viaversion.viarewind.protocol.packet.ClientboundPackets1_7_2_5;
-import com.viaversion.viarewind.protocol.packet.ServerboundPackets1_7_2_5;
+import com.viaversion.viarewind.protocol.v1_7_6_10to1_7_2_5.packet.ClientboundPackets1_7_2_5;
+import com.viaversion.viarewind.protocol.v1_7_6_10to1_7_2_5.packet.ServerboundPackets1_7_2_5;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ServerboundPackets1_6_4;
 import com.viaversion.viaversion.rewriter.ComponentRewriter.ReadType;
 import com.viaversion.viaversion.rewriter.StatisticsRewriter;
