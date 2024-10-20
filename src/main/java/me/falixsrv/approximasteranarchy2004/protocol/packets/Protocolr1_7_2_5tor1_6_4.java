@@ -16,12 +16,13 @@ import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.Serverboun
 import com.viaversion.viaversion.rewriter.ComponentRewriter.ReadType;
 import com.viaversion.viaversion.rewriter.StatisticsRewriter;
 import com.viaversion.viaversion.rewriter.TagRewriter;
+import com.viaversion.viabackwards.api.BackwardsProtocol;
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
-final class Protocol1_6_4To1_7_2_5 extends LegacyProtocolVersion<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, ServerboundPackets1_6_4> {
+final class Protocol1_6_4To1_7_2_5 extends BackwardsProtocol<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, ServerboundPackets1_6_4> {
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
     public static final BackwardsMappingData MAPPINGS = new BackwardsMappingData("1.7.2", "1.6.4", Protocol1_6_4To1_7_2_5.class);
