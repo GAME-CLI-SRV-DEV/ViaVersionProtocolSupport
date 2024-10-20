@@ -1,77 +1,99 @@
-import com.viaversion.viaversion.api.protocol.AbstractProtocol;
-import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
-import com.viaversion.viaversion.api.type.Type;
-import com.viaversion.viaversion.api.type.Types;
-import net.raphimc.vialegacy.api.util.BlockFaceUtil;
-import net.raphimc.vialegacy.protocol.release.r1_6_1tor1_6_2.packet.ClientboundPackets1_6_1;
+package com.viaversion.viabackwards.protocol.template;
+
+import net.raphimc.vialegacy.api.LegacyProtocolVersion;
+import com.viaversion.viabackwards.api.data.BackwardsMappingData;
+import com.viaversion.viabackwards.api.rewriters.SoundRewriter;
+import com.viaversion.viabackwards.api.rewriters.TranslatableRewriter;
+import com.viaversion.viaversion.api.connection.UserConnection;
+import com.viaversion.viaversion.api.minecraft.entities.EntityTypes1_20_5;
+import com.viaversion.viaversion.api.protocol.packet.provider.PacketTypesProvider;
+import com.viaversion.viaversion.api.protocol.packet.provider.SimplePacketTypesProvider;
+import com.viaversion.viaversion.data.entity.EntityTrackerBase;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ClientboundPackets1_6_4;
+import com.viaversion.viarewind.protocol.packet.ClientboundPackets1_7_2_5;
+import com.viaversion.viarewind.protocol.packet.ServerboundPackets1_7_2_5;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ServerboundPackets1_6_4;
-import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.types.Types1_6_4;
-import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
-import com.viaversion.viaversion.rewriter.ComponentRewriter;
+import com.viaversion.viaversion.rewriter.ComponentRewriter.ReadType;
+import com.viaversion.viaversion.rewriter.StatisticsRewriter;
+import com.viaversion.viaversion.rewriter.TagRewriter;
 
-public class Protocolr1_7_2_5Tor1_6_1 extends StatelessProtocol<ClientboundPackets1_6_1, ClientboundPackets1_6_4, ServerboundPackets1_6_4, ServerboundPackets1_6_4> {
+import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
-    public Protocolr1_7_2_5Tor1_6_1() {
-        super(ClientboundPackets1_6_1.class, ClientboundPackets1_6_4.class, ServerboundPackets1_6_4.class, ServerboundPackets1_6_4.class);
+// Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
+
+final class Protocol1_6_4To1_7_2_5 extends LegacyProtocolVersion<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, ServerboundPackets1_6_4> {
+
+    // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
+    public static final BackwardsMappingData MAPPINGS = new BackwardsMappingData("1.7.2", "1.6.4", Protocol1_6_4To1_7_2_5.class);
+    private final EntityPacketRewriter1_7_2_5 entityRewriter = new EntityPacketRewriter1_7_2_5(this);
+    private final BlockItemPacketRewriter1_7_2_5 itemRewriter = new BlockItemPacketRewriter1_7_2_5(this);
+    private final TranslatableRewriter<ClientboundPackets1_7_2_5> translatableRewriter = new TranslatableRewriter<>(this, ReadType.NBT);
+    private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
+
+    public Protocol1_6_4To1_7_2_5() {
+        super(ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class);
     }
 
     @Override
     protected void registerPackets() {
-        this.registerClientbound(ClientboundPackets1_6_1.LOGIN, wrapper -> {
-            final PacketWrapper brand = PacketWrapper.create(ClientboundPackets1_6_4.CUSTOM_PAYLOAD, wrapper.user());
-            brand.write(Types1_6_4.STRING, "MC|Brand");
-            final byte[] brandBytes = "legacy".getBytes(StandardCharsets.UTF_8);
-            brand.write(Types.SHORT, (short) brandBytes.length); // length
-            brand.write(Types.REMAINING_BYTES, brandBytes); // data
+        super.registerPackets();
 
-            wrapper.send(Protocolr1_6_1Tor1_6_2.class);
-            brand.send(Protocolr1_6_1Tor1_6_2.class);
-            wrapper.cancel();
-        });
-        this.registerClientbound(ClientboundPackets1_6_1.UPDATE_ATTRIBUTES, new PacketHandlers() {
-            @Override
-            public void register() {
-                map(Types.INT); // entity id
-                handler(wrapper -> {
-                    final int amount = wrapper.passthrough(Types.INT); // count
-                    for (int i = 0; i < amount; i++) {
-                        wrapper.passthrough(Types1_6_4.STRING); // id
-                        wrapper.passthrough(Types.DOUBLE); // baseValue
-                        wrapper.write(Types.SHORT, (short) 0); // modifier count
-                    }
-                });
-            }
-        });
+        tagRewriter.registerGeneric(ClientboundPackets1_7_2_5.UPDATE_TAGS);
+        tagRewriter.registerGeneric(ClientboundConfigurationPackets1_21.UPDATE_TAGS);
+        new StatisticsRewriter<>(this).register(ClientboundPackets1_7_2_5.AWARD_STATS);
+        //new AttributeRewriter<>(this).register1_6_4(ClientboundPackets1_7_2_5.ENTITY_PROPERTIES);
 
-        this.registerServerbound(ServerboundPackets1_6_4.USE_ITEM_ON, new PacketHandlers() {
-            @Override
-            public void register() {
-                map(Types1_7_6.BLOCK_POSITION_UBYTE); // position
-                map(Types.UNSIGNED_BYTE); // direction
-                map(Types1_7_6.ITEM); // item
-                map(Types.UNSIGNED_BYTE); // offset x
-                map(Types.UNSIGNED_BYTE); // offset y
-                map(Types.UNSIGNED_BYTE); // offset z
-                handler(wrapper -> {
-                    final BlockPosition pos = wrapper.get(Types1_7_6.BLOCK_POSITION_UBYTE, 0);
-                    final short direction = wrapper.get(Types.UNSIGNED_BYTE, 0);
-                    final Item item = wrapper.get(Types1_7_6.ITEM, 0);
-
-                    if (item != null && item.identifier() == ItemList1_6.sign.itemId() && direction != 255 && direction != 0) { // If placed item is a sign then cancel and send a OPEN_SIGN_EDITOR packet
-                        final PacketWrapper openSignEditor = PacketWrapper.create(ClientboundPackets1_6_4.OPEN_SIGN_EDITOR, wrapper.user());
-                        openSignEditor.write(Types.BYTE, (byte) 0); // magic value
-                        openSignEditor.write(Types1_7_6.BLOCK_POSITION_INT, pos.getRelative(BlockFaceUtil.getFace(direction)));
-                        openSignEditor.send(Protocolr1_6_1Tor1_6_2.class);
-                    }
-                });
-            }
-        });
+        // Registers translatable mappings (missing a whole bunch still)
+        //translatableRewriter.registerOpenWindow(ClientboundPackets1_7_2_5.OPEN_WINDOW); // Handled by registerOpenWindow in item rewriters
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_ACTION_BAR_TEXT);
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_TITLE_TEXT);
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_SUBTITLE_TEXT);
+        translatableRewriter.registerBossEvent(ClientboundPackets1_7_2_5.BOSS_EVENT);
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISCONNECT);
+        translatableRewriter.registerTabList(ClientboundPackets1_7_2_5.TAB_LIST);
+        translatableRewriter.registerPlayerCombatKill1_20(ClientboundPackets1_7_2_5.PLAYER_COMBAT_KILL);
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SYSTEM_CHAT);
+        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISGUISED_CHAT);
+        translatableRewriter.registerPing();
     }
 
     @Override
-    public void init(UserConnection userConnection) {
-        userConnection.put(new PreNettySplitter(Protocolr1_6_1Tor1_6_2.class, ClientboundPackets1_6_1::getPacket));
+    public void init(final UserConnection user) {
+        addEntityTracker(user, new EntityTrackerBase(user, EntityTypes1_7_2_5.PLAYER));
     }
 
+    @Override
+    public BackwardsMappingData getMappingData() {
+        return MAPPINGS;
+    }
+
+    @Override
+    public EntityPacketRewriter1_7_2_5 getEntityRewriter() {
+        return entityRewriter;
+    }
+
+    @Override
+    public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
+        return itemRewriter;
+    }
+
+    @Override
+    public TranslatableRewriter<ClientboundPackets1_7_2_5> getComponentRewriter() {
+        return translatableRewriter;
+    }
+
+    @Override
+    public TagRewriter<ClientboundPackets1_7_2_5> getTagRewriter() {
+        return tagRewriter;
+    }
+
+    @Override
+    protected PacketTypesProvider<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPacket1_7_2_5, ServerboundPacket1_6_4> createPacketTypesProvider() {
+        return new SimplePacketTypesProvider<>(
+            packetTypeMap(unmappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundConfigurationPackets1_6_4.class),
+            packetTypeMap(mappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundConfigurationPackets1_6_4.class),
+            packetTypeMap(mappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundConfigurationPackets1_6_4.class),
+            packetTypeMap(unmappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundConfigurationPackets1_6_4.class)
+        );
+    }
 }
