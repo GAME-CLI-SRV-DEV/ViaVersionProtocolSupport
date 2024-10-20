@@ -12,5 +12,7 @@ repositories {
 
 	dependencies {
 	      compileOnly("com.viaversion:viaversion-common:5.0.4")
+              compileOnly("com.viaversion:viabackwards-common:5.0.4")
+              compileOnly("com.viaversion:viarewind-core:5.0.4")
               api("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT")
 	}
