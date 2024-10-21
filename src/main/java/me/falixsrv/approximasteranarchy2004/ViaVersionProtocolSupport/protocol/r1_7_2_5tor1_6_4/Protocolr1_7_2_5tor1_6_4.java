@@ -65,15 +65,15 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
         return MAPPINGS;
     }
 
-    @Override
-    public EntityPacketRewriter1_7_2_5 getEntityRewriter() {
-        return entityRewriter;
-    }
+    // @Override
+    // public EntityPacketRewriter1_7_2_5 getEntityRewriter() {
+    //    return entityRewriter;
+    // }
 
-    @Override
-    public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
-        return itemRewriter;
-    }
+    // @Override
+    // public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
+    //   return itemRewriter;
+    // }
 /*
     @Override
     public TranslatableRewriter<ClientboundPackets1_7_2_5> getComponentRewriter() {
