@@ -3,8 +3,8 @@
 
 add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do.
 
-# Do You Support Bedrock Directly?
-No, VVPS dont support Bedrock Edition unlike ProtocolSupport, However, you can use GeyserMC.
+# Do You Support Bedrock Edition(Pocket Edition) Directly?
+No, VVPS dont support Bedrock Edition unlike ProtocolSupport Pocket Edition. However, you can use GeyserMC.
 
 # is ViaProxy Support Planned?
 Not yet, but you can install VVPS on Backend
