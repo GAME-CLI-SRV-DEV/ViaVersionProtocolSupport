@@ -1,4 +1,4 @@
-package com.viaversion.viabackwards.protocol.template;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4;
 
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import com.viaversion.viabackwards.api.data.BackwardsMappingData;
