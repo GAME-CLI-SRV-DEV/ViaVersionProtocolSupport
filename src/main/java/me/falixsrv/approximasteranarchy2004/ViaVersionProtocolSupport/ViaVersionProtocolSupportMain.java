@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.falixsrv.approximasteranarchy2004.VVPSPlatform;
 
-public class ViaVersionProtocolSupport {
+public class ViaVersionProtocolSupportMain {
 public static void init(VVPSPlatform platform, VVPSConfig config) {
         Preconditions.checkArgument(ViaVersionProtocolSupport.platform == null, "ViaVersionProtocolSupport is already initialized!");
 

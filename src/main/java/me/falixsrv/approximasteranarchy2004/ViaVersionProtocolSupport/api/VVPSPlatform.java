@@ -5,7 +5,7 @@
 
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupport;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.VVPSConfig;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.rewriters.TranslatableRewriter;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.Protocolr1_7_2_5Tor1_6_4.Protocolr1_7_2_5Tor1_6_4;
