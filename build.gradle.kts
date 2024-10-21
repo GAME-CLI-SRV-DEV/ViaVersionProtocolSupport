@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.0"
+    java
 }
 
 repositories {
@@ -21,3 +22,10 @@ repositories {
 	      compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
               api("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT")
 	}
+
+tasks.withType<JavaCompile> {
+    sourceCompatibility = "21"
+    targetCompatibility = "21"
+}
+
+
