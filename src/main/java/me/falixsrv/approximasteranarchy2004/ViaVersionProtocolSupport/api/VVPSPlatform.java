@@ -8,7 +8,7 @@ package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.VVPSConfig;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.rewriters.TranslatableRewriter;
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2Tor1_6_4.Protocolr1_7_2_5Tor1_6_4;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2tor1_6_4.Protocolr1_7_2_5tor1_6_4;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.utils.VersionInfo;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
