@@ -9,7 +9,7 @@ repositories {
 
     }
 	maven {
-    url = uri("https://repo.papermc.io/maven-snapshots/")
+    url = uri("https://repo.papermc.io/repository/maven-public/")
 
     }
 }
