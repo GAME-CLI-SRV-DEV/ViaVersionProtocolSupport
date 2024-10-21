@@ -6,7 +6,7 @@ import java.text.MessageFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import me.falixsrv.approximasteranarchy2004.VVPSPlatform;
+import me.falixsrv.approximasteranarchy2004.api.VVPSPlatform;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
