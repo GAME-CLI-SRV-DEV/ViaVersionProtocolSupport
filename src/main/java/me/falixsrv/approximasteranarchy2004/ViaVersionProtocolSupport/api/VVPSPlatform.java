@@ -12,7 +12,7 @@ import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.P
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.utils.VersionInfo;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
-import net.raphimc.vialegacy.api.protocol.version.LegacyProtocolVersion;
+import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import com.viaversion.viaversion.update.Version;
 import java.io.File;
 import java.util.Arrays;
