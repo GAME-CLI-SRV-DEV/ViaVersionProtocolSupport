@@ -45,7 +45,7 @@ public interface VVPSPlatform {
 
         getLogger().info("Registering protocols...");
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
-        protocolManager.registerProtocol(new Protocolr1_7_2_5To1_6_4(), LegacyProtocolVersion.v1_6_4, LegacyProtocolVersion.v1_7_2_5);
+        protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.v1_6_4, LegacyProtocolVersion.v1_7_2_5);
     }
 
     /**
