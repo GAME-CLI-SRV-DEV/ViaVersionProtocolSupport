@@ -7,6 +7,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.falixsrv.approximasteranarchy2004.api.VVPSPlatform;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
