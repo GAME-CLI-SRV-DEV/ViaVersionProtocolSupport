@@ -5,7 +5,6 @@ import com.viaversion.viabackwards.api.data.BackwardsMappingData;
 import com.viaversion.viabackwards.api.rewriters.SoundRewriter;
 import com.viaversion.viabackwards.api.rewriters.TranslatableRewriter;
 import com.viaversion.viaversion.api.connection.UserConnection;
-import com.viaversion.viaversion.api.minecraft.entities.EntityTypes1_20_5;
 import com.viaversion.viaversion.api.protocol.packet.provider.PacketTypesProvider;
 import com.viaversion.viaversion.api.protocol.packet.provider.SimplePacketTypesProvider;
 import com.viaversion.viaversion.data.entity.EntityTrackerBase;
@@ -55,12 +54,12 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
         //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISGUISED_CHAT);
         translatableRewriter.registerPing();
     }
-
+/*
     @Override
     public void init(final UserConnection user) {
         //addEntityTracker(user, new EntityTrackerBase(user, EntityTypes1_7_2_5.PLAYER));
     }
-
+*/
     @Override
     public BackwardsMappingData getMappingData() {
         return MAPPINGS;
@@ -75,7 +74,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
     public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
         return itemRewriter;
     }
-
+/*
     @Override
     public TranslatableRewriter<ClientboundPackets1_7_2_5> getComponentRewriter() {
         return translatableRewriter;
@@ -96,3 +95,4 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
         );
     }
 }
+*/
