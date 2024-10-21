@@ -1,4 +1,4 @@
-package me.falixsrv.approximasteranarchy2004;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -6,7 +6,7 @@ import java.text.MessageFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import me.falixsrv.approximasteranarchy2004.VVPSPlatform;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
 
 public class ViaVersionProtocolSupportMain {
 public static void init(VVPSPlatform platform, VVPSConfig config) {
