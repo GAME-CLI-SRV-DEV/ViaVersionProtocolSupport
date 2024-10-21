@@ -26,8 +26,6 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
     public static final BackwardsMappingData MAPPINGS = new BackwardsMappingData("1.7.2", "1.6.4", Protocol1_6_4To1_7_2_5.class);
-    private final EntityPacketRewriter1_7_2_5 entityRewriter = new EntityPacketRewriter1_7_2_5(this);
-    private final BlockItemPacketRewriter1_7_2_5 itemRewriter = new BlockItemPacketRewriter1_7_2_5(this);
     private final TranslatableRewriter<ClientboundPackets1_7_2_5> translatableRewriter = new TranslatableRewriter<>(this, ReadType.NBT);
     private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
 
@@ -39,28 +37,28 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
     protected void registerPackets() {
         super.registerPackets();
 
-        tagRewriter.registerGeneric(ClientboundPackets1_7_2_5.UPDATE_TAGS);
-        tagRewriter.registerGeneric(ClientboundConfigurationPackets1_21.UPDATE_TAGS);
+        //tagRewriter.registerGeneric(ClientboundPackets1_7_2_5.UPDATE_TAGS);
+        //tagRewriter.registerGeneric(ClientboundConfigurationPackets1_21.UPDATE_TAGS);
         new StatisticsRewriter<>(this).register(ClientboundPackets1_7_2_5.AWARD_STATS);
         //new AttributeRewriter<>(this).register1_6_4(ClientboundPackets1_7_2_5.ENTITY_PROPERTIES);
 
         // Registers translatable mappings (missing a whole bunch still)
         //translatableRewriter.registerOpenWindow(ClientboundPackets1_7_2_5.OPEN_WINDOW); // Handled by registerOpenWindow in item rewriters
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_ACTION_BAR_TEXT);
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_TITLE_TEXT);
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_SUBTITLE_TEXT);
-        translatableRewriter.registerBossEvent(ClientboundPackets1_7_2_5.BOSS_EVENT);
+        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_ACTION_BAR_TEXT);
+        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_TITLE_TEXT);
+        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_SUBTITLE_TEXT);
+        //translatableRewriter.registerBossEvent(ClientboundPackets1_7_2_5.BOSS_EVENT);
         translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISCONNECT);
-        translatableRewriter.registerTabList(ClientboundPackets1_7_2_5.TAB_LIST);
-        translatableRewriter.registerPlayerCombatKill1_20(ClientboundPackets1_7_2_5.PLAYER_COMBAT_KILL);
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SYSTEM_CHAT);
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISGUISED_CHAT);
+        // translatableRewriter.registerTabList(ClientboundPackets1_7_2_5.TAB_LIST);
+        // translatableRewriter.registerPlayerCombatKill1_20(ClientboundPackets1_7_2_5.PLAYER_COMBAT_KILL);
+        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SYSTEM_CHAT);
+        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISGUISED_CHAT);
         translatableRewriter.registerPing();
     }
 
     @Override
     public void init(final UserConnection user) {
-        addEntityTracker(user, new EntityTrackerBase(user, EntityTypes1_7_2_5.PLAYER));
+        //addEntityTracker(user, new EntityTrackerBase(user, EntityTypes1_7_2_5.PLAYER));
     }
 
     @Override
@@ -91,10 +89,10 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
     @Override
     protected PacketTypesProvider<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPacket1_7_2_5, ServerboundPacket1_6_4> createPacketTypesProvider() {
         return new SimplePacketTypesProvider<>(
-            packetTypeMap(unmappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundConfigurationPackets1_6_4.class),
-            packetTypeMap(mappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundConfigurationPackets1_6_4.class),
-            packetTypeMap(mappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundConfigurationPackets1_6_4.class),
-            packetTypeMap(unmappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundConfigurationPackets1_6_4.class)
+            packetTypeMap(unmappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class),
+            packetTypeMap(mappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class),
+            packetTypeMap(mappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class),
+            packetTypeMap(unmappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class)
         );
     }
 }
