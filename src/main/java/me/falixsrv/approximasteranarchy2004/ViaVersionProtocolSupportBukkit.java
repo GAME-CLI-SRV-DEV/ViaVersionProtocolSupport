@@ -31,8 +31,11 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 	@Override
 	public void onEnable() {
 	Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "config.yml")));
-	String message = ChatColor.AQUA + "ViaVersion" + ChatColor.GRAY + "ProtocolSupport";
-        Bukkit.getServer().sendMessage(message);
+	Component message = Component.text()
+    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .build();
+Bukkit.getServer().sendMessage(message);
 	}
 
 
