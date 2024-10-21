@@ -7,7 +7,7 @@ package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.VVPSConfig;
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.rewriters.TranslatableRewriter;
+import com.viaversion.viabackwards.api.rewriters.TranslatableRewriter;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Protocolr1_7_2_5tor1_6_4;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.utils.VersionInfo;
 import com.viaversion.viaversion.api.Via;
@@ -31,7 +31,7 @@ public interface VVPSPlatform {
         config.reload();
         Via.getManager().getConfigurationProvider().register(config);
 
-        ViaBackwards.init(this, config);
+        ViaVersionProtocolSupportMain.init(this, config);
 
         if (isOutdated()) {
             disable();
@@ -63,9 +63,9 @@ public interface VVPSPlatform {
 		    getLogger().severe("║                                                                   ");
 		    getLogger().severe("║ Your ViaVersion, Backwards, Rewind is Outdated                    ");
 		    getLogger().severe("║ Please Use ViaVersion + ViaBackwards " + MINIMUM_VV_VERSION + "or higher");
-			getLogger().severe("║ If You Are Using ViaVersion On ViaLoader Follow these steps:");
-			getLogger().severe("║ ViaProxy: Override it using JAR(Not Yet Supported)");
-			getLogger().severe("║ ViaVersionProtocolSupport Will Now Shutdown...");
+		    getLogger().severe("║ If You Are Using ViaVersion On ViaLoader Follow these steps:");
+		    getLogger().severe("║ ViaProxy: Override it using JAR(Not Yet Supported)");
+		    getLogger().severe("║ ViaVersionProtocolSupport Will Now Shutdown...");
 		    getLogger().severe("╚══════════════════════════════════════════════════════════════════╝");
             return true;
         }
