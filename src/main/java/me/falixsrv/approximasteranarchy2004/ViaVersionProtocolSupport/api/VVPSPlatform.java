@@ -43,9 +43,9 @@ public interface VVPSPlatform {
         getLogger().info("Loading translations...");
         TranslatableRewriter.loadTranslatables();
 
-        getLogger().info("Registering protocols...");
+        getLogger().info("Registering Protocols...");
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
-        protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.v1_6_4, LegacyProtocolVersion.v1_7_2_5);
+        protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.r1_6_4, ProtocolVersion.v1_7_2);
     }
 
     /**
