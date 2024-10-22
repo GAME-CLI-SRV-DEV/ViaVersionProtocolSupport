@@ -32,7 +32,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
             }
 	@Override
 	public void onEnable() {
-	Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "config.yml")));
+	Via.getManager().addEnableListener(() -> this.init());
 	Component message = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
