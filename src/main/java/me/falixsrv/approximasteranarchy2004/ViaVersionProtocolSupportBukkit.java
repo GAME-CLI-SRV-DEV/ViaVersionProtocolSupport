@@ -32,14 +32,17 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
             }
 	@Override
 	public void onEnable() {
-	Via.getManager().addEnableListener(() -> this.init());
 	Component message = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
 Bukkit.getServer().sendMessage(message);
+        this.start()
 	}
 
+	public void start() {
+	com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init());
+	}
 
     @Override
     public void disable() {
