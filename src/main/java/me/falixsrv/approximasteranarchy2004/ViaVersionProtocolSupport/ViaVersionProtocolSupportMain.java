@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSConfig;
 
 public class ViaVersionProtocolSupportMain {
 public static void init(VVPSPlatform platform, VVPSConfig config) {
