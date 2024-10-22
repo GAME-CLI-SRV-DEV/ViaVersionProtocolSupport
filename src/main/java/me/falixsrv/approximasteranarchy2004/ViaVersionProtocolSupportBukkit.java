@@ -37,7 +37,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
 Bukkit.getServer().sendMessage(message);
-        this.start()
+        this.start();
 	}
 
 	public void start() {
