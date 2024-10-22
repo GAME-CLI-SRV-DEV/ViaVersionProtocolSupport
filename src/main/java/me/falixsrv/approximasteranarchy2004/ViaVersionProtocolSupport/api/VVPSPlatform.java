@@ -14,6 +14,7 @@ import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import com.viaversion.viaversion.update.Version;
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import java.io.File;
 import java.util.Arrays;
 import java.util.logging.Logger;
