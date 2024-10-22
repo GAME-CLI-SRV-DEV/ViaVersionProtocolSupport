@@ -43,7 +43,7 @@ Bukkit.getServer().sendMessage(message);
 
     @Override
     public void disable() {
-        
+        System.out.println("Bye!");
     }
 }
 
