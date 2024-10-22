@@ -13,6 +13,7 @@ import com.viaversion.viaversion.api.Via;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.io.File;
 
 public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 
@@ -41,7 +42,7 @@ Bukkit.getServer().sendMessage(message);
 	}
 
 	public void start() {
-	com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init());
+	com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "config.yml")));
 	}
 
     @Override
