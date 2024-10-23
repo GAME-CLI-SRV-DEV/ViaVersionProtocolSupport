@@ -50,9 +50,9 @@ Bukkit.getServer().sendMessage(message);
             VVPSConfig.GenerateConfig();
         } else {
             System.out.println("File exists.");
+	    com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "vvpsconfig.yml")));
            }
 	}
-      com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "vvpsconfig.yml")));
     @Override
     public void disable() {
         System.out.println("Bye!");
