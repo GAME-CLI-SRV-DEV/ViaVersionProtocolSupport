@@ -9,7 +9,8 @@ ViaVersion, ViaBackwards, and ViaRewind.
 # Transition from ProtocolSupport
 It's Easy. Put the plugin, Enable it.
 Config is easy to use.
-
+but i dont know what to put in
+so... idk about ps config
 # Do You Support Bedrock Edition(Pocket Edition) Directly?
 No, VVPS dont support Bedrock Edition unlike ProtocolSupport Pocket Edition. However, you can use GeyserMC.
 
@@ -48,6 +49,13 @@ For c0.0.15-1.0.0, Click the Icon.
 |1.6.1->1.5.2|0%|
 |1.5.0/1|Implemented in ViaLegacy|
 |1.5.0->1.4.7/6|0%|
+
+# Pocket Edition Usage
+Warning: it is intended to work as Extension of Geyser. Spigot and Sponge is not supported because ViaBedrock Which makes that plugin functional is for BE Servers.
+
+it also uses ViaLoader, so you can use Anykind of Geyser versions :skull:.
+but i dont recommend using random geyser versions as it would look very outdated.
+
 
 # Standalone Usage
 ### Using ViaVersionProtocolSupportNetwork:
