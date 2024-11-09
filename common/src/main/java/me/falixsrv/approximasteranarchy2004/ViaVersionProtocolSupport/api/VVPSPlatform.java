@@ -87,7 +87,7 @@ public interface VVPSPlatform {
 			getLogger().severe("║ EEEEEEEE RRRRRRR   RRRRRRR  O      O RRRRRRR");
 			getLogger().severe("║ E        R      R  R      R O      O R      R");
 			getLogger().severe("║ EEEEEEEE R      R  R      R OOOOOOOO R      R");
-			getLogger().severe("║ ")
+			getLogger().severe("║ ");
 		    getLogger().severe("║ You are using Outdated version of ViaVersion, Backwards, Rewind.                  ");
 		    getLogger().severe("║ Please use ViaVersion + ViaBackwards + Rewind " + MINIMUM_VV_VERSION + " We Only support 1.21.1 and above unfortunately");
 		    getLogger().severe("║ if you are using ViaProxy:");
