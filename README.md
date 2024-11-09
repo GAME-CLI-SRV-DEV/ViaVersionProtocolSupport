@@ -69,6 +69,8 @@ ViaLoader is Not Supported yet.
 # Inspired by ProtocolSupport
 Thank you!
 
+# Note:
+exclude("io/lenni0451/optconfig/**") is put on ViaProxy Subproject
 # Thanks to
 [RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451) for making ViaLegacy(Library API for VVPS Protocol) & ViaBedrock(Library API for VVPSGE Protocol)\
 [ViaBackwards](https://github.com/ViaVersion/ViaBackwards) For Template(Very Cool)
