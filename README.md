@@ -70,6 +70,6 @@ ViaLoader is Not Supported yet.
 Thank you!
 
 # Thanks to
-[RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451) for making ViaLegacy(Library API for VVPS Protocol) & ViaBedrock(Library API for VVPSGE Protocol)
+[RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451) for making ViaLegacy(Library API for VVPS Protocol) & ViaBedrock(Library API for VVPSGE Protocol)\
 [ViaBackwards](https://github.com/ViaVersion/ViaBackwards) For Template(Very Cool)
 
