@@ -65,10 +65,10 @@ public interface VVPSPlatform {
 		    getLogger().severe("║                                                                   ");
 			getLogger().severe("║  에에에에에에        에 에  러러러러러러     러                                                           ");
 			getLogger().severe("║ 에         에       에 에          러     러                                                             ");
-			getLogger().severe("║ 에         에       에 에          러     러                                                           ")
-			getLogger().severe("║ 에         에에에에에에 에  러러러러러러러러러러                                                             ")
-			getLogger().severe("║ 에         에       에 에  러             러                                                ")
-			getLogger().severe("║ 에         에       에 에  러             러                                                ")
+			getLogger().severe("║ 에         에       에 에          러     러                                                           ");
+			getLogger().severe("║ 에         에에에에에에 에  러러러러러러러러러러                                                             ");
+			getLogger().severe("║ 에         에       에 에  러             러                                                ");
+			getLogger().severe("║ 에         에       에 에  러             러                                                ");
 			getLogger().severe("║  에에에에에에        에 에  러러러러러러     러                                                           ");
 			getLogger().severe("║                                                                   ");
 			getLogger().severe("║                                                                  ");
