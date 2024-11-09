@@ -43,8 +43,8 @@ For c0.0.15-1.0.0, Click the Icon.
 
 |MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
 |--|--|
-|1.7.2->1.6.4|45%|
-|1.6.4->1.6.2|Implemented in ViaLegacy|
+|1.7.2->1.6.4/2|70%|
+|1.6.4/2|Implemented in ViaLegacy|
 |1.6.2->1.6.1|0%|
 |1.6.1->1.5.2|0%|
 |1.5.0/1|Implemented in ViaLegacy|
@@ -52,30 +52,24 @@ For c0.0.15-1.0.0, Click the Icon.
 
 # Pocket Edition Usage
 Warning: it is intended to work as Extension of Geyser. Spigot and Sponge is not supported because ViaBedrock Which makes that plugin functional is for BE Servers.
+it is also unstable!!! 
 
-it also uses ViaLoader, so you can use Anykind of Geyser versions :skull:.
-but i dont recommend using random geyser versions as it would look very outdated.
+it also uses ViaLoader, so you can use Anykind of Geyser versions :skull:.\
+but i dont recommend using randumb geyser versions as it would look very outdated.\
+
+The GeyserMC Version Includes [Only Pocket Edition](https://github.com/KejonaMC/GeyserBlockJavaPlayers) Bypasser called ViaBedrock.\
+Download VVPS-Geyser, put it in the GeyserMC Folder, Start the Geyser, Then you can use ViaBedrock On VIAaaS. :haha:
+This Extension dont work with inventory. so, you have to get ViaVersionProtocolSupportGeyserStuff(Uses Commands to equip inventory)
 
 
 # Standalone Usage
-### Using ViaVersionProtocolSupportNetwork:
-This Method Should Be Used if ViaVersionProtocolSupportNetwork-Velocity is incompatible with latest Version.
-For Standalone, using ViaPSN would be For Public Service would be
-```
-aiptype-address._porttype-port._vtype-version._accountsel-(T/F/OAM).viaversionprotocolsupport.vianet.hostname
-```
-if the accountsel is T, you have to add account using the website/forms.
-if the accountsel is F, you can only join Cracked Server.
-if the accountsel is OAM, you have to use openauthmod.
-Example:
-aIPv4-203.0.113.42._port_tcp-25565._vJE-1.18.2._accountsel-T.viaversionprotocolsupport.vianet.lenni0451.net
-Warning: your Username that you accessed can be grabbed by website. do this when you trust this instance.
 ### using ViaProxy
-address_port_version.viaproxy._accountsel-T.viaversionprotocolsupport.vianet.hostname
-```
-example address
-ViaPSN: aIPv4-203.0.113.42._port_tcp-25565._vJE-1.18.2._accountsel-T.viaversionprotocolsupport.vianet.lenni0451.net:25562
-ViaProxy: address_port_version.viaproxy._accountsel-T.viaversionprotocolsupport.vianet.geyserconnect.net:25534
-```
+put it in the plugins folder
+ViaLoader is Not Supported yet.
 # Inspired by ProtocolSupport
 Thank you!
+
+# Thanks to
+[RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451) for making ViaLegacy(Library API for VVPS Protocol) & ViaBedrock(Library API for VVPSGE Protocol)
+[ViaBackwards](https://github.com/ViaVersion/ViaBackwards) For Template(Very Cool)
+
