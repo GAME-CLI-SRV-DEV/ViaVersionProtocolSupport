@@ -1,4 +1,4 @@
-package me.falixsrv.approximasteranarchy2004;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -6,7 +6,7 @@ import java.text.MessageFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import me.falixsrv.approximasteranarchy2004.api.VVPSPlatform;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import com.viaversion.viaversion.api.Via;
@@ -15,11 +15,15 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 
-public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
+public class ViaVersionProtocolSupportBukkit extends JavaPlugin implements VVPSPlatform {
 
 String filePath = "config.yml";
 File file = new File(filePath);
 
+    public void BukkitPlugin() {
+        Via.getManager().addEnableListener(() -> init());
+    }
+	
 	@Override
 	public void onLoad() {
     Logger logger = getLogger();
@@ -40,21 +44,16 @@ File file = new File(filePath);
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
-Bukkit.getServer().sendMessage(message);
-        this.start();
+    Bukkit.getServer().sendMessage(message);
 	}
-
-	public void start() {
-
-        if (!file.exists()) {
-            VVPSConfig.GenerateConfig();
-        } else {
-            System.out.println("File exists.");
-	    com.viaversion.viaversion.api.Via.getManager().addEnableListener(() -> this.init(new File(getDataFolder(), "vvpsconfig.yml")));
-           }
+ 
+    @Override
+	public void disable() {
+		System.out.println("By who drank spezi");
+		getPluginLoader().disablePlugin(this);
 	}
     @Override
-    public void disable() {
+    public void onDisable() {
         System.out.println("Bye!");
     }
 }
