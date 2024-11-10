@@ -1,3 +1,4 @@
+/*
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 
 import net.lenni0451.optconfig.ConfigLoader;
@@ -19,3 +20,4 @@ public class VVPSConfig {
     public static List<String> listOption = List.of("i ran", "Out of ideas");
 
 }
+*/

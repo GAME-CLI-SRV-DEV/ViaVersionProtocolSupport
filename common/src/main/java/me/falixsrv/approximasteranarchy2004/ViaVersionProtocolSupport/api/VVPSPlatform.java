@@ -6,10 +6,9 @@
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSConfig;
 import com.viaversion.viabackwards.api.rewriters.TranslatableRewriter;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Protocolr1_7_2_5tor1_6_4;
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.utils.VersionInfo;
+import com.viaversion.viaversion.util.VersionInfo;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
@@ -27,12 +26,9 @@ public interface VVPSPlatform {
      * Initialize ViaVersionProtocolSupport
 	 *
      */
-    default void init(final File configFile) {
-        VVPSConfig config = new VVPSConfig(configFile, getLogger());
-        config.reload();
-        Via.getManager().getConfigurationProvider().register(config);
+    default void init() {
 
-        ViaVersionProtocolSupportMain.init(this, config);
+        ViaVersionProtocolSupportMain.init(this);
 
         if (isOutdated()) {
             disable();
