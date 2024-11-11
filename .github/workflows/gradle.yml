@@ -56,7 +56,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: ViaVersionProtocolSupport PaperSpigotMC Plugin
-          path: build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
+          path: bukkit/build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
           
   dependency-submission:
 
