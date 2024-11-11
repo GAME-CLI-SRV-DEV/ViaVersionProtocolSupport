@@ -48,7 +48,16 @@ jobs:
     #
     # - name: Build with Gradle 8.9
     #   run: gradle build
-
+    
+    - name: rename modules
+      run: git mv build/libs/spigot.jar build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: ViaVersionProtocolSupport PaperSpigotMC Plugin
+          path: build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
+          
   dependency-submission:
 
     runs-on: ubuntu-latest
