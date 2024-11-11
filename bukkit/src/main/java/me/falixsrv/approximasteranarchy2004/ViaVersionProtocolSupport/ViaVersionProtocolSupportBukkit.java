@@ -54,10 +54,11 @@ File file = new File(filePath);
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport ", NamedTextColor.GRAY))
     .build();
-    	Component message = Component.text()
+    Component loaf = Component.text()
+    .append(Prefix)
     .append(Component.text("VVPS Is Loafed...", NamedTextColor.GREEN))
     .build();
-	Bukkit.getServer().sendMessage(Prefix + message);
+	Bukkit.getServer().sendMessage(loaf);
     }
  
     @Override
