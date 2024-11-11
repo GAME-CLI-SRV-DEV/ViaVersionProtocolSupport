@@ -57,7 +57,7 @@ File file = new File(filePath);
     	Component message = Component.text()
     .append(Component.text("VVPS Is Loafing...", NamedTextColor.AQUA))
     .build();
-	Bukkit.getServer().sendMessage(Prefix + ": " + Message);
+	Bukkit.getServer().sendMessage(Prefix + ": " + message);
     }
  
     @Override
