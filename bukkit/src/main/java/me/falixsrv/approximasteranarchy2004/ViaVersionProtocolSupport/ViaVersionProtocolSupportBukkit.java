@@ -52,12 +52,12 @@ File file = new File(filePath);
 	VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
-    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .append(Component.text("ProtocolSupport ", NamedTextColor.GRAY))
     .build();
     	Component message = Component.text()
-    .append(Component.text("VVPS Is Loafing...", NamedTextColor.AQUA))
+    .append(Component.text("VVPS Is Loafed...", NamedTextColor.GREEN))
     .build();
-	Bukkit.getServer().sendMessage(Prefix + ": " + message);
+	Bukkit.getServer().sendMessage(Prefix + message);
     }
  
     @Override
