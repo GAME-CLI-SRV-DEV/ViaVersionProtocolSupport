@@ -50,7 +50,14 @@ File file = new File(filePath);
     @Override
 	public void init() {
 	VVPSPlatform.super.init();
-        final ProtocolVersion protocolVersion = Via.getAPI().getServerVersion().highestSupportedProtocolVersion();
+    Component Prefix = Component.text()
+    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .build();
+    	Component message = Component.text()
+    .append(Component.text("VVPS Is Loafing...", NamedTextColor.AQUA))
+    .build();
+	Bukkit.getServer().sendMessage(Prefix + ": " + Message);
     }
  
     @Override
