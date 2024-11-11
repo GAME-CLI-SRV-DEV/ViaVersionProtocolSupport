@@ -46,6 +46,31 @@ File file = new File(filePath);
     .build();
     Bukkit.getServer().sendMessage(message);
 	}
+    @Override
+	public void init()
+	VVPSPlatform.super.init();
+
+        final ProtocolVersion protocolVersion = Via.getAPI().getServerVersion().highestSupportedProtocolVersion();
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_17)) {
+            new PlayerItemDropListener(this).register();
+        }
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_16)) {
+            new FireExtinguishListener(this).register();
+        }
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_14)) {
+            new LecternInteractListener(this).register();
+        }
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_12)) {
+            new FireDamageListener(this).register();
+        }
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_11)) {
+            new BlockBreakListener(this).register();
+        }
+
+        final ViaProviders providers = Via.getManager().getProviders();
+        if (protocolVersion.newerThanOrEqualTo(ProtocolVersion.v1_20_2)) {
+            providers.use(AdvancementCriteriaProvider.class, new BukkitAdvancementCriteriaProvider());
+        }
  
     @Override
 	public void disable() {
