@@ -27,9 +27,6 @@ public interface VVPSPlatform {
 	 *
      */
     default void init() {
-
-        ViaVersionProtocolSupportMain.init(this);
-
         if (isOutdated()) {
             disable();
             return;
