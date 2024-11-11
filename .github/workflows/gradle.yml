@@ -50,7 +50,7 @@ jobs:
     #   run: gradle build
     
     - name: rename modules
-      run: git mv build/libs/spigot.jar build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
+      run: git mv bukkit/build/libs/bukkit.jar bukkit/build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
