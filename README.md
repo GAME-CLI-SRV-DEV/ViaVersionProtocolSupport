@@ -31,7 +31,7 @@ You Need ViaVersionProtocolSupportVelocity or you need to install them on backen
 # Code From
 ViaBackwards(Protocol template and Platform Code)
 # ViaVersionProtocolSupport Allows:
-ViaPS allows 1.4.6-1.6.4.(1.6.4 is almost complete, 44 ERRORS Remaining Before Full Compile)
+ViaPS allows 1.4.6-1.6.4.(1.6.4 is complete, 1.5.2 not ready)
 For c0.0.15-1.0.0, Click the Icon.
 |Version|Classic|Alpha|Beta|1.0.0-1.4.6|1.4.6-1.6.4|
 |--|--|--|--|--|--|
