@@ -45,7 +45,13 @@ File file = new File(filePath);
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
     Bukkit.getServer().sendMessage(message);
-	}
+	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
+            // Enable in the next tick
+            Via.getPlatform().runSync(this::enable, 1);
+        } else {
+            enable();
+        }
+}
 	
     @Override
 	public void init() {
