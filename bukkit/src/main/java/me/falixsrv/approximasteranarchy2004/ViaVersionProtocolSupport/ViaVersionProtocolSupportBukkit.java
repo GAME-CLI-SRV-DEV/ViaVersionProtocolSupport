@@ -47,9 +47,9 @@ File file = new File(filePath);
     Bukkit.getServer().sendMessage(message);
 	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
             // Enable in the next tick
-            Via.getPlatform().runSync(this::enable, 1);
+            Via.getPlatform().runSync(this::init, 1);
         } else {
-            enable();
+            init();
         }
 }
 	
