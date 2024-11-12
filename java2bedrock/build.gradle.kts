@@ -7,21 +7,23 @@ repositories {
     mavenCentral()
     maven {
     url = uri("https://repo.viaversion.com/")
-
     }
-	maven {
-    url = uri("https://repo.papermc.io/repository/maven-public/")
-
+    maven {
+    url = uri("https://repo.opencollab.dev/")
+    }
+    maven {
+    url = uri("https://maven.lenni0451.net/everything")
     }
 }
 
 	dependencies {
-		implementation("com.viaversion:viaversion:5.1.1")
+    implementation("com.viaversion:viaversion:5.1.1")
     implementation("com.viaversion:viabackwards-common:5.1.1")
     implementation("com.viaversion:viarewind-common:4.0.3")
     implementation("net.raphimc:vialoader:3.0.4")
-	  implementation(project(":common"))
-	  compileOnly("org.geysermc:geyser-api:2.4.4-SNAPSHOT")
+    implementation("net.raphimc:ViaBedrock:0.0.13-SNAPSHOT")
+    implementation(project(":common"))
+    compileOnly("org.geysermc:geyser-api:2.4.4-SNAPSHOT")
 	}
 
 java {
