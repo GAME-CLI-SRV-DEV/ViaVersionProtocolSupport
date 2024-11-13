@@ -1,4 +1,5 @@
-
+package me.falixsrv.approximasteranarchy2004.viaversionprotocolsupport.JavaEdition2BedrockEdition
+      
 import com.viaversion.viaversion.ViaLoader;
 import com.viaversion.viaversion.api.platform.ViaPlatform;
 import com.viaversion.viaversion.api.injector.ViaInjector;
@@ -9,7 +10,7 @@ import us.myles.ViaLegacyPlatformImpl;
 import us.myles.ViaAprilFoolsPlatformImpl;
 import us.myles.ViaBedrockPlatformImpl;
 
-public class Main implements Extension{
+public class JE2BE implements Extension{
       @Subscribe
     public void onPreInitialize(GeyserPreInitializeEvent event) {
             this.logger().info("ViaVersionProtocolSupport를 실행하기 위해 필요한 라이브러리를 로딩합니다.");
@@ -34,7 +35,6 @@ public class Main implements Extension{
             );
 
         this.logger().info("ViaVersion 라이브러리 로딩을 완료했습니다.");
-            this.disable();
         }
     }
   
