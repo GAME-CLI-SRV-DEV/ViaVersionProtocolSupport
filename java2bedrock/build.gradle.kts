@@ -14,6 +14,12 @@ repositories {
     maven {
     url = uri("https://maven.lenni0451.net/everything")
     }
+    maven {
+    url = uri("https://libraries.minecraft.net")
+    }
+    maven {
+    url = uri("https://jitpack.io")
+    }
 }
 
 	dependencies {
