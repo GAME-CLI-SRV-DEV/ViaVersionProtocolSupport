@@ -20,7 +20,7 @@ repositories {
     implementation("com.viaversion:viaversion:5.1.1")
     implementation("com.viaversion:viabackwards-common:5.1.1")
     implementation("com.viaversion:viarewind-common:4.0.3")
-    implementation("net.raphimc:vialoader:3.0.4")
+    implementation("net.raphimc:ViaLoader:3.0.4")
     implementation("net.raphimc:ViaBedrock:0.0.13-SNAPSHOT")
     implementation(project(":common"))
     compileOnly("org.geysermc:geyser-api:2.4.4-SNAPSHOT")
