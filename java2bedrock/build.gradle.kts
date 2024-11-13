@@ -35,7 +35,7 @@ java {
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "me.falixsrv.approximasteranarchy2004.viaversionprotocolSupport.java2bedrock" // Change this to your main class
+            attributes["Main-Class"] = "me.falixsrv.approximasteranarchy2004.viaversionprotocolsupport.JavaEdition2BedrockEdition" // Change this to your main class
         }
     }
 
