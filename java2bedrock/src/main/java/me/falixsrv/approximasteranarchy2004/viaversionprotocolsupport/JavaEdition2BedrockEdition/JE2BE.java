@@ -9,6 +9,7 @@ import net.raphimc.vialoader.impl.platform.ViaRewindPlatformImpl;
 import net.raphimc.vialoader.impl.platform.ViaLegacyPlatformImpl;
 import net.raphimc.vialoader.impl.platform.ViaAprilFoolsPlatformImpl;
 import net.raphimc.vialoader.impl.platform.ViaBedrockPlatformImpl;
+import org.geysermc.geyser.api.extension.Extension;
 
 public class JE2BE implements Extension{
       @Subscribe
