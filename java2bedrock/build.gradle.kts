@@ -11,7 +11,7 @@ repositories {
         url = uri("https://repo.viaversion.com/")
     }
     maven {
-        url = uri("https://repo.opencollab.dev/maven-snapshots")
+        url = uri("https://repo.opencollab.dev/")
     }
     maven {
         url = uri("https://maven.lenni0451.net/everything")
