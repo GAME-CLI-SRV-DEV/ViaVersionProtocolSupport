@@ -1,6 +1,6 @@
 plugins {
     java
-	id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
@@ -8,19 +8,19 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 repositories {
     mavenCentral()
     maven {
-    url = uri("https://repo.viaversion.com/")
+        url = uri("https://repo.viaversion.com/")
     }
     maven {
-    url = uri("https://repo.opencollab.dev/")
+        url = uri("https://repo.opencollab.dev/")
     }
     maven {
-    url = uri("https://maven.lenni0451.net/everything")
+        url = uri("https://maven.lenni0451.net/everything")
     }
     maven {
-    url = uri("https://libraries.minecraft.net")
+        url = uri("https://libraries.minecraft.net")
     }
     maven {
-    url = uri("https://jitpack.io")
+        url = uri("https://jitpack.io")
     }
 }
 
@@ -32,7 +32,7 @@ dependencies {
     implementation("net.raphimc:ViaBedrock:0.0.13-SNAPSHOT")
     implementation(project(":common"))
     compileOnly("org.geysermc:geyser-api:2.4.4-SNAPSHOT")
-	   }
+}
 
 java {
     toolchain {
@@ -52,9 +52,13 @@ tasks {
     }
 
     shadowJar {
-        dependsOn(tasks.named<ShadowJar>("common:shadowJar"))
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
     }
 }
 
+tasks.named<ShadowJar>("shadowJar") {
+    dependsOn(tasks.named<ShadowJar>("common:shadowJar"))
+    mustRunAfter(tasks.named<ShadowJar>("common:shadowJar"))
+    inputs.files(tasks.named<ShadowJar>("common:shadowJar").get().outputs.files)
+}
