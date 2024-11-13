@@ -46,7 +46,7 @@ tasks {
     }
 
     build {
-        dependsOn(:java2bedrock:shadowJar)
+        dependsOn(shadowJar)
     }
     shadowJar {
         mergeServiceFiles()
