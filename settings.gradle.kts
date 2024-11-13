@@ -1,3 +1,3 @@
 rootProject.name = "ViaVersionProtocolSupport"
 
-include("bukkit", "common", "Java2Bedrock")
+include("bukkit", "common", "java2bedrock")
