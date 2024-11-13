@@ -48,9 +48,14 @@ tasks {
     build {
         dependsOn(shadowJar)
     }
+   tasks.named<ShadowJar>("java2bedrock:shadowJar").configure {
+    dependsOn(tasks.named<ShadowJar>("common:shadowJar"))
+   }
+
+
     shadowJar {
         mergeServiceFiles()
-        archiveClassifier.set("shadowie") // Prevent the -all suffix on the shadowjar file.
+        archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
     }
 }
 
