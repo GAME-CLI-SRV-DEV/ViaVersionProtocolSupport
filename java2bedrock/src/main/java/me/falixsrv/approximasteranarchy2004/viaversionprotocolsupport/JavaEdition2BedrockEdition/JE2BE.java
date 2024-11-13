@@ -27,14 +27,7 @@ public class JE2BE implements Extension{
             this.disable();
     }
                   // ViaBedrock 로드
-            ViaLoader.init(
-            null /*ViaPlatform*/,
-            new VVPSJE2BEVLLoaderImpl(),
-            null /*ViaInjector*/,
-            null /*ViaCommandHandler*/,
-            
-            ViaBedrockPlatformImpl::new
-            );
+            ViaLoader.init(null, new VVPSJE2BEVLLoaderImpl(), null, null, ViaBedrockPlatformImpl::new);
 
         this.logger().info("ViaVersion 라이브러리 로딩을 완료했습니다.");
         }
