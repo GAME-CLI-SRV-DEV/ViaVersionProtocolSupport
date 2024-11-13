@@ -1,6 +1,6 @@
 package me.falixsrv.approximasteranarchy2004.viaversionprotocolsupport.JavaEdition2BedrockEdition;
       
-import com.viaversion.viaversion.ViaLoader;
+import net.raphimc.vialoader.ViaLoader;
 import com.viaversion.viaversion.api.platform.ViaPlatform;
 import com.viaversion.viaversion.api.injector.ViaInjector;
 import com.viaversion.viaversion.api.command.ViaCommandHandler;
