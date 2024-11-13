@@ -58,11 +58,10 @@ tasks {
         dependsOn(":common:shadowJar")
         mustRunAfter(":common:shadowJar")
     }
-}
 
-// Explicitly declare the dependency for the compileJava task
-tasks.named("compileJava").configure {
-    dependsOn(":common:shadowJar")
-    inputs.files(tasks.named<ShadowJar>("common:shadowJar").get().outputs.files)
+    compileJava {
+        dependsOn(":common:shadowJar")
+        inputs.files(project(":common").tasks.named<ShadowJar>("shadowJar").get().outputs.files)
+    }
 }
 
