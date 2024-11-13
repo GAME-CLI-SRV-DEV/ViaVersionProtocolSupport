@@ -11,7 +11,7 @@ repositories {
         url = uri("https://repo.viaversion.com/")
     }
     maven {
-        url = uri("https://repo.opencollab.dev/")
+        url = uri("https://repo.opencollab.dev/maven-snapshot")
     }
     maven {
         url = uri("https://maven.lenni0451.net/everything")
@@ -31,7 +31,7 @@ dependencies {
     implementation("net.raphimc:ViaLoader:3.0.4")
     implementation("net.raphimc:ViaBedrock:0.0.13-SNAPSHOT")
     implementation(project(":common"))
-    implementation("org.geysermc.geyser:api:2.5.0-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:api:2.5.0-SNAPSHOT")
 }
 
 java {
