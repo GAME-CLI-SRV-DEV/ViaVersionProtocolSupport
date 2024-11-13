@@ -1,4 +1,4 @@
-package me.falixsrv.approximasteranarchy2004.viaversionprotocolsupport.JavaEdition2BedrockEdition
+package me.falixsrv.approximasteranarchy2004.viaversionprotocolsupport.JavaEdition2BedrockEdition;
       
 import com.viaversion.viaversion.ViaLoader;
 import com.viaversion.viaversion.api.platform.ViaPlatform;
