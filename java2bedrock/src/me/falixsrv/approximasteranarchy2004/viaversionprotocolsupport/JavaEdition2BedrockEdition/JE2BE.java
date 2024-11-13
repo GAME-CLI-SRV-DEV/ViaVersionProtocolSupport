@@ -4,11 +4,11 @@ import com.viaversion.viaversion.ViaLoader;
 import com.viaversion.viaversion.api.platform.ViaPlatform;
 import com.viaversion.viaversion.api.injector.ViaInjector;
 import com.viaversion.viaversion.api.command.ViaCommandHandler;
-import us.myles.ViaBackwardsPlatformImpl;
-import us.myles.ViaRewindPlatformImpl;
-import us.myles.ViaLegacyPlatformImpl;
-import us.myles.ViaAprilFoolsPlatformImpl;
-import us.myles.ViaBedrockPlatformImpl;
+import net.raphimc.vialoader.impl.platform.ViaBackwardsPlatformImpl;
+import net.raphimc.vialoader.impl.platform.ViaRewindPlatformImpl;
+import net.raphimc.vialoader.impl.platform.ViaLegacyPlatformImpl;
+import net.raphimc.vialoader.impl.platform.ViaAprilFoolsPlatformImpl;
+import net.raphimc.vialoader.impl.platform.ViaBedrockPlatformImpl;
 
 public class JE2BE implements Extension{
       @Subscribe
