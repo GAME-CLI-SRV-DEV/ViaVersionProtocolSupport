@@ -29,9 +29,10 @@ public class JE2BE implements Extension{
                   // ViaBedrock 로드
             ViaLoader.init(
             null /*ViaPlatform*/,
-            new CustomVLLoaderImpl(),
+            new VVPSJE2BEVLLoaderImpl(),
             null /*ViaInjector*/,
             null /*ViaCommandHandler*/,
+            
             ViaBedrockPlatformImpl::new
             );
 
@@ -41,6 +42,19 @@ public class JE2BE implements Extension{
   
 
 
-class CustomVLLoaderImpl extends VLLoader {
-    // 구현 내용
+class VVPSJE2BEVLLoaderImpl extends VLLoader {
+        @Override
+    public void load() {
+        super.load();
+
+        // ViaVersion
+        Via.getManager().getProviders().use(CompressionProvider.class, new ViaProxyCompressionProvider());
+        Via.getManager().getProviders().use(VersionProvider.class, new ViaProxyVersionProvider());
+
+        // ViaBackwards
+        Via.getManager().getProviders().use(TransferProvider.class, new ViaProxyTransferProvider());
+
+        // ViaBedrock
+        Via.getManager().getProviders().use(NettyPipelineProvider.class, new ViaProxyNettyPipelineProvider());
+    }
 }
