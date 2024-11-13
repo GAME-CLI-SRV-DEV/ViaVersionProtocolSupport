@@ -58,7 +58,7 @@ tasks {
 }
 
 tasks.named<ShadowJar>("shadowJar") {
-    dependsOn(tasks.named<ShadowJar>("common:shadowJar"))
-    mustRunAfter(tasks.named<ShadowJar>("common:shadowJar"))
-    inputs.files(tasks.named<ShadowJar>("common:shadowJar").get().outputs.files)
+    dependsOn(tasks.named<ShadowJar>(":common:shadowJar"))
+    mustRunAfter(tasks.named<ShadowJar>(":common:shadowJar"))
+    inputs.files(tasks.named<ShadowJar>(":common:shadowJar").get().outputs.files)
 }
