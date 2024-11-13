@@ -50,7 +50,7 @@ tasks {
     }
     shadowJar {
         mergeServiceFiles()
-        archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
+        archiveClassifier.set("shadowie") // Prevent the -all suffix on the shadowjar file.
     }
 }
 
