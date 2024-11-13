@@ -60,3 +60,9 @@ tasks {
     }
 }
 
+// Explicitly declare the dependency for the compileJava task
+tasks.named("java2bedrock:compileJava").configure {
+    dependsOn(":common:shadowJar")
+    inputs.files(tasks.named<ShadowJar>("common:shadowJar").get().outputs.files)
+}
+
