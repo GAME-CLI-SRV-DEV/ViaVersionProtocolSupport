@@ -48,17 +48,15 @@ tasks {
     }
 
     build {
-        dependsOn(shadowJar)
+        dependsOn(":common:shadowJar")
+        dependsOn("shadowJar")
     }
 
-    shadowJar {
+    withType<ShadowJar> {
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
+        dependsOn(":common:shadowJar")
+        mustRunAfter(":common:shadowJar")
     }
 }
 
-tasks.named<ShadowJar>("shadowJar") {
-    dependsOn(tasks.named<ShadowJar>(":common:shadowJar"))
-    mustRunAfter(tasks.named<ShadowJar>(":common:shadowJar"))
-    inputs.files(tasks.named<ShadowJar>(":common:shadowJar").get().outputs.files)
-}
