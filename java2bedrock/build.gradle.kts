@@ -31,7 +31,7 @@ dependencies {
     implementation("net.raphimc:ViaLoader:3.0.4")
     implementation("net.raphimc:ViaBedrock:0.0.13-SNAPSHOT")
     implementation(project(":common"))
-    compileOnly("org.geysermc:geyser-api:2.4.4-SNAPSHOT")
+    implementation("org.geysermc.geyser:api:2.5.0-SNAPSHOT")
 }
 
 java {
