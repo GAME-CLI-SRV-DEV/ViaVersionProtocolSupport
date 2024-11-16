@@ -34,9 +34,6 @@ public interface VVPSPlatform {
 
         Via.getManager().getSubPlatforms().add(VersionInfo.getImplementationVersion());
 
-        getLogger().info("번역 로딩중입니다.");
-        TranslatableRewriter.loadTranslatables();
-
         getLogger().info("버전 등록중입니다.");
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
         protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.r1_6_4, ProtocolVersion.v1_7_2); // 지원하는 버전이 너무 낮을 때에는 LegacyProtocolVersion을 사용한다. 하지만 참가하는 서버 버전이 클라이언트의 1.6.4보다 높으면 ProtocolVersion을 사용한다.
