@@ -15,6 +15,7 @@ import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.Serverboun
 import com.viaversion.viaversion.rewriter.ComponentRewriter.ReadType;
 import com.viaversion.viaversion.rewriter.StatisticsRewriter;
 import com.viaversion.viaversion.rewriter.TagRewriter;
+import com.viaversion.viaversion.protocols.base.ClientboundLoginPackets;
 import com.viaversion.viabackwards.api.BackwardsProtocol;
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
@@ -32,68 +33,98 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
         super(ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class);
     }
 
-    @Override
-    protected void registerPackets() {
-        super.registerPackets();
+    	@Override
+	protected void registerPackets() {
+		this.registerClientbound(State.LOGIN, ClientboundLoginPackets.GAME_PROFILE, new PacketHandlers() {
+			@Override
+			public void register() {
+				map(Types.STRING, REMOVE_DASHES); // Uuid
+				map(Types.STRING); // Name
+			}
+		});
 
-        //tagRewriter.registerGeneric(ClientboundPackets1_7_2_5.UPDATE_TAGS);
-        //tagRewriter.registerGeneric(ClientboundConfigurationPackets1_21.UPDATE_TAGS);
-        new StatisticsRewriter<>(this).register(ClientboundPackets1_7_2_5.AWARD_STATS);
-        //new AttributeRewriter<>(this).register1_6_4(ClientboundPackets1_7_2_5.ENTITY_PROPERTIES);
+        
+ 		this.registerClientbound(State.LOGIN, ClientboundLoginPackets.LOGIN_COMPRESSION, new PacketHandlers() {
+			@Override
+			public void register() {
+				handler(wrapper -> {
+					final int threshold = wrapper.read(Types.VAR_INT);
 
-        // Registers translatable mappings (missing a whole bunch still)
-        //translatableRewriter.registerOpenWindow(ClientboundPackets1_7_2_5.OPEN_WINDOW); // Handled by registerOpenWindow in item rewriters
-        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_ACTION_BAR_TEXT);
-        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_TITLE_TEXT);
-        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SET_SUBTITLE_TEXT);
-        //translatableRewriter.registerBossEvent(ClientboundPackets1_7_2_5.BOSS_EVENT);
-        translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISCONNECT);
-        // translatableRewriter.registerTabList(ClientboundPackets1_7_2_5.TAB_LIST);
-        // translatableRewriter.registerPlayerCombatKill1_20(ClientboundPackets1_7_2_5.PLAYER_COMBAT_KILL);
-        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.SYSTEM_CHAT);
-        //translatableRewriter.registerComponentPacket(ClientboundPackets1_7_2_5.DISGUISED_CHAT);
-        translatableRewriter.registerPing();
-    }
-/*
-    @Override
-    public void init(final UserConnection user) {
-        //addEntityTracker(user, new EntityTrackerBase(user, EntityTypes1_7_2_5.PLAYER));
-    }
-*/
-    @Override
-    public BackwardsMappingData getMappingData() {
-        return MAPPINGS;
-    }
+					Via.getManager().getProviders().get(CompressionHandlerProvider.class).onHandleLoginCompressionPacket(wrapper.user(), threshold);
+					wrapper.cancel();
+				});
+			}
+		});
+		this.cancelClientbound(ClientboundPackets1_8.SET_COMPRESSION); // unused
+		this.registerClientbound(ClientboundPackets1_8.KEEP_ALIVE, new PacketHandlers() {
+			@Override
+			public void register() {
+				map(Types.VAR_INT, Types.INT); // id
+			}
+		});
 
-    // @Override
-    // public EntityPacketRewriter1_7_2_5 getEntityRewriter() {
-    //    return entityRewriter;
-    // }
+		this.registerServerbound(State.LOGIN, ServerboundLoginPackets.ENCRYPTION_KEY, new PacketHandlers() {
+			@Override
+			public void register() {
+				map(Types.SHORT_BYTE_ARRAY, Types.BYTE_ARRAY_PRIMITIVE); // shared secret
+				map(Types.SHORT_BYTE_ARRAY, Types.BYTE_ARRAY_PRIMITIVE); // verification token
+			}
+		});
 
-    // @Override
-    // public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
-    //   return itemRewriter;
-    // }
-/*
-    @Override
-    public TranslatableRewriter<ClientboundPackets1_7_2_5> getComponentRewriter() {
-        return translatableRewriter;
-    }
+		this.registerServerbound(ServerboundPackets1_7_2_5.KEEP_ALIVE, new PacketHandlers() {
+			@Override
+			public void register() {
+				map(Types.INT, Types.VAR_INT); // id
+			}
+		});
+	}
 
-    @Override
-    public TagRewriter<ClientboundPackets1_7_2_5> getTagRewriter() {
-        return tagRewriter;
-    }
+	@Override
+	public void transform(Direction direction, State state, PacketWrapper packetWrapper) throws CancelException {
+		Via.getManager().getProviders().get(CompressionHandlerProvider.class).onTransformPacket(packetWrapper.user());
 
-    @Override
-    protected PacketTypesProvider<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPacket1_7_2_5, ServerboundPacket1_6_4> createPacketTypesProvider() {
-        return new SimplePacketTypesProvider<>(
-            packetTypeMap(unmappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class),
-            packetTypeMap(mappedClientboundPacketType, ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class),
-            packetTypeMap(mappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class),
-            packetTypeMap(unmappedServerboundPacketType, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class)
-        );
-    }
-}
-*/
+		super.transform(direction, state, packetWrapper);
+	}
+
+	@Override
+	public void init(UserConnection connection) {
+		connection.addEntityTracker(this.getClass(), new EntityTracker1_8(connection));
+		connection.addClientWorld(this.getClass(), new ClientWorld());
+
+		connection.put(new InventoryTracker(connection));
+		connection.put(new PlayerSessionStorage(connection));
+		connection.put(new GameProfileStorage(connection));
+		connection.put(new ScoreboardTracker(connection));
+		connection.put(new CompressionStatusTracker(connection));
+		connection.put(new WorldBorderEmulator(connection));
+	}
+
+	@Override
+	public void register(ViaProviders providers) {
+		providers.register(CompressionHandlerProvider.class, new TrackingCompressionHandlerProvider());
+
+		if (ViaRewind.getConfig().isEmulateWorldBorder()) {
+			Via.getManager().getScheduler().scheduleRepeating(new WorldBorderUpdateTask(), 0L, 50L, TimeUnit.MILLISECONDS);
+		}
+	}
+
+	@Override
+	public RewindMappingData getMappingData() {
+		return MAPPINGS;
+	}
+
+	@Override
+	public BlockItemPacketRewriter1_8 getItemRewriter() {
+		return itemRewriter;
+	}
+
+	@Override
+	public EntityPacketRewriter1_8 getEntityRewriter() {
+		return entityRewriter;
+	}
+
+	@Override
+	public boolean hasMappingDataToLoad() {
+		return true;
+	}
 }
