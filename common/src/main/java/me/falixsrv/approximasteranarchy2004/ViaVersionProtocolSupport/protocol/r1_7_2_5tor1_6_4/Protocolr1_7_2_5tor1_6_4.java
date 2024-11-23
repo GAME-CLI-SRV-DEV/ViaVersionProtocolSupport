@@ -23,6 +23,10 @@ import com.viaversion.viaversion.api.protocol.packet.State;
 import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
 import com.viaversion.viaversion.api.protocol.remapper.ValueTransformer;
 import com.viaversion.viaversion.api.type.Types;
+import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
+import com.viaversion.viaversion.exception.CancelException;
+import com.viaversion.viarewind.ViaRewind;
+
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
