@@ -18,7 +18,10 @@ import com.viaversion.viaversion.rewriter.TagRewriter;
 import com.viaversion.viaversion.protocols.base.ClientboundLoginPackets;
 import com.viaversion.viabackwards.api.BackwardsProtocol;
 import com.viaversion.viarewind.api.data.RewindMappingData;
+import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.protocol.packet.State;
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
+import com.viaversion.viaversion.api.protocol.remapper.ValueTransformer;
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
