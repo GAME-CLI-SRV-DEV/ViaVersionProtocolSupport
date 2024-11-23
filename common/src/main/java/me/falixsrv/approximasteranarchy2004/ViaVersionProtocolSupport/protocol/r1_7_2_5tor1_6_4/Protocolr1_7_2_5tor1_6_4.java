@@ -17,6 +17,7 @@ import com.viaversion.viaversion.rewriter.StatisticsRewriter;
 import com.viaversion.viaversion.rewriter.TagRewriter;
 import com.viaversion.viaversion.protocols.base.ClientboundLoginPackets;
 import com.viaversion.viabackwards.api.BackwardsProtocol;
+import com.viaversion.viarewind.api.data.RewindMappingData;
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
@@ -55,8 +56,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 				});
 			}
 		});
-		this.cancelClientbound(ClientboundPackets1_8.SET_COMPRESSION); // unused
-		this.registerClientbound(ClientboundPackets1_8.KEEP_ALIVE, new PacketHandlers() {
+		this.cancelClientbound(ClientboundPackets1_7_2_5.SET_COMPRESSION); // unused
+		this.registerClientbound(ClientboundPackets1_7_2_5.KEEP_ALIVE, new PacketHandlers() {
 			@Override
 			public void register() {
 				map(Types.VAR_INT, Types.INT); // id
@@ -114,7 +115,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	}
 
 	@Override
-	public BlockItemPacketRewriter1_8 getItemRewriter() {
+	public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
 		return itemRewriter;
 	}
 
