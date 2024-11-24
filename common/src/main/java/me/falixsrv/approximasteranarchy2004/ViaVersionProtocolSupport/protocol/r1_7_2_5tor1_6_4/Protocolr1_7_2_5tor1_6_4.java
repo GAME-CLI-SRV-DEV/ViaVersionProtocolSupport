@@ -119,7 +119,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	}
 
 	@Override
-	public RewindMappingData getMappingData() {
+	public BackwardsMappingData getMappingData() {
 		return MAPPINGS;
 	}
 
