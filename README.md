@@ -19,7 +19,7 @@ Not yet, but you can install VVPS on Backend
 
 # Are you going to Support Bungee?
 Waterfall Support is not going to happen. install VVPS Core on Backend or Use Velocity.
-Transitioning From [Waterfall 1.18.2](55a77b6355d200913fc5fa8715142d22b46abd416fe64e7902726ce4a53f21df) and ProtocolSupportBungee(https://github.com/ProtocolSupport/ProtocolSupportBungee) is explained below
+Transitioning From [Waterfall 1.18.2](https://github.com/PaperMC/Waterfall/commit/55a77b6355d200913fc5fa8715142d22b46abd416fe64e7902726ce4a53f21df) and ProtocolSupportBungee(https://github.com/ProtocolSupport/ProtocolSupportBungee) is explained below
 
 # Transitioning From ProtocolSupportBungee
 You Need ViaVersionProtocolSupportVelocity or you need to install them on backend.
