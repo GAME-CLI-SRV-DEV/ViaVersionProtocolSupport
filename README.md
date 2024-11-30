@@ -4,7 +4,8 @@
 add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do.
 
 # Requirements
-ViaVersion, ViaBackwards, and ViaRewind.
+ViaVersion, ViaBackwards, and ViaRewind(It may collide but still required).
+Craftbukkit/Spigot 1.6.4 or Paper 1.21.1
 
 # Transition from ProtocolSupport
 It's Easy. Put the plugin, Enable it.
@@ -15,7 +16,7 @@ so... idk about ps config
 No, VVPS dont support Bedrock Edition unlike ProtocolSupport Pocket Edition. However, you can use GeyserMC.
 
 # is ViaProxy Support Planned?
-Not yet, but you can install VVPS on Backend
+it's preparing, but do not open the oven.
 
 # Are you going to Support Bungee?
 Waterfall Support is not going to happen. install VVPS Core on Backend or Use Velocity.
@@ -31,7 +32,7 @@ You Need ViaVersionProtocolSupportVelocity or you need to install them on backen
 # Code From
 ViaBackwards(Protocol template and Platform Code)
 # ViaVersionProtocolSupport Allows:
-ViaPS allows classic to 1.7.2
+ViaPS allows classic to 1.6-1.7
 
 |MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
 |--|--|
