@@ -4,3 +4,4 @@ main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionP
 depends: ViaVersion, ViaBackwards, ViaRewind
 description: adds 1.4.6-1.6.4
 author: ApproximasterTelevision2004
+folia-supported: true
