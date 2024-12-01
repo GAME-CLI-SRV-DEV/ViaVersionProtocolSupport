@@ -69,11 +69,11 @@ File file = new File(filePath);
  
     @Override
 	public void disable() {
-		System.out.println("By who drank spezi");
 		getPluginLoader().disablePlugin(this);
 	}
     @Override
     public void onDisable() {
+	System.out.println("By CensingSmile123 and Approximaster");
         System.out.println("Bye!");
     }
 }
