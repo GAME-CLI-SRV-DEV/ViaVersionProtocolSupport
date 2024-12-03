@@ -29,6 +29,7 @@ import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
 import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
+import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.rewriter.BlockItemPacketRewriter1_8;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
