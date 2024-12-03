@@ -28,7 +28,8 @@ import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
 import com.viaversion.viarewind.ViaRewind;
-
+import com.viaversion.viaversion.api.Via;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
 
 import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
@@ -45,15 +46,47 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
         super(ClientboundPackets1_7_2.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2.class, ServerboundPackets1_6_4.class);
     }
 
-    	@Override
-	protected void registerPackets() {
-		this.registerClientbound(State.LOGIN, ClientboundLoginPackets.GAME_PROFILE, new PacketHandlers() {
-			@Override
-			public void register() {
-				map(Types.STRING, REMOVE_DASHES); // Uuid
-				map(Types.STRING); // Name
-			}
-		});
+        this.registerClientboundTransition(ClientboundPackets1_7_2.LOGIN,
+                ClientboundPackets1_6_4.LOGIN, new PacketHandlers() {
+                    @Override
+                    public void register() {
+                        map(Types.INT); // entity id
+                        handler(wrapper -> {
+                            wrapper.user().get(PlayerInfoStorage.class).entityId = wrapper.get(Types.INT, 0);
+                            final String terrainType = wrapper.read(Types1_6_4.STRING); // level type
+                            final short gameType = wrapper.read(Types.BYTE); // game mode
+                            final byte dimension = wrapper.read(Types.BYTE); // dimension id
+                            final short difficulty = wrapper.read(Types.BYTE); // difficulty
+                            wrapper.read(Types.BYTE); // world height
+                            final short maxPlayers = wrapper.read(Types.BYTE); // max players
+
+                            wrapper.write(Types.UNSIGNED_BYTE, gameType);
+                            wrapper.write(Types.BYTE, dimension);
+                            wrapper.write(Types.UNSIGNED_BYTE, difficulty);
+                            wrapper.write(Types.UNSIGNED_BYTE, maxPlayers);
+                            wrapper.write(Types.STRING, terrainType);
+                        });
+                        handler(wrapper -> {
+                            final byte dimensionId = wrapper.get(Types.BYTE, 0);
+                            wrapper.user().getClientWorld(Protocolr1_7_2_5Tor1_6_4.class).setEnvironment(dimensionId);
+
+                            wrapper.user().put(new ChunkTracker(wrapper.user()));
+                        });
+                    }
+                }, State.LOGIN, (PacketHandler) wrapper -> {
+                    ViaVersionProtocolSupportMain.getPlatform().getLogger().warning("Server skipped LOGIN state");
+                    final PacketWrapper sharedKey = PacketWrapper.create(ClientboundPackets1_6_4.SHARED_KEY, wrapper.user());
+                    sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
+                    sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
+                    wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = true;
+                    sharedKey.send(Protocolr1_6_4Tor1_7_2_5.class, false); // switch to play state
+                    wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = false;
+
+                    wrapper.setPacketType(ClientboundPackets1_6_4.LOGIN);
+                    wrapper.send(Protocolr1_6_4Tor1_7_2_5.class, false);
+                    wrapper.cancel();
+                }
+        );
 
         
  		this.registerClientbound(State.LOGIN, ClientboundLoginPackets.LOGIN_COMPRESSION, new PacketHandlers() {
