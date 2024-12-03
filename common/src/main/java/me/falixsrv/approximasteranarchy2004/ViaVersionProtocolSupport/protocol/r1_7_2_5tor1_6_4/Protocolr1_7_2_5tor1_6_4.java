@@ -37,7 +37,7 @@ import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<ClientboundPackets1_7_2, ClientboundPackets1_6_4, ServerboundPackets1_7_2, ServerboundPackets1_6_4> {
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
-    public static final BackwardsMappingData MAPPINGS = new BackwardsMappingData("1.7.2", "1.6.4");
+    public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
     private final TranslatableRewriter<ClientboundPackets1_7_2> translatableRewriter = new TranslatableRewriter<>(this, ReadType.NBT);
     private final TagRewriter<ClientboundPackets1_7_2> tagRewriter = new TagRewriter<>(this);
 
@@ -121,7 +121,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	}
 
 	@Override
-	public BackwardsMappingData getMappingData() {
+	public RewindMappingData getMappingData() {
 		return MAPPINGS;
 	}
 
