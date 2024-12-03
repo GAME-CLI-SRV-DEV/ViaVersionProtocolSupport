@@ -9,8 +9,8 @@ import com.viaversion.viaversion.api.protocol.packet.provider.PacketTypesProvide
 import com.viaversion.viaversion.api.protocol.packet.provider.SimplePacketTypesProvider;
 import com.viaversion.viaversion.data.entity.EntityTrackerBase;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ClientboundPackets1_6_4;
-import net.raphimc.vialegacy.protocol.release.r1_7_2_5tor1_7_6_10.packet.ClientboundPackets1_7_2;
-import net.raphimc.vialegacy.protocol.release.r1_7_2_5tor1_7_6_10.packet.ServerboundPackets1_7_2;
+import com.viaversion.viarewind.protocol.v1_7_6_10to1_7_2_5.packet.ClientboundPackets1_7_2_5;
+import com.viaversion.viarewind.protocol.v1_7_6_10to1_7_2_5.packet.ServerboundPackets1_7_2_5;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ServerboundPackets1_6_4;
 import com.viaversion.viaversion.rewriter.ComponentRewriter.ReadType;
 import com.viaversion.viaversion.rewriter.StatisticsRewriter;
@@ -67,8 +67,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 				});
 			}
 		});
-		this.cancelClientbound(ClientboundPackets1_7_2.SET_COMPRESSION); // unused
-		this.registerClientbound(ClientboundPackets1_7_2.KEEP_ALIVE, new PacketHandlers() {
+		this.cancelClientbound(ClientboundPackets1_7_2_5.SET_COMPRESSION); // unused
+		this.registerClientbound(ClientboundPackets1_7_2_5.KEEP_ALIVE, new PacketHandlers() {
 			@Override
 			public void register() {
 				map(Types.VAR_INT, Types.INT); // id
@@ -126,7 +126,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	}
 
 	@Override
-	public BlockItemPacketRewriter1_7_2_5 getItemRewriter() {
+	public BlockItemPacketRewriter1_8 getItemRewriter() {
 		return itemRewriter;
 	}
 
