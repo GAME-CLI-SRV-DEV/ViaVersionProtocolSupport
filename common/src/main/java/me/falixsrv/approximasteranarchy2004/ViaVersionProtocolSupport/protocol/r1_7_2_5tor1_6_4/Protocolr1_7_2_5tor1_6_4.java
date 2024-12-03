@@ -29,9 +29,6 @@ import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
 import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
-package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
-
-import static com.viaversion.viaversion.util.ProtocolUtil.packetTypeMap;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
