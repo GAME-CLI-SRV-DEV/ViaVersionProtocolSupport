@@ -13,7 +13,9 @@ Config is easy to use.
 but i dont know what to put in
 so... idk about ps config
 # Do You Support Bedrock Edition(Pocket Edition) Directly?
-No, VVPS dont support Bedrock Edition unlike ProtocolSupport Pocket Edition. However, you can use GeyserMC.
+Yes, But Only Sponge. See [This Pull](https://github.com/GeyserMC/Geyser/pull/4097] Why did ViaVersionProtocolSupport Started to Include Geyser And Floodgate.
+
+For Other Platform You Can Use GeyserMC for their platform.
 
 # is ViaProxy Support Planned?
 it's preparing, but do not open the oven.
