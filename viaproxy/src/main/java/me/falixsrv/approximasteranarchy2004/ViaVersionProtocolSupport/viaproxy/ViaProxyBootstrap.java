@@ -40,11 +40,6 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
     
       @Override
 	public void onEnable() {
-	Component message = Component.text()
-    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
-    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
-    .build();
-    Bukkit.getServer().sendMessage(message);
 	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
             // Enable in the next tick
             Via.getPlatform().runSync(this::init, 1);
