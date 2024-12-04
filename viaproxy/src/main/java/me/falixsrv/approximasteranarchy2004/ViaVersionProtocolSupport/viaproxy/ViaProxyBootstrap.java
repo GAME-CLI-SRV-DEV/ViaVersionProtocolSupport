@@ -5,6 +5,11 @@ import com.viaversion.viaversion.api.Via;
 
 public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
 
+
+    public void ViaProxyPlugin() {
+        Via.getManager().addEnableListener(() -> init());
+    }
+    
     @Override
     public void onEnable() {
        System.out.println("If You Found this Message, Congrats!")
@@ -32,15 +37,36 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
     private void onProxyStop(final ProxyStopEvent event) {
         this.disable();
     }
-  
+    
+      @Override
+	public void onEnable() {
+	Component message = Component.text()
+    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .build();
+    Bukkit.getServer().sendMessage(message);
+	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
+            // Enable in the next tick
+            Via.getPlatform().runSync(this::init, 1);
+        } else {
+            init();
+        }
+}
+	
+    @Override
+	public void init() {
+	VVPSPlatform.super.init();
+    }
+ 
     @Override
     public void disable() { 
         System.out.println("Proxy Stopped.");
+        ViaProxyPlugin.disable()
     }
   
     @Override
-    public void onDisable() { //Optional
-        System.out.println("THIS PLUGIN HAS BEEN DISABLED BECAUSE IT CRASHED AND GO BRR/YOU EXITTED VIAPROXY. DO NOT MAKE AN ISSUE BECAUSE IT'S NOT COOKED YET.");
+    public void onDisable() { 
+        System.out.println("ViaVersionProtocolSupport is Shutting Down...");
     }
 
 }
