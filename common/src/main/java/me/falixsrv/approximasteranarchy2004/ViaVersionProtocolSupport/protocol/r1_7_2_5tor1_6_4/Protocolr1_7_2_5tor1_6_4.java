@@ -31,6 +31,7 @@ import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.rewriter.BlockItemPacketRewriter1_8;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.rewriter.EntityPacketRewriter1_8;
+import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.Protocol1_8to1_7_6_10;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
