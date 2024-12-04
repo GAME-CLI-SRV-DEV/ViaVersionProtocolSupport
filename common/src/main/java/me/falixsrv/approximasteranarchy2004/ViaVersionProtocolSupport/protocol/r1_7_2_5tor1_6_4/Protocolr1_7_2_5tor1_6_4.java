@@ -41,6 +41,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
     private final TranslatableRewriter<ClientboundPackets1_7_2_5> translatableRewriter = new TranslatableRewriter<>(this, ReadType.NBT);
     private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
 
+   public static final ValueTransformer<String, String> REMOVE_DASHES = new ValueTransformer<>(Types.STRING) {
+		@Override
+		public String transform(PacketWrapper wrapper, String s) {
+			return s.replace("-", "");
+		}
+	};
+	
     public Protocolr1_7_2_5tor1_6_4() {
         super(ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class);
     }
