@@ -29,7 +29,7 @@ import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
 import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
-import me.falixsrv.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
