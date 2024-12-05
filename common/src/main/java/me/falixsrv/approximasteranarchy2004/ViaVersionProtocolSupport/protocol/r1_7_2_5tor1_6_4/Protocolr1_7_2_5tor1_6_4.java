@@ -29,8 +29,8 @@ import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
 import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
-import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.rewriter.BlockItemPacketRewriter1_8;
-import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.rewriter.EntityPacketRewriter1_8;
+import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.rewriter.ItemRewriter;
+import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.rewriter.EntityRewriter;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.Protocol1_8To1_7_6_10;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
@@ -41,8 +41,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
     public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
     private final TranslatableRewriter<ClientboundPackets1_7_2_5> translatableRewriter = new TranslatableRewriter<>(this, ReadType.NBT);
     private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
-    private final BlockItemPacketRewriter1_8 itemRewriter = new BlockItemPacketRewriter1_8(this);
-    private final EntityPacketRewriter1_8 entityRewriter = new EntityPacketRewriter1_8(this);
+    private final ItemRewriter itemRewriter = new ItemRewriter(this);
    public static final ValueTransformer<String, String> REMOVE_DASHES = new ValueTransformer<>(Types.STRING) {
 		@Override
 		public String transform(PacketWrapper wrapper, String s) {
@@ -134,13 +133,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	}
 
 	@Override
-	public BlockItemPacketRewriter1_8 getItemRewriter() {
+	public ItemRewriter getItemRewriter() {
 		return itemRewriter;
-	}
-
-	@Override
-	public EntityPacketRewriter1_8 getEntityRewriter() {
-		return entityRewriter;
 	}
 
 	@Override
