@@ -1,7 +1,7 @@
 /*
  * From ViaLegacy 
  */
-package me.falixsrv.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter;
 
 import net.raphimc.vialegacy.api.remapper.LegacyItemRewriter;
 import me.falixsrv.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Protocolr1_7_2_5Tor1_6_4;
