@@ -22,8 +22,8 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
        System.out.println(" ");
        System.out.println("So Now, this would be a rare, but please donate your Synology NAS Hardware by creating a Draft Donation issue on GAME-CLI-SRV-DEV/ViaProxyConnect or r/approximaster.");
        System.out.println("Otherwise it will be a tragedy because this christmas would be christmas Without approximaster anarchy server.");
-       System.out.println(" ");
-
+       System.out.println("goodbye my dear lunchly");
+System.out.println("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486 on.")
 
 
     }
