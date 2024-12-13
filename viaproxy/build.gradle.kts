@@ -36,8 +36,17 @@ tasks {
         dependsOn("shadowJar")
     }
     
-    shadowJar {
+
+    withType<ShadowJar> {
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
+        dependsOn(":common:shadowJar")
+        mustRunAfter(":common:shadowJar")
     }
+
+    compileJava {
+        dependsOn(":common:shadowJar")
+        inputs.files(project(":common").tasks.named<ShadowJar>("shadowJar").get().outputs.files)
+    }
+    
 }
