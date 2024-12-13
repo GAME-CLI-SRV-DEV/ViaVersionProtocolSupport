@@ -14,9 +14,9 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
     public void onEnable() {
        System.out.println("[ ⬤ START ] ViaVersionProtocolSupport");
        System.out.println(" ");
-       System.err.println("[ (!) WARN ] ViaVersionProtocolSupport is in beta.")
-       System.err.println("[ (!) WARN ] Especially ViaProxy.")
-       System.err.println("[ (!) WARN ] *** VVPS will Start In 3 Seconds ***")
+       System.err.println("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
+       System.err.println("[ (!) WARN ] Especially ViaProxy.");
+       System.err.println("[ (!) WARN ] *** VVPS will Start In 3 Seconds ***");
        Thread.sleep(3000);
        System.err.println("If You Found this Message, Congrats!")
        System.err.println("This is the VVPS Speaking.");
@@ -30,27 +30,19 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
        System.err.println("Otherwise it will be a tragedy because this christmas would be christmas Without approximaster anarchy server.");
        System.err.println("goodbye my dear lunchly");
 System.err.println("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486) on for protesters Againist Villagers654 and Infinite Games Network & Purpur Regime! LET'S OVERTHROW VILLAGERS654 & PURPURMC With Rizz Power of VIAaaS And ViaProxy!");
-System.err.println(" ");
-System.err.println("       /-------------\________/");
-System.err.println("      /  PURPUR SUCKS        /");
-System.err.println("     /    VILLA SUCKS       /");
-System.err.println("    /                      /");  
-System.err.println("   /--------------\_______/");
-System.err.println("  /");
-System.err.println(" /");
 
 
     }
 
       @EventHandler
     private void onProxyStart(final ProxyStartEvent event) {
-	System.out.println("[ ► PLAY ] Now Loading...")
+	System.out.println("[ ► PLAY ] Now Loading...");
         this.init();
     }
 
     @EventHandler
     private void onProxyStop(final ProxyStopEvent event) {
-	System.out.println("[ || PAUSE ] pausing...")
+	System.out.println("[ || PAUSE ] pausing...");
         this.disable();
     }
     
