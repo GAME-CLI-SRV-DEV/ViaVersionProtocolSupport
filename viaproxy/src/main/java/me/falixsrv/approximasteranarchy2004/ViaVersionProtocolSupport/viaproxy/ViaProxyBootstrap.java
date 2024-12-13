@@ -25,10 +25,13 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
        System.out.println("goodbye my dear lunchly");
 System.out.println("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486) on for protesters Againist Villagers654 and Infinite Games Network & Purpur Regime! LET'S OVERTHROW VILLAGERS654 & PURPURMC With Rizz Power of VIAaaS And ViaProxy!");
 System.out.println(" ");
-System.out.println("   /-------------\________/");
-System.out.println("  /                      /")
-System.out.println(" /                      /")
-System.out.println("/                      /")    
+System.out.println("       /-------------\________/");
+System.out.println("      /  PURPUR SUCKS        /");
+System.out.println("     /    VILLA SUCKS       /");
+System.out.println("    /                      /");  
+System.out.println("   /--------------\_______/");
+System.out.println("  /");
+System.out.println(" /");
 
 
     }
