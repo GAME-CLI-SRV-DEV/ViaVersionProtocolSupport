@@ -3,6 +3,8 @@ plugins {
 	id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 repositories {
     mavenCentral()
     maven {
@@ -37,7 +39,7 @@ tasks {
     }
     
 
-    withType<shadowJar> {
+    withType<ShadowJar> {
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
         dependsOn(":common:shadowJar")
