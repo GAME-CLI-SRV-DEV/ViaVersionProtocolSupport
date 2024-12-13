@@ -43,18 +43,18 @@ public class vvpsrew_item_1_7_2_5tor1_6_4 extends LegacyItemRewriter<Clientbound
       this.addRemappedItem(404, 149, "Unlit Redstone Comparator");
       this.addRemappedItem(404, 150, "Lit Redstone Comparator");
 
-        this.addNonExistentItem(3, 2);
+        this.addNonExistentItem(2, 3);
         this.addNonExistentItem(5, 4, 5);
-        this.addNonExistentItem(6, 4, 5);
-        this.addNonExistentItem(12, 1);
-        this.addNonExistentItem(38, 1, 8);
+        this.addNonExistentItem(5, 4, 6);
+        this.addNonExistentItem(1, 12);
+        this.addNonExistentItem(8, 1, 38);
         this.addNonExistentItems(95);
-        this.addNonExistentItem(97, 3, 5);
-        this.addNonExistentItem(126, 4, 5);
-        this.addNonExistentItemRange(160, 164);
-        this.addNonExistentItemRange(174, 175);
-        this.addNonExistentItem(349, 1, 3);
-        this.addNonExistentItemRange(350, 1);
+        this.addNonExistentItem(5, 3, 97);
+        this.addNonExistentItem(5, 4, 126);
+        this.addNonExistentItemRange(164, 160);
+        this.addNonExistentItemRange(175, 174);
+        this.addNonExistentItem(3, 1, 349);
+        this.addNonExistentItemRange(1, 350);
     }
 
     @Override
