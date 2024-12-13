@@ -33,6 +33,7 @@ import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r
 import java.util.concurrent.TimeUnit;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.provider.CompressionHandlerProvider;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.provider.compression.TrackingCompressionHandlerProvider;
+import com.viaversion.viaversion.api.minecraft.ClientWorld;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
