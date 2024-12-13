@@ -65,7 +65,7 @@ Thank you.\
 but rip bozo anyway :skull:
 
 # Note:
-exclude("io/lenni0451/optconfig/**"), exclude("net/raphimc/vialegacy") is put on ViaProxy Subproject.
+exclude("net/raphimc/vialegacy/**") is put on ViaProxy Subproject.
 # Thanks to
 [RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451) for making ViaLegacy(Library API for VVPS Protocol) & ViaProxy\
 [ViaBackwards](https://github.com/ViaVersion/ViaBackwards) For Template(Very Cool)
