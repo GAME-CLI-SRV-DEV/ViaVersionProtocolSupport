@@ -6,13 +6,13 @@ plugins {
 repositories {
     mavenCentral()
     maven {
-    url = uri("https://repo.viaversion.com/")
+    url = uri("https://repo.viaversion.com/everything/")
 
     }
 }
 
 	dependencies {
-		compileOnly("net.raphimc:viaproxy:3.3.7-SNAPSHOT") 
+		compileOnly("net.raphimc:ViaProxy:3.3.7-SNAPSHOT") 
 	    implementation(project(":common")) {
         exclude("net.raphimc", "ViaLegacy")
       }
