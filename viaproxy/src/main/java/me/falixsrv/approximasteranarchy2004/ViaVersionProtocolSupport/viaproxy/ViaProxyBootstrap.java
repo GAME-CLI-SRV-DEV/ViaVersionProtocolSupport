@@ -9,10 +9,10 @@ import com.viaversion.viaversion.api.Via;
 import net.raphimc.viaproxy.plugins.events.ProxyStartEvent;
 import net.raphimc.viaproxy.plugins.events.ProxyStopEvent;
 
-public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
+public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
 
 
-    public void ViaProxyPlugin() {
+    public void ViaProxyVVPSPlugin() {
         Via.getManager().addEnableListener(() -> init());
     }
     
