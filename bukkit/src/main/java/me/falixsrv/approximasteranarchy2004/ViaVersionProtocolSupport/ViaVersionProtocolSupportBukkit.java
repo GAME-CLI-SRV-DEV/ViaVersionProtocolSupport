@@ -21,6 +21,7 @@ String filePath = "config.yml";
 File file = new File(filePath);
 
     public void BukkitPlugin() {
+	Via.getManager().addEnableListener(ViaLegacyBukkit::new);
         Via.getManager().addEnableListener(() -> init());
     }
 	
