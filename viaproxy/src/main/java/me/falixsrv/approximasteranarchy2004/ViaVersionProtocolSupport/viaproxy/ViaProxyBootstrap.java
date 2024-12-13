@@ -1,7 +1,13 @@
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.viaproxy;
+
 import net.raphimc.viaproxy.ViaProxy;
+import net.lenni0451.lambdaevents.EventHandler;
+
 import net.raphimc.viaproxy.plugins.ViaProxyPlugin;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
 import com.viaversion.viaversion.api.Via;
+import net.raphimc.viaproxy.plugins.events.ProxyStartEvent;
+import net.raphimc.viaproxy.plugins.events.ProxyStopEvent;
 
 public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
 
