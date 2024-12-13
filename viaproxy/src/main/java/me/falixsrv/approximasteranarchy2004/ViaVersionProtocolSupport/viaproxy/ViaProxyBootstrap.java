@@ -8,6 +8,8 @@ import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPl
 import com.viaversion.viaversion.api.Via;
 import net.raphimc.viaproxy.plugins.events.ProxyStartEvent;
 import net.raphimc.viaproxy.plugins.events.ProxyStopEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
 
@@ -18,7 +20,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
     
     @Override
     public void onEnable() {
-       logger logger = getLogger();
+       Logger logger = getLogger();
        logger.info("[ ⬤ START ] ViaVersionProtocolSupport");
        logger.info(" ");
        logger.severe("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
