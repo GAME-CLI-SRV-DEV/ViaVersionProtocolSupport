@@ -18,37 +18,38 @@ public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
     
     @Override
     public void onEnable() {
-       System.out.println("[ ⬤ START ] ViaVersionProtocolSupport");
-       System.out.println(" ");
-       System.err.println("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
-       System.err.println("[ (!) WARN ] Especially ViaProxy.");
-       System.err.println("[ (!) WARN ] *** VVPS will Start In 3 Seconds ***");
+       logger logger = getLogger();
+       logger.info("[ ⬤ START ] ViaVersionProtocolSupport");
+       logger.info(" ");
+       logger.severe("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
+       logger.severe("[ (!) WARN ] Especially ViaProxy.");
+       logger.severe("[ (!) WARN ] *** VVPS will Start In 3 Seconds ***");
        Thread.sleep(3000);
-       System.err.println("If You Found this Message, Congrats!");
-       System.err.println("This is Outfit8TSB Speaking. i got some bad news");
-       System.err.println("Actually, This Plugin is Beta and will not be released until further notice.");
-       System.err.println(" ");
-       System.err.println("This Plugin Was Planned When Approximaster Anarchy 2004(main)/AnarchyConnect(connect) Was There,");
-       System.err.println("However, The Server was Shutted Down for, Yes You Guessed it, Ram Cuts. the Main Server Died For Running out of ram.");
-       System.err.println("so The Main Company decided to get a donation.");
-       System.err.println(" ");
-       System.err.println("So Now, this would be a rare, but please donate your Synology NAS Hardware by creating a Draft Donation issue on GAME-CLI-SRV-DEV/ViaProxyConnect or r/approximaster.");
-       System.err.println("Otherwise it will be a tragedy because this christmas would be christmas Without approximaster anarchy server.");
-       System.err.println("goodbye my dear lunchly");
-System.err.println("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486) on for protesters Againist Villagers654 and Infinite Games Network & Purpur Regime! LET'S OVERTHROW VILLAGERS654 & PURPURMC With Rizz Power of VIAaaS And ViaProxy!");
+       logger.severe("If You Found this Message, Congrats!");
+       logger.severe("This is Outfit8TSB Speaking. i got some bad news");
+       logger.severe("Actually, This Plugin is Beta and will not be released until further notice.");
+       logger.severe(" ");
+       logger.severe("This Plugin Was Planned When Approximaster Anarchy 2004(main)/AnarchyConnect(connect) Was There,");
+       logger.severe("However, The Server was Shutted Down for, Yes You Guessed it, Ram Cuts. the Main Server Died For Running out of ram.");
+       logger.severe("so The Main Company decided to get a donation.");
+       logger.severe(" ");
+       logger.severe("So Now, this would be a rare, but please donate your Synology NAS Hardware by creating a Draft Donation issue on GAME-CLI-SRV-DEV/ViaProxyConnect or r/approximaster.");
+       logger.severe("Otherwise it will be a tragedy because this christmas would be christmas Without approximaster anarchy server.");
+       logger.severe("goodbye my dear lunchly");
+logger.severe("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486) on for protesters Againist Villagers654 and Infinite Games Network & Purpur Regime! LET'S OVERTHROW VILLAGERS654 & PURPURMC With Rizz Power of VIAaaS And ViaProxy!");
 
 
     }
 
       @EventHandler
     private void onProxyStart(final ProxyStartEvent event) {
-	System.out.println("[ ► PLAY ] Now Loading...");
+	logger.info("[ ► PLAY ] Now Loading...");
         this.init();
     }
 
     @EventHandler
     private void onProxyStop(final ProxyStopEvent event) {
-	System.out.println("[ || PAUSE ] pausing...");
+	logger.info("[ || PAUSE ] pausing...");
         this.disable();
     }
     
@@ -69,12 +70,12 @@ System.err.println("we will let AnarchyConnect ViaProxy(address_port_version.via
  
     @Override
     public void disable() { 
-        System.out.println("(PAUSE ||) Proxy Stopped.");
+        logger.info("(PAUSE ||) Proxy Stopped.");
     }
   
     @Override
     public void onDisable() { 
-        System.out.println("( ■ STOP ) ViaVersionProtocolSupport is Shutting Down...");
+        logger.info("( ■ STOP ) ViaVersionProtocolSupport is Shutting Down...");
     }
 
 }
