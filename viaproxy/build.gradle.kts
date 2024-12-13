@@ -30,10 +30,12 @@ tasks {
             attributes["Main-Class"] = "me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport" // Change this to your main class
         }
     }
-
+        
     build {
-        dependsOn(shadowJar)
+        dependsOn(":common:shadowJar")
+        dependsOn("shadowJar")
     }
+    
     shadowJar {
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
