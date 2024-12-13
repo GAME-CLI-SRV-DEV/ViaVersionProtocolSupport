@@ -18,9 +18,9 @@ public class PluginMain extends ViaProxyPlugin implements VVPSPlatform {
        System.err.println("[ (!) WARN ] Especially ViaProxy.");
        System.err.println("[ (!) WARN ] *** VVPS will Start In 3 Seconds ***");
        Thread.sleep(3000);
-       System.err.println("If You Found this Message, Congrats!")
-       System.err.println("This is the VVPS Speaking.");
-       System.err.println("Actually, This Plugin is Beta and will not be released until further notice.")
+       System.err.println("If You Found this Message, Congrats!");
+       System.err.println("This is Outfit8TSB Speaking. i got some bad news");
+       System.err.println("Actually, This Plugin is Beta and will not be released until further notice.");
        System.err.println(" ");
        System.err.println("This Plugin Was Planned When Approximaster Anarchy 2004(main)/AnarchyConnect(connect) Was There,");
        System.err.println("However, The Server was Shutted Down for, Yes You Guessed it, Ram Cuts. the Main Server Died For Running out of ram.");
