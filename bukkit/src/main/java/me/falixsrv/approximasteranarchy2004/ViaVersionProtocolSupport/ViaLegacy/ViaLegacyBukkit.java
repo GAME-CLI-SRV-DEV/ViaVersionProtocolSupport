@@ -1,7 +1,7 @@
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy;
   
 import net.raphimc.vialegacy.platform.ViaLegacyPlatform;
-import com.viaversion.api.Via;
+import com.viaversion.viaversion.api.Via;
 
 public class ViaLegacyBukkit implements ViaLegacyPlatform {
 
