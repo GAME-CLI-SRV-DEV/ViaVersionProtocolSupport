@@ -1,4 +1,4 @@
-package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy;
   
 import net.raphimc.vialegacy.platform.ViaLegacyPlatform;
 import com.viaversion.api.Via;
