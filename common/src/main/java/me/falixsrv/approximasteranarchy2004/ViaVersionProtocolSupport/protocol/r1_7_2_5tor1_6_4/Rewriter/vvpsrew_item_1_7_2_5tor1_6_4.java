@@ -11,7 +11,7 @@ import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 
 public class vvpsrew_item_1_7_2_5tor1_6_4 extends LegacyItemRewriter<ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, Protocolr1_7_2_5tor1_6_4> {
 
-    public vvpsrew_item_1_7_2_5tor1_6_4(final Protocolr1_7_2_5tor1_6_4 protocol) {
+    public vvpsrew_item_1_7_2_5tor1_6_4(final Protocolr1_7_2_5tor1_6_4 Protocol) {
         super(protocol, "1.6.4", Types1_7_6.ITEM, Types1_7_6.ITEM_ARRAY);
 
       this.addRemappedItem(355, 26, "Bed Block");
