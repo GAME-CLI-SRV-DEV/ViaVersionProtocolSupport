@@ -17,9 +17,11 @@ public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
     public void ViaProxyVVPSPlugin() {
         Via.getManager().addEnableListener(() -> init());
     }
-    
-    @Override
-    public void onEnable() {
+
+
+      @EventHandler
+    private void onProxyStart(final ProxyStartEvent event) {
+	
        Logger logger = getLogger();
        logger.info("[ ⬤ START ] ViaVersionProtocolSupport");
        logger.info(" ");
@@ -41,10 +43,6 @@ public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
 logger.severe("we will let AnarchyConnect ViaProxy(address_port_version.viaproxy.anarchyconnect.duckdns.org:56114), and AnarchyConnect VIAaaS(address._pPort._vVersion._uUSERNAME._oX.viac9h8o4.anarchyconnect.duckdns.org:21486) on for protesters Againist Villagers654 and Infinite Games Network & Purpur Regime! LET'S OVERTHROW VILLAGERS654 & PURPURMC With Rizz Power of VIAaaS And ViaProxy!");
 
 
-    }
-
-      @EventHandler
-    private void onProxyStart(final ProxyStartEvent event) {
 	logger.info("[ ► PLAY ] Now Loading...");
         this.init();
     }
