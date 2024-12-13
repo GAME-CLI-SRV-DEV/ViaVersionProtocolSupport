@@ -36,7 +36,7 @@ ViaPS allows classic to 1.6
 
 |MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
 |--|--|
-|1.7.2->1.6.4/2|70% 16 ERRORS REMAINING|
+|1.7.2->1.6.4/2|99% 0 ERRORS REMAINING BUT DISABLED|
 |1.6.4/2|-|
 |1.6.2->1.6.1|0% 0 ERRORS REMAINING|
 |1.6.1->1.5.2|0% 0 ERRORS REMAINING|
