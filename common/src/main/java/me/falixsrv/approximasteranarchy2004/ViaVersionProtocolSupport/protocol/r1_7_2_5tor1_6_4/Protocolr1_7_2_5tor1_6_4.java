@@ -28,6 +28,7 @@ import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.storage.*;
 import com.viaversion.viaversion.protocols.base.ServerboundLoginPackets;
 import com.viaversion.viaversion.exception.CancelException;
+import com.viaversion.viarewind.protocol.v1_8to1_7_6_10.task.WorldBorderUpdateTask;
 import com.viaversion.viarewind.ViaRewind;
 import com.viaversion.viaversion.api.Via;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4; // from ViaLegacy, Modified for a backward compat
