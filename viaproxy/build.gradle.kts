@@ -37,7 +37,7 @@ tasks {
     }
     
 
-    withType<ShadowJar> {
+    withType<shadowJar> {
         mergeServiceFiles()
         archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
         dependsOn(":common:shadowJar")
