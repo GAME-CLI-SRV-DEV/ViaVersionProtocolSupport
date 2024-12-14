@@ -18,6 +18,11 @@ For Other Platform You Can Use GeyserMC for their platform.
 # is ViaProxy Support Planned?
 it's preparing, but do not open the oven.
 
+# Legacy Version Installation
+you need spigot 1.4.4-1.6.4\
+Download VVPS-Spigot, Put it in the plugins folder\
+and restart your server. 
+
 # Are you going to Support Bungee?
 Waterfall Support is not going to happen. install VVPS Core on Backend or Use Velocity.
 Transitioning From [Waterfall 1.18.2](https://github.com/PaperMC/Waterfall/commit/55a77b6355d200913fc5fa8715142d22b46abd416fe64e7902726ce4a53f21df) and ProtocolSupportBungee(https://github.com/ProtocolSupport/ProtocolSupportBungee) is explained below
