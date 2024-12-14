@@ -43,7 +43,7 @@ public interface VVPSPlatform {
                     "   <=\\/_/_/    \\_\\/   |______|_|  \\_\\_____/|_____\\____/|_| \\_|_|   |_|  \\___/ \\__\\___/ \\___\\___/|_|_____/ \\__,_| .__/| .__/ \\___/|_|   \\__|\n" +
                     "                                                                                                               | |   | |                   \n" +
                     "                                                                                                               |_|   |_|                   ");
-	getLogger().info("ViaVersionProtocolSupport - 페이퍼 서버에서 유명한 다중지원플러그인 ViaVersion을 기반으로 스피곳 버킷 1.12에서 사용되었던 다중지원플러그인 ProtocolSupport를 처음부터 다시 써내려 더 많은 하위 버전의 접속을 허용하는 국산 다중지원플러그인입니다")
+	getLogger().info("ViaVersionProtocolSupport - 페이퍼 서버에서 유명한 다중지원플러그인 ViaVersion을 기반으로 스피곳 버킷 1.12에서 사용되었던 다중지원플러그인 ProtocolSupport를 처음부터 다시 써내려 더 많은 하위 버전의 접속을 허용하는 국산 다중지원플러그인입니다");
         getLogger().info("버전 등록중입니다.");
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
         protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.r1_6_4, ProtocolVersion.v1_7_2); // 지원하는 버전이 너무 낮을 때에는 LegacyProtocolVersion을 사용한다. 하지만 참가하는 서버 버전이 클라이언트의 1.6.4보다 높으면 ProtocolVersion을 사용한다.
