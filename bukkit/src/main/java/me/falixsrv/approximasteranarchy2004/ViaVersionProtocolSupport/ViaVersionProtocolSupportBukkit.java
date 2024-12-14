@@ -37,7 +37,6 @@ File file = new File(filePath);
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
-		Via.getManager().addEnableListener(ViaLegacyPlugin::new);
             }
 	
     @Override
@@ -57,6 +56,7 @@ File file = new File(filePath);
 	
     @Override
 	public void init() {
+	Via.getManager().addEnableListener(ViaLegacyPlugin::new);
 	VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
