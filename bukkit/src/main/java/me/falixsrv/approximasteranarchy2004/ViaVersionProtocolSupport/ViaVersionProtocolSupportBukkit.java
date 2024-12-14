@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy.ViaLegacyPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import com.viaversion.viaversion.api.Via;
@@ -21,7 +22,7 @@ String filePath = "config.yml";
 File file = new File(filePath);
 
     public void BukkitPlugin() {
-	Via.getManager().addEnableListener(ViaLegacyBukkit::new);
+	Via.getManager().addEnableListener(ViaLegacyPlugin::new);
         Via.getManager().addEnableListener(() -> init());
     }
 	
