@@ -76,7 +76,7 @@ File file = new File(filePath);
     @Override
     public void onDisable() {
 	System.out.println("By CensingSmile123 and Approximaster");
-        System.out.println("Bye!");
+        System.out.println("이 플러그인의 저작권은 아프록시마스터 스튜디오 2004에서 만들어져 2024년 첫 버전이 제공되었으며, GNU 일반 공중 사용 허가서 v3.0에 따라 라이선스가 부여됩니다. 자세한 내용은 <https://www.gnu.org/licenses/>를 참조하십시오.");
     }
 }
 
