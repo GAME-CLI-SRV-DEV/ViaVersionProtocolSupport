@@ -37,7 +37,7 @@ File file = new File(filePath);
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
-		Via.getManager().addEnableListener(ViaLegacyPlatformImpl::new);
+		Via.getManager().addEnableListener(ViaLegacyPlugin::new);
             }
 	
     @Override
