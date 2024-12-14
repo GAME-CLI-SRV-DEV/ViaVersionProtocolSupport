@@ -50,6 +50,8 @@ File file = new File(filePath);
             // Enable in the next tick
             Via.getPlatform().runSync(this::init, 1);
         } else {
+            logger.severe("ALERT: LateProtocolVersionSetting is False! ViaLegacy Will Not Run!")
+	    logger.severe("This will not run ViaLegacy and Make VVPS Not Work Properly.");
             init();
         }
 }
