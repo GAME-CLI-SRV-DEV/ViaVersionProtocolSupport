@@ -3,9 +3,9 @@ package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy
 import net.raphimc.vialegacy.platform.ViaLegacyPlatform;
 import com.viaversion.viaversion.api.Via;
 
-public class ViaLegacyBukkit implements ViaLegacyPlatform {
+public class ViaLegacyPlugin implements ViaLegacyPlatform {
 
-    public ViaLegacyBukkit() {
+    public ViaLegacyPlugin() {
         this.init(this.getDataFolder());
     }
 
