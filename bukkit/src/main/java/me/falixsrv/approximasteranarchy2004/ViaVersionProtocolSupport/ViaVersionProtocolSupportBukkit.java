@@ -59,7 +59,7 @@ File file = new File(filePath);
 	VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
-    .append(Component.text("ProtocolSupport ", NamedTextColor.GRAY))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
     Component loaf = Component.text()
     .append(Prefix)
