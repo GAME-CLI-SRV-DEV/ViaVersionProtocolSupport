@@ -22,7 +22,6 @@ String filePath = "config.yml";
 File file = new File(filePath);
 
     public void BukkitPlugin() {
-	Via.getManager().addEnableListener(ViaLegacyPlugin::new);
         Via.getManager().addEnableListener(() -> init());
     }
 	
@@ -38,6 +37,7 @@ File file = new File(filePath);
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
+		Via.getManager().addEnableListener(ViaLegacyPlatformImpl::new);
             }
 	
     @Override
@@ -51,9 +51,6 @@ File file = new File(filePath);
             // Enable in the next tick
             Via.getPlatform().runSync(this::init, 1);
         } else {
-	    Logger logger = getLogger();
-            logger.severe("ALERT: LateProtocolVersionSetting is False! ViaLegacy Will Not Run!");
-	    logger.severe("This will not run ViaLegacy and Make VVPS Not Work Properly.");
             init();
         }
 }
