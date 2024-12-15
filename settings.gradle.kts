@@ -1,3 +1,3 @@
 rootProject.name = "ViaVersionProtocolSupport"
 
-include("bukkit", "common") //viaproxy soon
+include("vialegacylib", "bukkit", "common") //viaproxy soon
