@@ -1,6 +1,5 @@
 plugins {
     java
-	id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -36,11 +35,4 @@ tasks {
         }
     }
 
-    build {
-        dependsOn(shadowJar)
-    }
-    shadowJar {
-        mergeServiceFiles()
-        archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
-    }
 }
