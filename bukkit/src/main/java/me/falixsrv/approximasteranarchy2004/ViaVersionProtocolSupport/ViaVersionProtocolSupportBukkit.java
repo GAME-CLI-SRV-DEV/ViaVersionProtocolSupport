@@ -7,7 +7,6 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
-import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy.ViaLegacyPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import com.viaversion.viaversion.api.Via;
@@ -56,7 +55,6 @@ File file = new File(filePath);
 	
     @Override
 	public void init() {
-	Via.getManager().addEnableListener(ViaLegacyPlugin::new);
 	VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
