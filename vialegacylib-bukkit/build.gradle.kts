@@ -10,9 +10,13 @@ repositories {
     maven {
     url = uri("https://repo.viaversion.com/")
     }
+    maven {
+    url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
 }
 
 	dependencies {
+compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
 	      compileOnly("com.viaversion:viaversion-common:5.0.4") // ViaVersion Addon
         implementation(project(":vialegacylib-common")) // ViaLegacy Library
 	}
