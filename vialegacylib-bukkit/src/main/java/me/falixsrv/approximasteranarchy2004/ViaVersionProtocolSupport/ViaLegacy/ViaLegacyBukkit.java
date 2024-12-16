@@ -8,7 +8,7 @@ public class ViaLegacyBukkit extends JavaPlugin {
 
   @Override
   public void onLoad() {
-  Via.getManager().addEnableListener(ViaLegacyPlugin::new);
+  Via.getManager().addEnableListener(ViaLegacyPlugin::new); // ViaBackwards -> ViaLegacy -> ViaRewind -> ViaVersion 
      }
   
 }
