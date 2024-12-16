@@ -31,7 +31,7 @@ File file = new File(filePath);
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
-    Bukkit.getServer().sendMessage(message);
+    Bukkit.getServer().sendMessage(Prefix);
     Component copyleft = Component.text()
     .append(Component.text("Copyright (C) 2015~2024 ", NamedTextColor.WHITE))
     .append(Component.text("A", NamedTextColor.RED))
@@ -40,7 +40,7 @@ File file = new File(filePath);
     .append(Component.text("r", NamedTextColor.GREEN))
     .append(Component.text("o", NamedTextColor.AQUA))
     .append(Component.text("x", NamedTextColor.BLUE))
-    .append(Component.text("i", NamedTextColor.PURPLE))
+    .append(Component.text("i", NamedTextColor.LIGHT_PURPLE))
     .append(Component.text("m", NamedTextColor.DARK_PURPLE))
     .append(Component.text("a", NamedTextColor.DARK_RED))
     .append(Component.text("s", NamedTextColor.GOLD))
