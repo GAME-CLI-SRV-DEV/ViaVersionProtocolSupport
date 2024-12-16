@@ -27,15 +27,40 @@ File file = new File(filePath);
 	@Override
 	public void onLoad() {
     Logger logger = getLogger();
-		logger.severe("╔══════════════════════════════════════════════════════════════════╗");
-		logger.severe("║                               WARNING                             ");
+    Component Prefix = Component.text()
+    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .build();
+    Bukkit.getServer().sendMessage(message);
+    Component copyleft = Component.text()
+    .append(Component.text("Copyright (C) 2015~2024 ", NamedTextColor.WHITE))
+    .append(Component.text("A", NamedTextColor.RED))
+    .append(Component.text("p", NamedTextColor.GOLD))
+    .append(Component.text("p", NamedTextColor.YELLOW))
+    .append(Component.text("r", NamedTextColor.GREEN))
+    .append(Component.text("o", NamedTextColor.AQUA))
+    .append(Component.text("x", NamedTextColor.BLUE))
+    .append(Component.text("i", NamedTextColor.PURPLE))
+    .append(Component.text("m", NamedTextColor.DARK_PURPLE))
+    .append(Component.text("a", NamedTextColor.DARK_RED))
+    .append(Component.text("s", NamedTextColor.GOLD))
+    .append(Component.text("t", NamedTextColor.DARK_GREEN))
+    .append(Component.text("e", NamedTextColor.DARK_AQUA))
+    .append(Component.text("r", NamedTextColor.DARK_PURPLE))
+    .append(Component.text(" Studios 2004, All Rights Reversed.", NamedTextColor.WHITE))
+    .build();
+		logger.severe("╔═══════════════════════════════════════════════════════════════════════════╗");
+		logger.severe("║                               LOADING...                             ");
 		logger.severe("║                                                                   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
 		logger.severe("║                                                                   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
-		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
+		logger.severe("║                                                                   ");
+		logger.severe("║                                                                   ");
+		logger.severe("║ Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
+		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
             }
 	
     @Override
