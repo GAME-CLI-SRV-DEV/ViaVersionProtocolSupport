@@ -20,7 +20,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin implements VVPSP
 String filePath = "config.yml";
 File file = new File(filePath);
 
-    public void BukkitPlugin() {
+    public void ViaVersionProtocolSupportBukkit() {
         Via.getManager().addEnableListener(() -> init());
     }
 
@@ -74,7 +74,6 @@ File file = new File(filePath);
 	
     @Override
 	public void init() {
-	VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
