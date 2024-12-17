@@ -61,6 +61,11 @@ jobs:
       with:
           name: ViaVersionProtocolSupport PaperSpigotMC Plugin
           path: bukkit/build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
+    - name: Upload Bukkit Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: ViaLegacy for Bukkit
+          path: vialegacylib-bukkit/build/libs/vialegacylib-bukkit.jar
           
   dependency-submission:
 

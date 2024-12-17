@@ -1,6 +1,5 @@
 plugins {
     java
-	id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -18,7 +17,7 @@ repositories {
 	      compileOnly("com.viaversion:viaversion-common:5.0.4")
               compileOnly("com.viaversion:viabackwards-common:5.0.4")
               compileOnly("com.viaversion:viarewind-common:4.0.3")
-              implementation("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT")
+              compileOnly("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT")
 			  implementation("net.lenni0451:optconfig:1.0.0")
 			  implementation("com.google.guava:guava:33.3.1-jre")
 	}
@@ -36,11 +35,4 @@ tasks {
         }
     }
 
-    build {
-        dependsOn(shadowJar)
-    }
-    shadowJar {
-        mergeServiceFiles()
-        archiveClassifier.set("") // Prevent the -all suffix on the shadowjar file.
-    }
 }

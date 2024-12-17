@@ -1,7 +1,8 @@
 name: ViaVersionProtocolSupport
 version: 8.55-1.21.1-5.0.0
 main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportBukkit
-depends: ViaVersion, ViaBackwards, ViaRewind
+depend: [ ViaVersion, ViaBackwards, ViaRewind, ViaLegacy-Bukkit ]
 description: adds 1.4.6-1.6.4
-author: ApproximasterTelevision2004
+author: [ ApproximasterTelevision2004 ]
 folia-supported: true
+load: STARTUP

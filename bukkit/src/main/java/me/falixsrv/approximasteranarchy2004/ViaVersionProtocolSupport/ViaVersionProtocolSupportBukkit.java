@@ -20,30 +20,52 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin implements VVPSP
 String filePath = "config.yml";
 File file = new File(filePath);
 
-    public void BukkitPlugin() {
+    public ViaVersionProtocolSupportBukkit() {
+	System.out.println("Please Ignore the warning from Bukkit");
+	System.out.println("We Use STDOUT. STDOUT FOREVER.");
+	System.out.println("Loading the Platform");
         Via.getManager().addEnableListener(() -> init());
     }
-	
-	@Override
-	public void onLoad() {
-    Logger logger = getLogger();
-		logger.severe("╔══════════════════════════════════════════════════════════════════╗");
-		logger.severe("║                               WARNING                             ");
-		logger.severe("║                                                                   ");
-		logger.severe("║                                                                   ");
-		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
-		logger.severe("║                                                                   ");
-		logger.severe("║                                                                   ");
-		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
-		logger.severe("╚══════════════════════════════════════════════════════════════════╝");
-            }
+
 	
     @Override
 	public void onEnable() {
-	Component message = Component.text()
+    Component message = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
+    Logger logger = getLogger();
+    Bukkit.getServer().sendMessage(message);
+    Component copyleft = Component.text()
+    .append(Component.text("Copyright (C) 2015~2024 ", NamedTextColor.WHITE))
+    .append(Component.text("A", NamedTextColor.RED))
+    .append(Component.text("p", NamedTextColor.GOLD))
+    .append(Component.text("p", NamedTextColor.YELLOW))
+    .append(Component.text("r", NamedTextColor.GREEN))
+    .append(Component.text("o", NamedTextColor.AQUA))
+    .append(Component.text("x", NamedTextColor.BLUE))
+    .append(Component.text("i", NamedTextColor.LIGHT_PURPLE))
+    .append(Component.text("m", NamedTextColor.DARK_PURPLE))
+    .append(Component.text("a", NamedTextColor.DARK_RED))
+    .append(Component.text("s", NamedTextColor.GOLD))
+    .append(Component.text("t", NamedTextColor.DARK_GREEN))
+    .append(Component.text("e", NamedTextColor.DARK_AQUA))
+    .append(Component.text("r", NamedTextColor.DARK_PURPLE))
+    .append(Component.text(" Studios 2004, All Rights Reversed.", NamedTextColor.WHITE))
+    .build();
+    Bukkit.getServer().sendMessage(copyleft);
+		logger.severe("╔═══════════════════════════════════════════════════════════════════════════╗");
+		logger.severe("║                               LOADING...                             ");
+		logger.severe("║                                                                   ");
+		logger.severe("║                                                                   ");
+		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
+		logger.severe("║ ViaVersionProtocolSupport는 베타 버전입니다. 테스트 후 사용하세요.   ");
+		logger.severe("║                                                                   ");
+		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
+		logger.severe("║                                                                   ");
+		logger.severe("║                                                                   ");
+		logger.severe("║ Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
+		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
     Bukkit.getServer().sendMessage(message);
 	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
             // Enable in the next tick
@@ -55,7 +77,7 @@ File file = new File(filePath);
 	
     @Override
 	public void init() {
-	VVPSPlatform.super.init();
+    VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
@@ -71,10 +93,5 @@ File file = new File(filePath);
 	public void disable() {
 		getPluginLoader().disablePlugin(this);
 	}
-    @Override
-    public void onDisable() {
-	System.out.println("By CensingSmile123 and Approximaster");
-        System.out.println("이 플러그인의 저작권은 아프록시마스터 스튜디오 2004에서 만들어져 2024년 첫 버전이 제공되었으며, GNU 일반 공중 사용 허가서 v3.0에 따라 라이선스가 부여됩니다. 자세한 내용은 <https://www.gnu.org/licenses/>를 참조하십시오.");
-    }
 }
 
