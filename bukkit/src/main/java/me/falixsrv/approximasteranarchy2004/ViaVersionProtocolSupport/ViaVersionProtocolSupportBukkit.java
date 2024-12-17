@@ -32,7 +32,7 @@ File file = new File(filePath);
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
     Logger logger = getLogger();
-    Bukkit.getServer().sendMessage(Prefix);
+    Bukkit.getServer().sendMessage(message);
     Component copyleft = Component.text()
     .append(Component.text("Copyright (C) 2015~2024 ", NamedTextColor.WHITE))
     .append(Component.text("A", NamedTextColor.RED))
