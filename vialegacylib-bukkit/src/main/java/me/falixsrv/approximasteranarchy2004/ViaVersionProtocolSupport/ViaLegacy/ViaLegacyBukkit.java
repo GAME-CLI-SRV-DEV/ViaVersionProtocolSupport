@@ -6,9 +6,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ViaLegacyBukkit extends JavaPlugin {
 
+  public ViaLegacyBukkit() {
+     Via.getManager().addEnableListener(ViaLegacyPlugin::new); 
+  }
+
   @Override
-  public void onLoad() {
-  Via.getManager().addEnableListener(ViaLegacyPlugin::new); // ViaBackwards -> ViaLegacy -> ViaRewind -> ViaVersion 
-     }
+  public void onEnable() { // Since ViaVersion Initializes ViaManager We can Refresh Version.
+    Via.getManager().getProtocolManager().setMaxProtocolPathSize(Integer.MAX_VALUE); // Allow Integer.MAX_VALUE protocols in the pipeline
+    Via.getManager().getProtocolManager().setMaxPathDeltaIncrease(-1); // Allow unlimited protocol path size increase
+    (ProtocolManagerImpl) Via.getManager().getProtocolManager()).refreshVersions(); // Refresh the version paths
+  }
   
 }
