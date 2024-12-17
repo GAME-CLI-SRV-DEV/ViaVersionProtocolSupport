@@ -15,7 +15,7 @@ public class ViaLegacyBukkit extends JavaPlugin {
   public void onEnable() { // Since ViaVersion Initializes ViaManager We can Refresh Version.
     Via.getManager().getProtocolManager().setMaxProtocolPathSize(Integer.MAX_VALUE); // Allow Integer.MAX_VALUE protocols in the pipeline
     Via.getManager().getProtocolManager().setMaxPathDeltaIncrease(-1); // Allow unlimited protocol path size increase
-    (ProtocolManagerImpl) Via.getManager().getProtocolManager()).refreshVersions(); // Refresh the version paths
+    ((ProtocolManagerImpl) Via.getManager().getProtocolManager()).refreshVersions(); // Refresh the version paths
   }
   
 }
