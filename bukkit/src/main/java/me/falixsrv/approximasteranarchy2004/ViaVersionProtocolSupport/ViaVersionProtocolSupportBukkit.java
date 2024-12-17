@@ -23,14 +23,15 @@ File file = new File(filePath);
     public void BukkitPlugin() {
         Via.getManager().addEnableListener(() -> init());
     }
+
 	
-	@Override
-	public void onLoad() {
-    Logger logger = getLogger();
-    Component Prefix = Component.text()
+    @Override
+	public void onEnable() {
+    Component message = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
     .build();
+    Logger logger = getLogger();
     Bukkit.getServer().sendMessage(Prefix);
     Component copyleft = Component.text()
     .append(Component.text("Copyright (C) 2015~2024 ", NamedTextColor.WHITE))
@@ -49,26 +50,19 @@ File file = new File(filePath);
     .append(Component.text("r", NamedTextColor.DARK_PURPLE))
     .append(Component.text(" Studios 2004, All Rights Reversed.", NamedTextColor.WHITE))
     .build();
+    Bukkit.getServer().sendMessage(copyleft);
 		logger.severe("╔═══════════════════════════════════════════════════════════════════════════╗");
 		logger.severe("║                               LOADING...                             ");
 		logger.severe("║                                                                   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
-		logger.severe("║                                                                   ");
+		logger.severe("║ ViaVersionProtocolSupport는 베타 버전입니다. 테스트 후 사용하세요.   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("║                                                                   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
 		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
-            }
-	
-    @Override
-	public void onEnable() {
-	Component message = Component.text()
-    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
-    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
-    .build();
     Bukkit.getServer().sendMessage(message);
 	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
             // Enable in the next tick
@@ -96,10 +90,5 @@ File file = new File(filePath);
 	public void disable() {
 		getPluginLoader().disablePlugin(this);
 	}
-    @Override
-    public void onDisable() {
-	System.out.println("By CensingSmile123 and Approximaster");
-        System.out.println("이 플러그인의 저작권은 아프록시마스터 스튜디오 2004에서 만들어져 2024년 첫 버전이 제공되었으며, GNU 일반 공중 사용 허가서 v3.0에 따라 라이선스가 부여됩니다. 자세한 내용은 <https://www.gnu.org/licenses/>를 참조하십시오.");
-    }
 }
 
