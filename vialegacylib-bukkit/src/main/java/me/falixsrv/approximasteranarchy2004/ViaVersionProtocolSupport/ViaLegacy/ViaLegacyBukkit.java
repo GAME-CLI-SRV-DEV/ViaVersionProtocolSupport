@@ -3,6 +3,7 @@ package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy.ViaLegacyPlugin;
 import com.viaversion.viaversion.api.Via;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.viaversion.viaversion.protocol.ProtocolManagerImpl;
 
 public class ViaLegacyBukkit extends JavaPlugin {
 
