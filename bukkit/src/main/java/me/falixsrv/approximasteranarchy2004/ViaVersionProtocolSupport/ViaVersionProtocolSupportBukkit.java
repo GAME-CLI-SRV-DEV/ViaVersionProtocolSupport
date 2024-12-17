@@ -21,6 +21,9 @@ String filePath = "config.yml";
 File file = new File(filePath);
 
     public ViaVersionProtocolSupportBukkit() {
+	System.out.println("Please Ignore the warning from Bukkit");
+	System.out.println("We Use STDOUT. STDOUT FOREVER.");
+	System.out.println("Loading the Platform");
         Via.getManager().addEnableListener(() -> init());
     }
 
@@ -74,6 +77,7 @@ File file = new File(filePath);
 	
     @Override
 	public void init() {
+    VVPSPlatform.super.init();
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
     .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
