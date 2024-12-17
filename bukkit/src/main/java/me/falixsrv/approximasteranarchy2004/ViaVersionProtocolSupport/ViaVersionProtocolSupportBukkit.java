@@ -20,7 +20,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin implements VVPSP
 String filePath = "config.yml";
 File file = new File(filePath);
 
-    public void ViaVersionProtocolSupportBukkit() {
+    public ViaVersionProtocolSupportBukkit() {
         Via.getManager().addEnableListener(() -> init());
     }
 
