@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 public class ViaLegacyPlugin implements ViaLegacyPlatform {
 
     public ViaLegacyPlugin() {
-        this.init(this.getDataFolder());
+        this.init(new File(this.getDataFolder(), "vialegacy.yml"));
     }
 
     @Override
