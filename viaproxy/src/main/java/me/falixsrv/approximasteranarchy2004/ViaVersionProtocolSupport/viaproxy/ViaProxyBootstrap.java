@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class ViaProxyBootstrap extends ViaProxyPlugin implements VVPSPlatform {
 
 
-    public void ViaProxyVVPSPlugin() {
+    public ViaProxyVVPSPlugin() {
         Via.getManager().addEnableListener(() -> init());
     }
 
