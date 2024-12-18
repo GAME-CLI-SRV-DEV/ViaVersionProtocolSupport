@@ -13,9 +13,14 @@ public class ViaLegacyBukkit extends JavaPlugin {
 
   @Override
   public void onEnable() { // Since ViaVersion Initializes ViaManager We can Refresh Version.
+    System.out.println("[VL] Enabling ViaLegacy For Bukkit...");
+    System.out.println("[VL] Enabling Integer Protocol Version");
     Via.getManager().getProtocolManager().setMaxProtocolPathSize(Integer.MAX_VALUE); // Allow Integer.MAX_VALUE protocols in the pipeline
+    System.out.println("[VL] Enabled Integer Protocol Version. Exceeding Protocol...");
     Via.getManager().getProtocolManager().setMaxPathDeltaIncrease(-1); // Allow unlimited protocol path size increase
+    System.out.println("[VL] Finalizing: Refreshing Version...");
     ((ProtocolManagerImpl) Via.getManager().getProtocolManager()).refreshVersions(); // Refresh the version paths
+    System.out.println("[VL] ViaLegacy Is Now Enabled.");
   }
   
 }
