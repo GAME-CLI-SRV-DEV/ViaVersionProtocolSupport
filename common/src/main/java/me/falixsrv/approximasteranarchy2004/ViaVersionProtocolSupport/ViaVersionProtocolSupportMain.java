@@ -1,4 +1,3 @@
-/*
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport;
 
 import com.google.common.base.Preconditions;
@@ -25,4 +24,4 @@ public static void init(VVPSPlatform platform) {
     }
 
 }
-*/
+
