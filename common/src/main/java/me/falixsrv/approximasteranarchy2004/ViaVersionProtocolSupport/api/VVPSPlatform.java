@@ -43,11 +43,14 @@ public interface VVPSPlatform {
                     "   <=\\/_/_/    \\_\\/   |______|_|  \\_\\_____/|_____\\____/|_| \\_|_|   |_|  \\___/ \\__\\___/ \\___\\___/|_|_____/ \\__,_| .__/| .__/ \\___/|_|   \\__|\n" +
                     "                                                                                                               | |   | |                   \n" +
                     "                                                                                                               |_|   |_|                   ");
-	getLogger().info("ViaVersionProtocolSupport - 페이퍼 서버에서 유명한 다중지원플러그인 ViaVersion을 기반으로 스피곳 버킷 1.12에서 사용되었던 다중지원플러그인 ProtocolSupport를 처음부터 다시 써내려 더 많은 하위 버전의 접속을 허용하는 국산 다중지원플러그인입니다");
+	getLogger().info("ViaVersionProtocolSupport - 페이퍼 서버에서 유명한 다중지원플러그인 ViaVersion을 기반으로 스피곳 1.12 서버에서 사용되었던 다중지원플러그인 ProtocolSupport를 처음부터 다시 써내려 더 많은 하위 버전의 접속을 허용하는 국산 다중지원플러그인입니다");
         getLogger().info("버전 등록중입니다.");
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
+	getlogger().info("버전 등록기 활성화되었습니다. 버전 로드 중...");
         protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.r1_6_4, ProtocolVersion.v1_7_2); // 지원하는 버전이 너무 낮을 때에는 LegacyProtocolVersion을 사용한다. 하지만 참가하는 서버 버전이 클라이언트의 1.6.4보다 높으면 ProtocolVersion을 사용한다.
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_6_1, LegacyProtocolVersion.r1_6_4); // 다중 버전 지원 플러그인을 만들때는 protocolManager에서 프로토콜을 등록해야 한다. 
+	getlogger().info("1.6.2-1.6.4 클라이언트 -> 1.7.2-1.7.5 서버 등록되었습니다.(1단계)");    
+     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_6_1, LegacyProtocolVersion.r1_6_4); // 다중 버전 지원 플러그인을 만들때는 protocolManager에서 프로토콜을 등록해야 한다.
+	getlogger().info("1.6.2-1.6.4 클라이언트 -> 1.6.0-1.6.1 서버 등록되었습니다.(2단계)");  
      // protocolManager.registerProtocol(new Protocolr1_6_1tor1_5_2(), LegacyProtocolVersion.r1_5_2, LegacyProtocolVersion.r1_6_1); 
      // protocolManager.registerProtocol(new Protocolr1_5_2tor1_4_6(), LegacyProtocolVersion.r1_4_6, LegacyProtocolVersion.r1_5_2); 
      // protocolManager.registerProtocol(new Protocolr1_4_6tor1_4_4(), LegacyProtocolVersion.r1_4_4, LegacyProtocolVersion.r1_4_6); 
