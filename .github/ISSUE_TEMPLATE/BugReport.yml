@@ -48,7 +48,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you will agree to: I did not Confuse ViaLegacyLib with ViaVersionProtocolSupport and I am aware that This Project is Beta.
+      description: "By submitting this issue, you will agree to: I did not Confuse ViaLegacyLib with ViaVersionProtocolSupport and I am aware that This Project is Beta."
       options:
         - label: I agree.
           required: true
