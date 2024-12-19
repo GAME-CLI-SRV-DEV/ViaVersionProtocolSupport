@@ -48,14 +48,18 @@ public interface VVPSPlatform {
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
         protocolManager.registerProtocol(new Protocolr1_7_2_5tor1_6_4(), LegacyProtocolVersion.r1_6_4, ProtocolVersion.v1_7_2); // 지원하는 버전이 너무 낮을 때에는 LegacyProtocolVersion을 사용한다. 하지만 참가하는 서버 버전이 클라이언트의 1.6.4보다 높으면 ProtocolVersion을 사용한다.
      // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_6_1, LegacyProtocolVersion.r1_6_4); // 다중 버전 지원 플러그인을 만들때는 protocolManager에서 프로토콜을 등록해야 한다. 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_5_2, LegacyProtocolVersion.r1_6_1); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_4_6, LegacyProtocolVersion.r1_5_2); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_4_4, LegacyProtocolVersion.r1_4_6); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_4_1, LegacyProtocolVersion.r1_4_4); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_2_5, LegacyProtocolVersion.r1_4_1); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_2_1, LegacyProtocolVersion.r1_2_4); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_1, LegacyProtocolVersion.r1_2_1); 
-     // protocolManager.registerProtocol(new Protocolr1_6_4tor1_6_1(), LegacyProtocolVersion.r1_0_1, LegacyProtocolVersion.r1_1);
+     // protocolManager.registerProtocol(new Protocolr1_6_1tor1_5_2(), LegacyProtocolVersion.r1_5_2, LegacyProtocolVersion.r1_6_1); 
+     // protocolManager.registerProtocol(new Protocolr1_5_2tor1_4_6(), LegacyProtocolVersion.r1_4_6, LegacyProtocolVersion.r1_5_2); 
+     // protocolManager.registerProtocol(new Protocolr1_4_6tor1_4_4(), LegacyProtocolVersion.r1_4_4, LegacyProtocolVersion.r1_4_6); 
+     // protocolManager.registerProtocol(new Protocolr1_4_4tor1_4_1(), LegacyProtocolVersion.r1_4_1, LegacyProtocolVersion.r1_4_4); 
+     // protocolManager.registerProtocol(new Protocolr1_4_1tor1_2_5(), LegacyProtocolVersion.r1_2_5, LegacyProtocolVersion.r1_4_1); 
+     // protocolManager.registerProtocol(new Protocolr1_2_5tor1_2_1(), LegacyProtocolVersion.r1_2_1, LegacyProtocolVersion.r1_2_5); 
+     // protocolManager.registerProtocol(new Protocolr1_2_1tor1_1(), LegacyProtocolVersion.r1_1, LegacyProtocolVersion.r1_2_1); 
+     // protocolManager.registerProtocol(new Protocolr1_1tor1_0_1(), LegacyProtocolVersion.r1_0_1, LegacyProtocolVersion.r1_1)
+     // 
+
+	    // 간단히 설명하자면,
+	    // protocolmanager.registerProtocol(new 프로토콜매핑(), (ProtocolVersion/LegacyProtocolVersion).버전,(ProtocolVersion/LegacyProtocolVersion).버전); 
     }
 
     /**
