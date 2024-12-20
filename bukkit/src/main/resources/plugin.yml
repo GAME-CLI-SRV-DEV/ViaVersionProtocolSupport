@@ -2,7 +2,7 @@ name: VVPS-Bukkit
 version: 8.55-1.21.1-5.0.0
 main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportBukkit
 depend: [ ViaVersion, ViaBackwards, ViaRewind, ViaLegacy-Bukkit ]
-description: adds 1.4.6-1.6.4
+loadbefore: [ ViaBackwards ]
 author: [ ApproximasterTelevision2004 ]
 folia-supported: true
 load: STARTUP
