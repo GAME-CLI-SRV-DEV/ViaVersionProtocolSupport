@@ -39,11 +39,11 @@ import com.viaversion.viaversion.api.minecraft.ClientWorld;
 
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
-public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<ClientboundPackets1_7_2, ClientboundPackets1_6_4, ServerboundPackets1_7_2, ServerboundPackets1_6_4> {
+public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, ServerboundPackets1_6_4> {
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
     public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
-    private final TagRewriter<ClientboundPackets1_7_2> tagRewriter = new TagRewriter<>(this);
+    private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
     private final vvpsrew_item_1_7_2_5tor1_6_4 itemRewriter = new vvpsrew_item_1_7_2_5tor1_6_4(this);
    public static final ValueTransformer<String, String> REMOVE_DASHES = new ValueTransformer<>(Types.STRING) {
 		@Override
@@ -53,7 +53,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	};
 	
     public Protocolr1_7_2_5tor1_6_4() {
-        super(ClientboundPackets1_7_2.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2.class, ServerboundPackets1_6_4.class);
+        super(ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class);
     }
 
     	@Override
@@ -78,7 +78,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 				});
 			}
 		});
-		this.registerClientbound(ClientboundPackets1_7_2.KEEP_ALIVE, new PacketHandlers() {
+		this.registerClientbound(ClientboundPackets1_7_2_5.KEEP_ALIVE, new PacketHandlers() {
 			@Override
 			public void register() {
 				map(Types.VAR_INT, Types.INT); // id
