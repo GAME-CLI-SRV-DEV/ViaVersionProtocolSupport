@@ -62,7 +62,7 @@ ViaPS allows classic to 1.8 Even Snapshot 15w31(a/b).
 
 |MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
 |--|--|
-|1.8->15w31a-15w31b|READY|
+|15w31a-15w31b->1.8|READY|
 |1.7.2-1.7.5->1.6.4|99% 0 ERRORS REMAINING BUT DISABLED|
 |1.6.2->1.6.4|-|
 |1.6.2->1.6.1|0% 0 ERRORS REMAINING|
