@@ -13,8 +13,8 @@ repositories {
 }
 
 	dependencies {
-	      compileOnly("com.viaversion:viaversion-common:5.0.4") // ViaVersion Addon
-        implementation("net.raphimc:ViaLegacy:3.0.4-SNAPSHOT") // ViaLegacy Binary
+	      compileOnly("com.viaversion:viaversion-common:5.2.1") // ViaVersion Addon
+        implementation("net.raphimc:ViaLegacy:3.0.6-SNAPSHOT") // ViaLegacy Binary
 	}
 
 java {
