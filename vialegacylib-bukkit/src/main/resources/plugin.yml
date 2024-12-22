@@ -1,6 +1,0 @@
-name: ViaLegacy-Bukkit
-main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaLegacy.ViaLegacyBukkit
-version: 3.0.4
-author: ApproximasterTelevision2004
-depend: [ ViaVersion ]
-load: STARTUP
