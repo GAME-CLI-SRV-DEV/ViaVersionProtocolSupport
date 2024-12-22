@@ -126,7 +126,7 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
 
 	@Override
 	public vvpsrew_item_1_7_2_5tor1_6_4 getItemRewriter() {
-		return itemRewriter;
+		return this.itemRewriter;
 	}
 
    }
