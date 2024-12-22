@@ -63,7 +63,7 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
                         map(Types.INT); // entity id
                         handler(wrapper -> {
                             wrapper.user().get(PlayerInfoStorage.class).entityId = wrapper.get(Types.INT, 0);
-                            final String terrainType = wrapper.read(Types1_7_6.STRING); // level type
+                            final String terrainType = wrapper.read(Types.STRING); // level type
                             final short gameType = wrapper.read(Types.BYTE); // game mode
                             final byte dimension = wrapper.read(Types.BYTE); // dimension id
                             final short difficulty = wrapper.read(Types.BYTE); // difficulty
@@ -93,12 +93,22 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
                 }
         );
 
-	@Override
-	public void transform(Direction direction, State state, PacketWrapper packetWrapper) throws CancelException {
-		Via.getManager().getProviders().get(CompressionHandlerProvider.class).onTransformPacket(packetWrapper.user());
-
-		super.transform(direction, state, packetWrapper);
-	}
+   this.registerClientbound(ClientboundPackets1_7_2_5.CHAT, new PacketHandlers() {
+            @Override
+            public void register() {
+                map(Types.STRING, Types1_6_4.STRING, TextRewriter::toClient); // message
+            }
+        });
+	
+   this.registerClientbound(ClientboundPackets1_7_2_5.SET_EQUIPPED_ITEM, new PacketHandlers() { 
+            @Override
+            public void register() {
+                map(Types.INT); // entity id
+                map(Types.SHORT); // slot
+                map(Types1_7_6.ITEM); // item
+                handler(wrapper -> itemRewriter.handleItemToClient(wrapper.user(), wrapper.get(Types1_6_4.ITEM, 0)));
+            }
+        });
 
 	@Override
 	public void init(UserConnection connection) {
