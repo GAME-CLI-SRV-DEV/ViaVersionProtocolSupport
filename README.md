@@ -1,7 +1,8 @@
-# ViaVersionProtocolSupport (ViaLegacy As a Plugin)
+# ViaVersionProtocolSupport
 ![image](https://github.com/user-attachments/assets/286e9bf8-63c5-4208-83e8-34afa77ac676)
 
-add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do, and add c0.0.15-1.4.6 support which protocolsupport didn't do
+add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do, and add c0.0.15-1.4.6 support which protocolsupport didn't do.
+
 
 # Requirements
 ViaVersion, ViaBackwards, and ViaRewind(It may collide but still required).
@@ -36,14 +37,13 @@ You Need ViaVersionProtocolSupportVelocity or you need to install them on backen
 3. Velocity will initialize.
 4. Join with 1.6.4-1.4.6 client(Currently Supports 1.6.4)
 
-# Code From
-ViaBackwards(Protocol template and Platform Code)
 # ViaVersionProtocolSupport Allows:
 ViaPS allows classic to 1.6
 
 |MC Version Corresponding to ProtocolSupport Supported Protocol Version|status|
 |--|--|
-|1.7.2->1.6.4/2|99% 0 ERRORS REMAINING BUT DISABLED|
+|SNAPSHOT|Requires ViaVersion|
+|1.7.2->1.6.4/2|REWRITING IN PROGRESS|
 |1.6.4/2|-|
 |1.6.2->1.6.1|0% 0 ERRORS REMAINING|
 |1.6.1->1.5.2|0% 0 ERRORS REMAINING|
