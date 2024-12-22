@@ -26,7 +26,6 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
        logger.severe("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
        logger.severe("[ (!) WARN ] Especially ViaProxy.");
        logger.info("[ ► PLAY ] Now Loading...");
-        this.init();
     }
 
     @EventHandler
