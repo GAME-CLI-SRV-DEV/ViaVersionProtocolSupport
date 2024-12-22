@@ -44,8 +44,6 @@ import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersion
 public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<ClientboundPackets1_7_2_5, ClientboundPackets1_6_4, ServerboundPackets1_7_2_5, ServerboundPackets1_6_4> {
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
-    public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
-    private final TagRewriter<ClientboundPackets1_7_2_5> tagRewriter = new TagRewriter<>(this);
     private final vvpsrew_item_1_7_2_5tor1_6_4 itemRewriter = new vvpsrew_item_1_7_2_5tor1_6_4(this);
 	
     public Protocolr1_7_2_5tor1_6_4() {
@@ -126,21 +124,10 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
             }
         });
 
-
-
-	@Override
-	public RewindMappingData getMappingData() {
-		return MAPPINGS;
-	}
-
 	@Override
 	public vvpsrew_item_1_7_2_5tor1_6_4 getItemRewriter() {
 		return itemRewriter;
 	}
 
-	@Override
-	public boolean hasMappingDataToLoad() {
-		return true;
-	}
    }
 }
