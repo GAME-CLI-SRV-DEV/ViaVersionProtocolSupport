@@ -52,6 +52,10 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
         super(ClientboundPackets1_7_2_5.class, ClientboundPackets1_6_4.class, ServerboundPackets1_7_2_5.class, ServerboundPackets1_6_4.class);
     }
 
+@Override
+protected void registerPackets() {
+        super.registerPackets();
+	    
 this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
                 ClientboundPackets1_6_4.LOGIN, new PacketHandlers() {
                     @Override
@@ -132,4 +136,4 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
 	public boolean hasMappingDataToLoad() {
 		return true;
 	}
-}
+  }
