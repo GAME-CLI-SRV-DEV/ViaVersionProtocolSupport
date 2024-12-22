@@ -18,21 +18,33 @@ ProtocolSupport가 있었던 플러그인 폴더에다 ViaVersionProtocolSupport
 Open Server again.\
 서버를 재개장합니다.
 
+# Unfixable Bugs / 고칠 수 없는 버그
+1.6.4 서버 참가가 가끔 안될 때도 있음(Shared Key는 1.7.2 패킷에 구현되지 않음)
+
+
 # Do You Support Bedrock Edition(Pocket Edition) Directly? 베드락 클라이언트 직접지원하나요?
 Yes, But Only Sponge. See [This Pull](https://github.com/GeyserMC/Geyser/pull/4097) for reason Why did ViaVersionProtocolSupport-Sponge Started to Include Geyser And Floodgate.
 
-For Other Platform such as paper, bungee, velocity, viaproxy, ViaForgeSmart, ViaFabricPlusmart, You Can Use GeyserMC for their platform.
+For Other Platform such as paper, bungee, velocity, viaproxy, ViaForgeSmart(ViaForge as a Server Mod), ViaFabricPlusmart(Server side mod ViaFabric Fork With ViaLegacy), You Can Use GeyserMC for their platform.
 
 스펀지버전만 직접적으로 Geyser를 포함했기 때문에 가능합니다. 페이퍼, 벨로시티, 번지코드, ViaProxy 같은 경우는 해당 플랫폼에 대응하는 GeyserMC를 사용해야 합니다.
+
+ViaVersionProtocolSupport 페이퍼 전용 플러그인 <-> Geyser-Spigot 플러그인
+ViaVersionProtocolSupport ViaProxy 전용 플러그인 <-> Geyser-ViaProxy 플러그인
+ViaVersionProtocolSupport 벨로시티 전용 플러그인 <-> Geyser-Velocity 플러그인
+ViaVersionProtocolSupport 번지코드 전용 플러그인 <-> Geyser-Bungeecord 플러그인
 
 # I made my plugin with ProtocolSupport API. is it compatible?(제 플러그인이 PS기반인데 호환되나요?)
 No it does not.\
 ViaVersionProtocolSupport is ViaVersion Based Rewritten Fork Version of ProtocolSupport. so it's absolutely Not Compatible.\
 For Your Plugin Can Work with VVPS, You Need To Use ViaAPI/ProtocolLib.\
 안됩니다.\
-이 플러그인은 ViaVersion을 바탕으로 ProtocolSupport를 다시 맨땅에서 만들어가지고 호환이 되지 않습니다.\
+이 플러그인은 ViaVersion의 API를 바탕으로 ProtocolSupport를 다시 맨땅에서 만들어가지고 호환이 되지 않습니다.\
 VVPS랑 작동시키려면 ViaAPI/ProtocolLib으로 교체하세요.
 
+# 베드락 서버 지원하나요?
+실험적으로 지원하긴 하는데... 저건 꼬일 확률이 엄청 큽니다. ViaBedrock은 아직 미완성 상태 거든요.
+Supported But it may cause issues. 
 # is ViaProxy Support Planned?
 준비 중 입니다.
 it's preparing, do not open the oven.
