@@ -21,6 +21,9 @@ Open Server again.\
 # Unfixable Bugs / 고칠 수 없는 버그
 1.6.4 서버 참가가 가끔 안될 때도 있음(Shared Key는 1.7.2 패킷에 구현되지 않음)
 
+# Fixables / 곧 고치는 버그
+블록 안 놓아질 수도 있음
+
 
 # Do You Support Bedrock Edition(Pocket Edition) Directly? 베드락 클라이언트 직접지원하나요?
 Yes, But Only Sponge. See [This Pull](https://github.com/GeyserMC/Geyser/pull/4097) for reason Why did ViaVersionProtocolSupport-Sponge Started to Include Geyser And Floodgate.
