@@ -105,32 +105,28 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
             public void register() {
                 map(Types.INT); // entity id
                 map(Types.SHORT); // slot
-                map(Types1_7_6.ITEM); // item
-                handler(wrapper -> itemRewriter.handleItemToClient(wrapper.user(), wrapper.get(Types1_6_4.ITEM, 0)));
+                map(Types.ITEM); // item
+                handler(wrapper -> itemRewriter.handleItemToClient(wrapper.user(), wrapper.get(Types1_7_6.ITEM, 0)));
             }
         });
 
-	@Override
-	public void init(UserConnection connection) {
-		connection.addEntityTracker(this.getClass(), new EntityTracker1_8(connection));
-		connection.addClientWorld(this.getClass(), new ClientWorld());
+        this.registerClientbound(ClientboundPackets1_7_2_5.RESPAWN, new PacketHandlers() {
+            @Override
+            public void register() {
+                map(Types.INT); // dimension id
+                map(Types.BYTE, Types.UNSIGNED_BYTE); // difficulty
+                map(Types.BYTE, Types.UNSIGNED_BYTE); // gamemode
+                read(Types.SHORT); // world height
+                map(Types1_6_4.STRING, Types.STRING); // worldType
+                handler(wrapper -> {
+                    if (wrapper.user().getClientWorld(Protocolr1_7_2_5tor1_6_4.class).setEnvironment(wrapper.get(Types.INT, 0))) {
+                        wrapper.user().get(ChunkTracker.class).clear();
+                    }
+                });
+            }
+        });
 
-		connection.put(new InventoryTracker(connection));
-		connection.put(new PlayerSessionStorage(connection));
-		connection.put(new GameProfileStorage(connection));
-		connection.put(new ScoreboardTracker(connection));
-		connection.put(new CompressionStatusTracker(connection));
-		connection.put(new WorldBorderEmulator(connection));
-	}
 
-	@Override
-	public void register(ViaProviders providers) {
-		providers.register(CompressionHandlerProvider.class, new TrackingCompressionHandlerProvider());
-
-		if (ViaRewind.getConfig().isEmulateWorldBorder()) {
-			Via.getManager().getScheduler().scheduleRepeating(new WorldBorderUpdateTask(), 0L, 50L, TimeUnit.MILLISECONDS);
-		}
-	}
 
 	@Override
 	public RewindMappingData getMappingData() {
