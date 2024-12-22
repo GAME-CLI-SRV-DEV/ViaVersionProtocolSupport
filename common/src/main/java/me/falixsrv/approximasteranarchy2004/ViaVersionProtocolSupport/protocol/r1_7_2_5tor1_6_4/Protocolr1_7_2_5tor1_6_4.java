@@ -142,4 +142,5 @@ this.registerClientboundTransition(ClientboundPackets1_7_2_5.LOGIN,
 	public boolean hasMappingDataToLoad() {
 		return true;
 	}
-  }
+   }
+}
