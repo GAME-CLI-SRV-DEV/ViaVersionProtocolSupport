@@ -18,23 +18,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
         Via.getManager().addEnableListener(VVPSBootstrap::new);
     }
 
-
-      @EventHandler
-    private void onProxyStart(final ProxyStartEvent event) {
-       logger.info("[ ⬤ START ] ViaVersionProtocolSupport");
-       logger.info("[ ⬤ START ] Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
-       logger.severe("[ (!) WARN ] ViaVersionProtocolSupport is in beta.");
-       logger.severe("[ (!) WARN ] Especially ViaProxy.");
-       logger.info("[ ► PLAY ] Now Loading...");
-    }
-
-    @EventHandler
-    private void onProxyStop(final ProxyStopEvent event) {
-	logger.info("[ || PAUSE ] pausing...");
-        this.disable();
-    }
-    
-      @Override
+ @Override
 	public void onEnable() {
 	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
             // Enable in the next tick
@@ -43,6 +27,14 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
             init();
         }
 }
+	
+
+    @EventHandler
+    private void onProxyStop(final ProxyStopEvent event) {
+	logger.info("[ || PAUSE ] pausing...");
+        this.disable();
+    }
+    
 	
     @Override
 	public void init() {
