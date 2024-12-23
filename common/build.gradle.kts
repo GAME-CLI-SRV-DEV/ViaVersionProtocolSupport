@@ -30,6 +30,8 @@ repositories {
               implementation("com.github.dirtpowered:BetaProtocollib:1.0-SNAPSHOT")
               implementation("com.github.Steveice10:MCProtocolLib:c5e4b66")
               // 
+             compileOnly("io.netty:netty-all:4.0.20.Final")
+             compileOnly("com.google.guava:guava:17.0")
 	}
 
 java {
