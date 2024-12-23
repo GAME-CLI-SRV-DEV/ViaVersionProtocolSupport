@@ -31,6 +31,7 @@ repositories {
         compileOnly("net.raphimc:ViaLegacy:3.0.4")
 	    implementation(project(":common"))
 	    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+         compileOnly("com.google.guava:guava:17.0")
 	}
 
 java {
