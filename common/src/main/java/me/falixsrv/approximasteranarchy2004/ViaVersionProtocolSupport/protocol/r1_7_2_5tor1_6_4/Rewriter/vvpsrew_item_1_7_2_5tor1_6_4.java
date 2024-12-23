@@ -6,7 +6,7 @@ package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.
 import net.raphimc.vialegacy.api.remapper.LegacyItemRewriter;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Protocolr1_7_2_5tor1_6_4;
 import net.raphimc.vialegacy.protocol.release.r1_6_4tor1_7_2_5.packet.ServerboundPackets1_6_4;
-import net.raphimc.vialegacy.protocol.release.v1_7_6_10to1_7_2_5.packet.ClientboundPackets1_7_2;
+import net.raphimc.vialegacy.protocol.release.v1_7_2_5to1_7_6_10.packet.ClientboundPackets1_7_2;
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 import com.viaversion.viaversion.api.protocol.Protocol;
 
