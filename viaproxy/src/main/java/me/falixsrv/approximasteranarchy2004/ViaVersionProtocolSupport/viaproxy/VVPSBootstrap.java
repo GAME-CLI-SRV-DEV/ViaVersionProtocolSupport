@@ -16,7 +16,7 @@ public class VVPSBootstrap implements VVPSPlatform {
 
     @Override
     public void off() {
-        Logger.INFO("Now Who is Bozo, Shevchik?")
+        Logger.INFO("ViaVersionProtocolSupport is Disabling...");
     }
 
 }
