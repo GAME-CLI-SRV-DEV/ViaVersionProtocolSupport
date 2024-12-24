@@ -90,7 +90,7 @@ File file = new File(filePath);
     }
  
     @Override
-	public void disable() {
+	public void off() {
 		getPluginLoader().disablePlugin(this);
 	}
 }
