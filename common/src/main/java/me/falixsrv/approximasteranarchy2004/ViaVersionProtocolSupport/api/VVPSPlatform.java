@@ -120,10 +120,4 @@ public interface VVPSPlatform {
      */
     void off();
 
-    /**
-     * Returns ViaBackwards's data folder.
-     *
-     * @return data folder
-     */
-    File getDataFolder();
 }
