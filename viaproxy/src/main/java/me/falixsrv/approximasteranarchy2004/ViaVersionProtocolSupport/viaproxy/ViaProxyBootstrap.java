@@ -20,7 +20,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
 
  @Override
 	public void onEnable() {
-System.out.println("Loading...")
+System.out.println("Loading...");
 }
 	
 
