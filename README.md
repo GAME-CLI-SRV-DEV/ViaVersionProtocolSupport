@@ -1,4 +1,4 @@
-# ViaVersionProtocolSupport (ViaLegacy As a Plugin)
+# ViaVersionProtocolSupport
 ![image](https://github.com/user-attachments/assets/286e9bf8-63c5-4208-83e8-34afa77ac676)
 
 add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do, and add c0.0.15-1.4.6 support which protocolsupport didn't do.\
@@ -18,7 +18,7 @@ ProtocolSupport 플러그인을 삭제합니다.\
 Put VVPS on it's place, "plugins".\
 ProtocolSupport가 있었던 플러그인 폴더에다 ViaVersionProtocolSupport를 넣으세요.\
 Open Server again.\
-서버를 재개장합니다.
+서버를 재개장합니다. (경고: 접속서버 포트는 별도설정해야합니다.)
 
 # Unfixable Bugs / 고칠 수 없는 버그
 1.6.4 서버 참가가 가끔 안될 때도 있음(Shared Key는 1.7.2 패킷에 구현되지 않음)
