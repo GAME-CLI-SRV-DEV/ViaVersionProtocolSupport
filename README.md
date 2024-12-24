@@ -18,7 +18,7 @@ ProtocolSupport 플러그인을 삭제합니다.\
 Put VVPS on it's place, "plugins".\
 ProtocolSupport가 있었던 플러그인 폴더에다 ViaVersionProtocolSupport를 넣으세요.\
 Open Server again.\
-서버를 재개장합니다. (경고: 접속서버 포트는 별도설정해야합니다.)
+서버를 재개장합니다. 
 
 # Unfixable Bugs / 고칠 수 없는 버그
 1.6.4 서버 참가가 가끔 안될 때도 있음(Shared Key는 1.7.2 패킷에 구현되지 않음)
@@ -37,7 +37,7 @@ For Other Platform such as paper, bungee, velocity, viaproxy, ViaForgeSmart(ViaF
 ViaVersionProtocolSupport 페이퍼 전용 플러그인 <-> Geyser-Spigot 플러그인\
 ViaVersionProtocolSupport ViaProxy 전용 플러그인 <-> Geyser-ViaProxy 플러그인\
 ViaVersionProtocolSupport 벨로시티 전용 플러그인 <-> Geyser-Velocity 플러그인\
-ViaVersionProtocolSupport 번지코드 전용 플러그인 <-> Geyser-Bungeecord 플러그인\
+ViaVersionProtocolSupport 번지코드 전용 플러그인 <-> Geyser-Bungeecord 플러그인
 
 # I made my plugin with ProtocolSupport API. is it compatible?(제 플러그인이 PS기반인데 호환되나요?)
 No it does not.\
