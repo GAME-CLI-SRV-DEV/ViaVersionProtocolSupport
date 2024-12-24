@@ -12,7 +12,7 @@ public class VVPSBootstrap implements VVPSPlatform {
     }
 
     @Override
-    public Logger getLogger() {
+    public static Logger getLogger() {
         return ViaVersionProtocolSupportMain.getPlatform().getLogger();
     }
 
