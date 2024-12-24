@@ -32,18 +32,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
     @EventHandler
     private void onProxyStop(final ProxyStopEvent event) {
 	System.out.println("[ || PAUSE ] pausing...");
-        this.disable();
-    }
-    
-	
-    @Override
-	public void init() {
-	VVPSPlatform.super.init();
-    }
- 
-    @Override
-    public void off() { 
-        System.out.println("[ PAUSE || ] Proxy Stopped.");
+        this.off();
     }
   
     @Override
