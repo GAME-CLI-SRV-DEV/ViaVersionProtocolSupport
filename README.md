@@ -3,8 +3,7 @@
 
 add 1.4.6-1.6.4 Support Like ProtocolSupport Used to do, and add c0.0.15-1.4.6 support which protocolsupport didn't do.\
 (Fallbacks Support Only 1.0.0-1.6.4. Fallback will not function on ViaProxy Unless Use-ViaLegacy Is Disabled)\
-ProtocolSupport가 지원하였던 1.4.6-1.6.4 버전을 똑같이 지원합니다. 클래식-1.4.6도 지원합니다.\
-(폴백 프로토콜은 1.0.0-1.6.4버전만 지원하며 ViaProxy버전에서는 Use-ViaLegacy가 꺼져있는 한 기능하지 않습니다. 현재 Fallback 기능만 동작합니다.)
+ProtocolSupport가 지원하였던 1.4.6-1.6.4 버전을 똑같이 지원합니다. 클래식-1.4.6도 지원합니다.
 # Requirements
 ViaVersion, ViaBackwards, and ViaRewind(It may collide but still required).\
 ViaVersion, ViaBackwards, ViaRewind(1.8버전은 충돌할 확률이 큽니다)
