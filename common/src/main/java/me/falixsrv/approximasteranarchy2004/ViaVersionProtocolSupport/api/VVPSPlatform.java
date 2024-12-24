@@ -29,7 +29,7 @@ public interface VVPSPlatform {
 	
     default void init() {
         if (isOutdated()) {
-            disable();
+            off();
             return;
         }
 
@@ -118,7 +118,7 @@ public interface VVPSPlatform {
     /**
      * Disable the plugin.
      */
-    void disable();
+    void off();
 
     /**
      * Returns ViaBackwards's data folder.
