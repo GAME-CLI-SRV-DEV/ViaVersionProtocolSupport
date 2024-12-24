@@ -31,7 +31,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
 
     @EventHandler
     private void onProxyStop(final ProxyStopEvent event) {
-	logger.info("[ || PAUSE ] pausing...");
+	System.out.println("[ || PAUSE ] pausing...");
         this.disable();
     }
     
@@ -42,13 +42,13 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
     }
  
     @Override
-    public void disable() { 
-        logger.info("[ PAUSE || ] Proxy Stopped.");
+    public void off() { 
+        System.out.println("[ PAUSE || ] Proxy Stopped.");
     }
   
     @Override
     public void onDisable() { 
-        logger.info("[ ■ STOP ] ViaVersionProtocolSupport is Shutting Down...");
+        System.out.println("[ ■ STOP ] ViaVersionProtocolSupport is Shutting Down...");
     }
 
 }
