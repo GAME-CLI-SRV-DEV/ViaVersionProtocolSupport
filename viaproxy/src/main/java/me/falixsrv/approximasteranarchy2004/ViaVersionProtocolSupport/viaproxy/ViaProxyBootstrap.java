@@ -22,13 +22,6 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
 	public void onEnable() {
 System.out.println("Loading...");
 }
-	
-
-    @EventHandler
-    private void onProxyStop(final ProxyStopEvent event) {
-	System.out.println("[ || PAUSE ] pausing...");
-        this.off();
-    }
   
     @Override
     public void onDisable() { 
