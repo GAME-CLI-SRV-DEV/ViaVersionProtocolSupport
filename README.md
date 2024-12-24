@@ -34,10 +34,10 @@ For Other Platform such as paper, bungee, velocity, viaproxy, ViaForgeSmart(ViaF
 
 스펀지버전만 직접적으로 Geyser를 포함했기 때문에 가능합니다. 페이퍼, 벨로시티, 번지코드, ViaProxy 같은 경우는 해당 플랫폼에 대응하는 GeyserMC를 사용해야 합니다.
 
-ViaVersionProtocolSupport 페이퍼 전용 플러그인 <-> Geyser-Spigot 플러그인
-ViaVersionProtocolSupport ViaProxy 전용 플러그인 <-> Geyser-ViaProxy 플러그인
-ViaVersionProtocolSupport 벨로시티 전용 플러그인 <-> Geyser-Velocity 플러그인
-ViaVersionProtocolSupport 번지코드 전용 플러그인 <-> Geyser-Bungeecord 플러그인
+ViaVersionProtocolSupport 페이퍼 전용 플러그인 <-> Geyser-Spigot 플러그인\
+ViaVersionProtocolSupport ViaProxy 전용 플러그인 <-> Geyser-ViaProxy 플러그인\
+ViaVersionProtocolSupport 벨로시티 전용 플러그인 <-> Geyser-Velocity 플러그인\
+ViaVersionProtocolSupport 번지코드 전용 플러그인 <-> Geyser-Bungeecord 플러그인\
 
 # I made my plugin with ProtocolSupport API. is it compatible?(제 플러그인이 PS기반인데 호환되나요?)
 No it does not.\
