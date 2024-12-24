@@ -18,7 +18,7 @@ public class VVPSBootstrap implements VVPSPlatform {
 
     @Override
     public void off() {
-        Logger.INFO("ViaVersionProtocolSupport is Disabling...");
+        Logger.info("ViaVersionProtocolSupport is Disabling...");
     }
 
 }
