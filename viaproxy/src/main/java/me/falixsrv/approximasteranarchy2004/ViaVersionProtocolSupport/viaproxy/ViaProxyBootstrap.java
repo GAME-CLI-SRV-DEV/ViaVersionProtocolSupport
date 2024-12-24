@@ -20,12 +20,7 @@ public class ViaProxyBootstrap extends ViaProxyPlugin {
 
  @Override
 	public void onEnable() {
-	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
-            // Enable in the next tick
-            Via.getPlatform().runSync(this::init, 1);
-        } else {
-            init();
-        }
+System.out.println("Loading...")
 }
 	
 
