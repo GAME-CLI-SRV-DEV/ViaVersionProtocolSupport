@@ -14,4 +14,9 @@ public class VVPSBootstrap implements VVPSPlatform {
         return ViaVersionProtocolSupportMain.getPlatform().getLogger();
     }
 
+    @Override
+    public void off() {
+        Logger.INFO("Now Who is Bozo")
+    }
+
 }
