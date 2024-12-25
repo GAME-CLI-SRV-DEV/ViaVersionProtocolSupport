@@ -1,5 +1,5 @@
 name: ViaVersionProtocolSupport-ViaProxy
 version: 8.55-3.3.6-5.2.1
 author: Approximaster Studios 2004
-main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.viaproxy
+main: me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.viaproxy.ViaProxyBootstrap
 min-version: 3.3.6
