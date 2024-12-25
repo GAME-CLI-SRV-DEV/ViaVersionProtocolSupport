@@ -3,6 +3,8 @@ description: File a bug report.
 title: "[BUG]: "
 assignees:
   - Outfit8TSB
+  - Lenni0451 // Although this is not official ViaVer Addon, i added them.
+  - FlorianMichael // Although this is not official ViaVer Addon, i added them.
 body:
   - type: markdown
     attributes:
