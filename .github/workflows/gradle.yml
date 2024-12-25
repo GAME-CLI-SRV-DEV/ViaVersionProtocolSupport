@@ -54,7 +54,7 @@ jobs:
       run: mv bukkit/build/libs/bukkit.jar bukkit/build/libs/ViaVersionProtocolSupport-PaperSpigotMCPlugin.jar
     
     - name: Rename ViaProxy Platform File
-      run: mv viaproxy/build/libs/viaproxy.jar viaproxy/build/libs/ViaVersionProtocolSupport-ViaProxyServerPlugin.jar
+      run: mv viaproxy/build/libs/viaproxy-all.jar viaproxy/build/libs/ViaVersionProtocolSupport-ViaProxyServerPlugin.jar
     
     - name: Upload Bukkit Artifacts
       uses: actions/upload-artifact@v4
