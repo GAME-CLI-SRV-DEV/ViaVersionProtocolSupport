@@ -13,14 +13,10 @@ import java.util.logging.Logger;
 
 public class ViaProxyBootstrap extends ViaProxyPlugin {
 
-
-    public ViaProxyBootstrap() {
-        Via.getManager().addEnableListener(VVPSBootstrap::new);
-    }
-
  @Override
 	public void onEnable() {
 System.out.println("Loading...");
+Via.getManager().addEnableListener(VVPSBootstrap::new);
 }
   
     @Override
