@@ -31,7 +31,7 @@ echo.
 :FormatPSSD
 set /p PSSPATH=PSSD:
 if PSSPATH equ *.* ( echo Why Do You Want to Format Your Plugin List All Of the sudden? goto :FormatPSSD ) else ( goto :FormatPSSData )
-if PSSPATH equ %SystemDrive% ( echo Why Do You Want to Nuke Your Computer All Of The Sudden? goto :FormatPSSData ) else ( goto :PSData )
+if PSSPATH equ %SystemDrive% ( echo Why Do You Want to Nuke Your Computer All Of The Sudden? goto :FormatPSSD ) else ( goto :PSData )
 :FormatPSSData
 set /p PSSPATH=PSS:
 if PSSPATH equ *.* ( echo Why Do You Want to Format Your Plugin List All Of the sudden? goto :FormatPSSData ) else ( goto :PSData )
@@ -47,5 +47,5 @@ echo.
 echo          Please Wait While The Setup Utility Deletes ProtocolSupport
 echo                                and it's data...
 echo.
-cmd /c rd /s /q %PSSPATH%
+%Comspec% /c rd /s /q %PSSPATH%
 del 
