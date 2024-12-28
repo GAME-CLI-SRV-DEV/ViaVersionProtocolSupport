@@ -112,7 +112,3 @@ Thanks to the original developers for their contributions!
 - [ViaBackwards](https://github.com/ViaVersion/ViaBackwards): Provided templates and platform code.
 - [ViaRewind](https://github.com/ViaVersion/ViaRewind): Supported compatibility between 1.7 and 1.8 for ViaLegacy.
 
----
-
-### Additional Notes:
-- `exclude("net/raphimc/vialegacy/**")` is applied to the ViaProxy subproject.
