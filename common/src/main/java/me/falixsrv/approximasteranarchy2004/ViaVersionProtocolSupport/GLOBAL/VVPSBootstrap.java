@@ -1,4 +1,4 @@
-package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.viaproxy;
+package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.GLOBAL;
 
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api.VVPSPlatform;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
