@@ -69,24 +69,5 @@ File file = new File(filePath);
 		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
     Bukkit.getServer().sendMessage(message);
 }
-	
-    @Override
-	public void init() {
-    VVPSPlatform.super.init();
-    Component Prefix = Component.text()
-    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
-    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
-    .build();
-    Component loaf = Component.text()
-    .append(Prefix)
-    .append(Component.text("VVPS Is Loafed...", NamedTextColor.GREEN))
-    .build();
-	Bukkit.getServer().sendMessage(loaf);
-    }
- 
-    @Override
-	public void off() {
-		getPluginLoader().disablePlugin(this);
-	}
 }
 
