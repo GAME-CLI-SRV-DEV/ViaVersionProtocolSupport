@@ -14,8 +14,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.GLOBAL.VVPSBootstrap;
 
-public class ViaVersionProtocolSupportBukkit extends JavaPlugin implements VVPSPlatform {
+public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 
 String filePath = "config.yml";
 File file = new File(filePath);
@@ -24,7 +25,7 @@ File file = new File(filePath);
 	System.out.println("Please Ignore the warning from Bukkit");
 	System.out.println("We Use STDOUT. STDOUT FOREVER.");
 	System.out.println("Loading the Platform");
-        Via.getManager().addEnableListener(() -> init());
+        Via.getManager().addEnableListener(VVPSBootstrap::new);
     }
 
 	
@@ -67,12 +68,6 @@ File file = new File(filePath);
 		logger.severe("║ Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
 		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
     Bukkit.getServer().sendMessage(message);
-	 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
-            // Enable in the next tick
-            Via.getPlatform().runSync(this::init, 1);
-        } else {
-            init();
-        }
 }
 	
     @Override
