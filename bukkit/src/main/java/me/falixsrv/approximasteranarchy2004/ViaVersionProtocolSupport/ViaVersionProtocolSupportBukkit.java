@@ -21,7 +21,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 String filePath = "config.yml";
 File file = new File(filePath);
 
-    public ViaVersionProtocolSupportBukkit() {
+    public void onLoad() {
 	System.out.println("Please Ignore the warning from Bukkit");
 	System.out.println("We Use STDOUT. STDOUT FOREVER.");
 	System.out.println("Loading the Platform");
