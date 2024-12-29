@@ -5,7 +5,7 @@
 
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.api;
 
-// import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
+import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.ViaVersionProtocolSupportMain;
 import com.viaversion.viabackwards.api.rewriters.TranslatableRewriter;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Protocolr1_7_2_5tor1_6_4;
 import com.viaversion.viaversion.util.VersionInfo;
@@ -34,7 +34,7 @@ public interface VVPSPlatform {
         }
 
         Via.getManager().getSubPlatforms().add(VersionInfo.getImplementationVersion());
-	ViaVersionProtocolSupportMain.init(this)
+	ViaVersionProtocolSupportMain.init(this);
         getLogger().info("Copyright (C) 2015-2024 Approximaster Studios 2004. All Rights Reserved");
 	getLogger().info("\n __      ______      ________ _____   _____ _____ ____  _   _ _____           _                  _  _____                              _   \n" +
                     " \\ \\    / / /\\ \\=>  / /  ____|  __ \\ / ____|_   _/ __ \\| \\ | |  __ \\         | |                | |/ ____|                            | |  \n" +
