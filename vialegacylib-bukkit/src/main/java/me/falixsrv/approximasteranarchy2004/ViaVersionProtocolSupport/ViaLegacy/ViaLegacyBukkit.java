@@ -7,9 +7,11 @@ import com.viaversion.viaversion.protocol.ProtocolManagerImpl;
 
 public class ViaLegacyBukkit extends JavaPlugin {
 
-  public ViaLegacyBukkit() {
+  @Override
+  public void onLoad() {
      Via.getManager().addEnableListener(ViaLegacyPlugin::new); 
   }
+
 
   @Override
   public void onEnable() { // Since ViaVersion Initializes ViaManager We can Refresh Version.
