@@ -35,7 +35,7 @@ public interface VVPSPlatform {
 
         Via.getManager().getSubPlatforms().add(VersionInfo.getImplementationVersion());
 	ViaVersionProtocolSupportMain.init(this)
-        getLogger().info("Copyright (C) Approximaster Studios 2004");
+        getLogger().info("Copyright (C) 2015-2024 Approximaster Studios 2004. All Rights Reserved");
 	getLogger().info("\n __      ______      ________ _____   _____ _____ ____  _   _ _____           _                  _  _____                              _   \n" +
                     " \\ \\    / / /\\ \\=>  / /  ____|  __ \\ / ____|_   _/ __ \\| \\ | |  __ \\         | |                | |/ ____|                            | |  \n" +
                     "  \\ \\  / / /  \\ \\  / /| |__  | |__) | (___   | || |  | |  \\| | |__) | __ ___ | |_ ___   ___ ___ | | (___  _   _ _ __  _ __   ___  _ __| |_ \n" +
