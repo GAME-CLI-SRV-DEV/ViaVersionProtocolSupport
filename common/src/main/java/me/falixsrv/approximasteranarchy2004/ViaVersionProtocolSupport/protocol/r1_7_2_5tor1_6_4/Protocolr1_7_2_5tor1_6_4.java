@@ -1127,3 +1127,4 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
 	public vvpsrew_item_1_7_2_5tor1_6_4 getItemRewriter() {
 		return itemRewriter;
 	}
+}
