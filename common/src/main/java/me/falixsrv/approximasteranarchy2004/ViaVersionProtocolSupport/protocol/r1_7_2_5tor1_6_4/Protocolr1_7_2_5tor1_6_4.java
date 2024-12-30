@@ -103,11 +103,11 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                     sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
                     wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = true;
 		    ViaVersionProtocolSupportMain.getPlatform().getLogger().severe("Sending Shared Key... (WARN: I SWEAR IT WILL NOT WORK)");
-                    sharedKey.send(Protocolr1_6_4Tor1_7_2_5.class, false); // switch to play state
+                    sharedKey.send(Protocolr1_7_2_5tor1_6_4.class, false); // switch to play state
                     wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = false;
 
                     wrapper.setPacketType(ClientboundPackets1_7_2.LOGIN);
-                    wrapper.send(Protocolr1_6_4Tor1_7_2_5.class, false);
+                    wrapper.send(Protocolr1_7_2_5tor1_6_4.class, false);
                     wrapper.cancel();
                 }
         );
@@ -117,7 +117,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.STRING, Types1_6_4.STRING, TextRewriter::toClient); // message
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_EQUIPPED_ITEM, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_EQUIPPED_ITEM, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // entity id
@@ -126,22 +126,22 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> itemRewriter.handleItemToClient(wrapper.user(), wrapper.get(Types1_7_6.ITEM, 0)));
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.RESPAWN, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.RESPAWN, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // dimension id
                 map(Types.BYTE, Types.UNSIGNED_BYTE); // difficulty
                 map(Types.BYTE, Types.UNSIGNED_BYTE); // gamemode
                 read(Types.SHORT); // world height
-                map(Types1_6_4.STRING, Types.STRING); // worldType
+                map(Types.STRING, Types1_6_4.STRING); // worldType
                 handler(wrapper -> {
-                    if (wrapper.user().getClientWorld(Protocolr1_6_4Tor1_7_2_5.class).setEnvironment(wrapper.get(Types.INT, 0))) {
+                    if (wrapper.user().getClientWorld(Protocolr1_7_2_5tor1_6_4.class).setEnvironment(wrapper.get(Types.INT, 0))) {
                         wrapper.user().get(ChunkTracker.class).clear();
                     }
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.MOVE_PLAYER_STATUS_ONLY, ClientboundPackets1_7_2.PLAYER_POSITION, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.PLAYER_POSITION, ClientboundPackets1_6_4.MOVE_PLAYER_STATUS_ONLY,  wrapper -> {
             final PlayerInfoStorage playerInfoStorage = wrapper.user().get(PlayerInfoStorage.class);
             final boolean supportsFlags = wrapper.user().getProtocolInfo().protocolVersion().newerThanOrEqualTo(ProtocolVersion.v1_8);
 
@@ -161,14 +161,14 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 wrapper.passthrough(Types.BOOLEAN); // onGround
             }
 
-            final PacketWrapper setVelocityToZero = PacketWrapper.create(ClientboundPackets1_6_4.SET_ENTITY_MOTION, wrapper.user());
+            final PacketWrapper setVelocityToZero = PacketWrapper.create(ClientboundPackets1_7_2.SET_ENTITY_MOTION, wrapper.user());
             setVelocityToZero.write(Types.INT, playerInfoStorage.entityId); // entity id
             setVelocityToZero.write(Types.SHORT, (short) 0); // velocity x
             setVelocityToZero.write(Types.SHORT, (short) 0); // velocity y
             setVelocityToZero.write(Types.SHORT, (short) 0); // velocity z
 
-            if (!wrapper.isCancelled()) wrapper.send(Protocolr1_6_4Tor1_7_2_5.class);
-            setVelocityToZero.send(Protocolr1_6_4Tor1_7_2_5.class);
+            if (!wrapper.isCancelled()) wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
+            setVelocityToZero.send(Protocolr1_7_2_5tor1_6_4.class);
             wrapper.cancel();
         });
         this.registerClientbound(ClientboundPackets1_7_2.PLAYER_POSITION, ClientboundPackets1_6_4.MOVE_PLAYER_POS, wrapper -> {
@@ -218,11 +218,11 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
             setVelocityToZero.write(Types.SHORT, (short) 0); // velocity y
             setVelocityToZero.write(Types.SHORT, (short) 0); // velocity z
 
-            if (!wrapper.isCancelled()) wrapper.send(Protocolr1_6_4Tor1_7_2_5.class);
-            setVelocityToZero.send(Protocolr1_6_4Tor1_7_2_5.class);
+            if (!wrapper.isCancelled()) wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
+            setVelocityToZero.send(Protocolr1_7_2_5tor1_6_4.class);
             wrapper.cancel();
         });
-        this.registerClientbound(ClientboundPackets1_6_4.PLAYER_POSITION, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.PLAYER_POSITION, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.DOUBLE); // x
@@ -234,13 +234,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.BOOLEAN); // onGround
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_CARRIED_ITEM, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_CARRIED_ITEM, new PacketHandlers() {
             @Override
             public void register() {
-                map(Types.SHORT, Types.BYTE); // slot
+                map(Types.BYTE, Types.SHORT); // slot
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.PLAYER_SLEEP, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.PLAYER_SLEEP, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // entity id
@@ -250,7 +250,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types1_7_6.BLOCK_POSITION_BYTE); // position
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ANIMATE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ANIMATE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -266,12 +266,12 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_PLAYER, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_PLAYER, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
                 handler(wrapper -> {
-                    final String name = wrapper.read(Types1_6_4.STRING); // name
+                    final String name = wrapper.read(Types.STRING); // name
                     wrapper.write(Types.STRING, (ViaLegacy.getConfig().isLegacySkinLoading() ? Via.getManager().getProviders().get(GameProfileFetcher.class).getMojangUUID(name) : new GameProfile(name).uuid).toString().replace("-", "")); // uuid
                     wrapper.write(Types.STRING, name);
                 });
@@ -289,7 +289,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> rewriteEntityData(wrapper.user(), wrapper.get(Types1_7_6.ENTITY_DATA_LIST, 0)));
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_ENTITY, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_ENTITY, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -313,7 +313,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_MOB, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_MOB, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -331,7 +331,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> rewriteEntityData(wrapper.user(), wrapper.get(Types1_7_6.ENTITY_DATA_LIST, 0)));
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_PAINTING, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_PAINTING, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -340,7 +340,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.INT); // rotation
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_EXPERIENCE_ORB, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_EXPERIENCE_ORB, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -350,7 +350,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.SHORT); // count
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_ENTITY_DATA, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_ENTITY_DATA, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // entity id
@@ -358,7 +358,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> rewriteEntityData(wrapper.user(), wrapper.get(Types1_7_6.ENTITY_DATA_LIST, 0)));
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.UPDATE_ATTRIBUTES, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.UPDATE_ATTRIBUTES, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // entity id
@@ -377,7 +377,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.LEVEL_CHUNK, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.LEVEL_CHUNK, wrapper -> {
             final Chunk chunk = wrapper.passthrough(Types1_7_6.getChunk(wrapper.user().getClientWorld(Protocolr1_6_4Tor1_7_2_5.class).getEnvironment()));
             wrapper.user().get(ChunkTracker.class).trackAndRemap(chunk);
         });
@@ -403,7 +403,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.BLOCK_UPDATE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.BLOCK_UPDATE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_UBYTE); // position
@@ -420,7 +420,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.BLOCK_EVENT, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.BLOCK_EVENT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_SHORT); // position
@@ -429,7 +429,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.SHORT, Types.VAR_INT); // block id
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.BLOCK_DESTRUCTION, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.BLOCK_DESTRUCTION, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -437,13 +437,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.BYTE); // progress
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.MAP_BULK_CHUNK, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.MAP_BULK_CHUNK, wrapper -> {
             final Chunk[] chunks = wrapper.passthrough(Types1_7_6.CHUNK_BULK);
             for (Chunk chunk : chunks) {
                 wrapper.user().get(ChunkTracker.class).trackAndRemap(chunk);
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.EXPLODE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.EXPLODE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.DOUBLE, Types.FLOAT); // x
@@ -467,7 +467,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.FLOAT); // velocity z
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.CUSTOM_SOUND, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.CUSTOM_SOUND, new PacketHandlers() {
             @Override
             public void register() {
                 handler(wrapper -> {
@@ -493,7 +493,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.UNSIGNED_BYTE); // pitch
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.LEVEL_EVENT, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.LEVEL_EVENT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // effect id
@@ -518,7 +518,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.LEVEL_PARTICLES, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.LEVEL_PARTICLES, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_6_4.STRING, Types.STRING); // particle
@@ -575,7 +575,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.ADD_GLOBAL_ENTITY, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.ADD_GLOBAL_ENTITY, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT, Types.VAR_INT); // entity id
@@ -585,7 +585,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.INT); // z
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.OPEN_SCREEN, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.OPEN_SCREEN, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.UNSIGNED_BYTE); // window id
@@ -596,13 +596,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 // more conditional data
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.CONTAINER_CLOSE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.CONTAINER_CLOSE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE, Types.UNSIGNED_BYTE); // window id
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.CONTAINER_SET_SLOT, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.CONTAINER_SET_SLOT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE); // window id
@@ -611,7 +611,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> itemRewriter.handleItemToClient(wrapper.user(), wrapper.get(Types1_7_6.ITEM, 0)));
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.CONTAINER_SET_CONTENT, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.CONTAINER_SET_CONTENT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE, Types.UNSIGNED_BYTE); // window id
@@ -623,7 +623,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.UPDATE_SIGN, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.UPDATE_SIGN, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_SHORT); // position
@@ -633,7 +633,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types1_6_4.STRING, Types.STRING); // line 4
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.MAP_ITEM_DATA, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.MAP_ITEM_DATA, new PacketHandlers() {
             @Override
             public void register() {
                 read(Types.SHORT); // item id
@@ -641,7 +641,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.SHORT_BYTE_ARRAY); // data
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.BLOCK_ENTITY_DATA, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.BLOCK_ENTITY_DATA, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_SHORT); // position
@@ -649,21 +649,21 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types1_7_6.NBT); // data
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.OPEN_SIGN_EDITOR, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.OPEN_SIGN_EDITOR, new PacketHandlers() {
             @Override
             public void register() {
                 read(Types.BYTE); // always 0
                 map(Types1_7_6.BLOCK_POSITION_INT); // position
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.AWARD_STATS, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.AWARD_STATS, wrapper -> {
             wrapper.cancel();
             final StatisticsStorage statisticsStorage = wrapper.user().get(StatisticsStorage.class);
             final int statId = wrapper.read(Types.INT); // statistic id
             final int increment = wrapper.read(Types.INT); // increment
             statisticsStorage.values.put(statId, statisticsStorage.values.get(statId) + increment);
         });
-        this.registerClientbound(ClientboundPackets1_6_4.PLAYER_INFO, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.PLAYER_INFO, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_6_4.STRING, Types.STRING); // name
@@ -671,7 +671,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.SHORT); // ping
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.COMMAND_SUGGESTIONS, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.COMMAND_SUGGESTIONS, wrapper -> {
             final String completions = wrapper.read(Types1_6_4.STRING); // completions
             final String[] completionsArray = completions.split("\0");
             wrapper.write(Types.VAR_INT, completionsArray.length); // completions count
@@ -679,7 +679,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 wrapper.write(Types.STRING, s); // completion
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_OBJECTIVE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_OBJECTIVE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_6_4.STRING, Types.STRING); // name
@@ -687,7 +687,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.BYTE); // mode
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_SCORE, wrapper -> {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_SCORE, wrapper -> {
             wrapper.write(Types.STRING, wrapper.read(Types1_6_4.STRING)); // name
             final byte mode = wrapper.passthrough(Types.BYTE); // mode
             if (mode == 0) {
@@ -695,14 +695,14 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 wrapper.passthrough(Types.INT); // score
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_DISPLAY_OBJECTIVE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_DISPLAY_OBJECTIVE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE); // position
                 map(Types1_6_4.STRING, Types.STRING); // name
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.SET_PLAYER_TEAM, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.SET_PLAYER_TEAM, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_6_4.STRING, Types.STRING); // name
@@ -723,7 +723,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientboundTransition(ClientboundPackets1_6_4.CUSTOM_PAYLOAD,
+        this.registerClientboundTransition(ClientboundPackets1_7_2.CUSTOM_PAYLOAD,
                 ClientboundPackets1_7_2.CUSTOM_PAYLOAD, new PacketHandlers() {
                     @Override
                     public void register() {
@@ -766,7 +766,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                     }
                 }, State.LOGIN, (PacketHandler) PacketWrapper::cancel
         );
-        this.registerClientboundTransition(ClientboundPackets1_6_4.SHARED_KEY, ClientboundLoginPackets.LOGIN_FINISHED, (PacketHandler) wrapper -> {
+        this.registerClientboundTransition(ClientboundLoginPackets.LOGIN_FINISHED, ClientboundPackets1_6_4.SHARED_KEY, (PacketHandler) wrapper -> {
             final ProtocolInfo info = wrapper.user().getProtocolInfo();
             final ProtocolMetadataStorage protocolMetadata = wrapper.user().get(ProtocolMetadataStorage.class);
             wrapper.read(Types.SHORT_BYTE_ARRAY); // shared secret
@@ -783,7 +783,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
             respawn.write(Types.BYTE, (byte) 0); // force respawn
             respawn.sendToServer(Protocolr1_6_4Tor1_7_2_5.class);
         });
-        this.registerClientboundTransition(ClientboundPackets1_6_4.SERVER_AUTH_DATA, ClientboundLoginPackets.HELLO, new PacketHandlers() {
+        this.registerClientboundTransition(ClientboundLoginPackets.HELLO, ClientboundPackets1_6_4.SERVER_AUTH_DATA, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_6_4.STRING, Types.STRING); // server hash
@@ -796,7 +796,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerClientboundTransition(ClientboundPackets1_6_4.DISCONNECT,
+        this.registerClientboundTransition(ClientboundPackets1_7_2.DISCONNECT,
                 ClientboundStatusPackets.STATUS_RESPONSE, (PacketHandler) wrapper -> {
                     final String reason = wrapper.read(Types1_6_4.STRING); // reason
                     try {
@@ -853,7 +853,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
             wrapper.write(Types1_6_4.STRING, ip); // hostname
             wrapper.write(Types.INT, port); // port
         });
-        this.registerServerboundTransition(ServerboundStatusPackets.PING_REQUEST, null, wrapper -> {
+        this.registerServerboundTransition(ServerboundStatusPackets.PING_REQUEST, ServerboundPackets1_6_4.SERVER_PING, null, wrapper -> {
             wrapper.cancel();
             final PacketWrapper pong = PacketWrapper.create(ClientboundStatusPackets.PONG_RESPONSE, wrapper.user());
             pong.write(Types.LONG, wrapper.read(Types.LONG)); // start time
@@ -879,13 +879,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
             }
         });
         this.registerServerboundTransition(ServerboundLoginPackets.ENCRYPTION_KEY, ServerboundPackets1_6_4.SHARED_KEY, null);
-        this.registerServerbound(ServerboundPackets1_7_2.CHAT, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.CHAT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.STRING, Types1_6_4.STRING); // message
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.INTERACT, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.INTERACT, new PacketHandlers() {
             @Override
             public void register() {
                 handler(wrapper -> wrapper.write(Types.INT, wrapper.user().get(PlayerInfoStorage.class).entityId)); // player id
@@ -893,14 +893,14 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.BYTE); // mode
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.MOVE_PLAYER_STATUS_ONLY, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.MOVE_PLAYER_STATUS_ONLY, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BOOLEAN); // onGround
                 handler(wrapper -> wrapper.user().get(PlayerInfoStorage.class).onGround = wrapper.get(Types.BOOLEAN, 0));
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.MOVE_PLAYER_POS, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.MOVE_PLAYER_POS, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.DOUBLE); // x
@@ -917,7 +917,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.MOVE_PLAYER_ROT, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.MOVE_PLAYER_ROT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.FLOAT); // yaw
@@ -931,7 +931,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.MOVE_PLAYER_POS_ROT, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.MOVE_PLAYER_POS_ROT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.DOUBLE); // x
@@ -952,7 +952,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 });
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.USE_ITEM_ON, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.USE_ITEM_ON, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_UBYTE); // position
@@ -964,7 +964,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.UNSIGNED_BYTE); // offset z
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.CONTAINER_CLICK, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.CONTAINER_CLICK, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE); // windowId
@@ -976,7 +976,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 handler(wrapper -> itemRewriter.handleItemToServer(wrapper.user(), wrapper.get(Types1_7_6.ITEM, 0)));
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.SIGN_UPDATE, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.SIGN_UPDATE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types1_7_6.BLOCK_POSITION_SHORT); // position
@@ -986,13 +986,13 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.STRING, Types1_6_4.STRING); // line 4
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.COMMAND_SUGGESTION, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.COMMAND_SUGGESTION, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.STRING, Types1_6_4.STRING); // text
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.CLIENT_INFORMATION, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.CLIENT_INFORMATION, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.STRING, Types1_6_4.STRING); // language
@@ -1018,7 +1018,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
                 map(Types.BOOLEAN); // show cape
             }
         });
-        this.registerServerbound(ServerboundPackets1_7_2.CLIENT_COMMAND, wrapper -> {
+        this.registerServerbound(ServerboundPackets1_6_4.CLIENT_COMMAND, wrapper -> {
             final int action = wrapper.read(Types.VAR_INT); // action
 
             if (action == 1) { // Request Statistics
@@ -1043,7 +1043,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<Clientboun
             }
             wrapper.write(Types.BYTE, (byte) 1); // force respawn
         });
-        this.registerServerbound(ServerboundPackets1_7_2.CUSTOM_PAYLOAD, new PacketHandlers() {
+        this.registerServerbound(ServerboundPackets1_6_4.CUSTOM_PAYLOAD, new PacketHandlers() {
             @Override
             public void register() {
                 handler(wrapper -> {
