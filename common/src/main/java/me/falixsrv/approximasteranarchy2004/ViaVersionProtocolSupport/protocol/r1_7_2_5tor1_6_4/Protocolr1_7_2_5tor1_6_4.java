@@ -1,5 +1,6 @@
 package me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4;
 
+import net.raphimc.vialegacy.ViaLegacy;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.connection.ProtocolInfo;
 import com.viaversion.viaversion.api.connection.UserConnection;
@@ -52,6 +53,9 @@ import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.EntityDataTy
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4; // from ViaLegacy, Modified for a backward compat
 import com.viaversion.viarewind.api.data.RewindMappingData;
+
+import java.util.List;
+import java.util.logging.Level;
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
 public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<ClientboundPackets1_7_2, ClientboundPackets1_6_4, ServerboundPackets1_7_2, ServerboundPackets1_6_4> {
