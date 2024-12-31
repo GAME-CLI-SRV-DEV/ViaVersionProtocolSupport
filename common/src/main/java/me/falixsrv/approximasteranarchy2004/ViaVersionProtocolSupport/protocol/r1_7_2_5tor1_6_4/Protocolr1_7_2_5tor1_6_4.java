@@ -275,7 +275,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                 map(Types.INT, Types.VAR_INT); // entity id
                 handler(wrapper -> {
                     final String name = wrapper.read(Types.STRING); // name
-                    wrapper.write(Types.STRING, (ViaLegacy.getConfig().isLegacySkinLoading() ? Via.getManager().getProviders().get(GameProfileFetcher.class).getMojangUUID(name) : new GameProfile(name).uuid).toString().replace("-", "")); // uuid
+                    wrapper.write(Types.STRING, (net.raphimc.vialegacy.ViaLegacy.getConfig().isLegacySkinLoading() ? Via.getManager().getProviders().get(GameProfileFetcher.class).getMojangUUID(name) : new GameProfile(name).uuid).toString().replace("-", "")); // uuid
                     wrapper.write(Types.STRING, name);
                 });
                 map(Types.INT); // x
