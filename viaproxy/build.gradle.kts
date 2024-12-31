@@ -13,7 +13,7 @@ repositories {
 
 	dependencies {
 		compileOnly("net.raphimc:ViaProxy:3.3.7-SNAPSHOT") 
-	    implementation(project(":common"))
+	    implementation(project(":standalone"))
 	}
 
 java {
