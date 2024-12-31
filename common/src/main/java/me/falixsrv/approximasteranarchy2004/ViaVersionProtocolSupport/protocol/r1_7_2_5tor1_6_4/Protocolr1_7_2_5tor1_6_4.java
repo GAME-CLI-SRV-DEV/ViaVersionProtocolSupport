@@ -357,7 +357,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             @Override
             public void register() {
                 map(Types.INT); // entity id
-                map(Types1_6_4.ENTITY_DATA_LIST, Types1_7_6.ENTITY_DATA_LIST); // entity data
+                map(Types1_7_6.ENTITY_DATA_LIST, Types1_6_4.ENTITY_DATA_LIST); // entity data
                 handler(wrapper -> rewriteEntityData(wrapper.user(), wrapper.get(Types1_7_6.ENTITY_DATA_LIST, 0)));
             }
         });
@@ -566,7 +566,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                         wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
                         startRain.send(Protocolr1_7_2_5tor1_6_4.class);
                         wrapper.cancel();
-                    } else if (gameState == 2) {
+                    } else if (gameState == 2) w 
                         final PacketWrapper stopRain = PacketWrapper.create(ClientboundPackets1_7_2.GAME_EVENT, wrapper.user());
                         stopRain.write(Types.UNSIGNED_BYTE, (short) 7);
                         stopRain.write(Types.FLOAT, 0.0f);
@@ -856,7 +856,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             wrapper.write(Types1_6_4.STRING, ip); // hostname
             wrapper.write(Types.INT, port); // port
         });
-        this.registerServerboundTransition(ServerboundStatusPackets.PING_REQUEST, ServerboundPackets1_6_4.SERVER_PING, null, wrapper -> {
+        this.registerServerboundTransition(ServerboundPackets1_6_4.SERVER_PING, null, wrapper -> {
             wrapper.cancel();
             final PacketWrapper pong = PacketWrapper.create(ClientboundStatusPackets.PONG_RESPONSE, wrapper.user());
             pong.write(Types.LONG, wrapper.read(Types.LONG)); // start time
@@ -868,8 +868,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             final String name = wrapper.read(Types.STRING); // user name
 
             wrapper.write(Types.UNSIGNED_BYTE, (short) wrapper.user().getProtocolInfo().serverProtocolVersion().getVersion()); // protocol id
-            wrapper.write(Types1_6_4.STRING, name); // user name
-            wrapper.write(Types1_6_4.STRING, handshakeStorage.getHostname()); // hostname
+            wrapper.write(Types.STRING, name); // user name
+            wrapper.write(Types.STRING, handshakeStorage.getHostname()); // hostname
             wrapper.write(Types.INT, handshakeStorage.getPort()); // port
 
             final ProtocolInfo info = wrapper.user().getProtocolInfo();
@@ -885,7 +885,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
         this.registerServerbound(ServerboundPackets1_6_4.CHAT, new PacketHandlers() {
             @Override
             public void register() {
-                map(Types.STRING, Types1_6_4.STRING); // message
+                map(Types1_6_4.STRING, Types.STRING); // message
             }
         });
         this.registerServerbound(ServerboundPackets1_6_4.INTERACT, new PacketHandlers() {
