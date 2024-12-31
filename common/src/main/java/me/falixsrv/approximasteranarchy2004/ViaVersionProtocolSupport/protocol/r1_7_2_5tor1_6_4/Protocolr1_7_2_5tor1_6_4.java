@@ -58,7 +58,6 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
     public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
-    private final TagRewriter<ClientboundPackets1_7_2> tagRewriter = new TagRewriter<>(this);
     private final vvpsrew_item_1_7_2_5tor1_6_4 itemRewriter = new vvpsrew_item_1_7_2_5tor1_6_4(this);
 	
     public Protocolr1_7_2_5tor1_6_4() {
