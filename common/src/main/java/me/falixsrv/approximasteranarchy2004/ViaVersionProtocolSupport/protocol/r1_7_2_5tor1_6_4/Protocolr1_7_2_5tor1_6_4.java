@@ -51,10 +51,10 @@ import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.provider.GameProfi
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.EntityDataTypes1_7_6;
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4; // from ViaLegacy, Modified for a backward compat
-
+import com.viaversion.viarewind.api.data.RewindMappingData;
 // Thanks To ViaBackwards For the Template for ViaLegacy Protocol.
 
-public final class Protocolr1_7_2_5tor1_6_4 extends BackwardsProtocol<ClientboundPackets1_7_2, ClientboundPackets1_6_4, ServerboundPackets1_7_2, ServerboundPackets1_6_4> {
+public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<ClientboundPackets1_7_2, ClientboundPackets1_6_4, ServerboundPackets1_7_2, ServerboundPackets1_6_4> {
 
     // ViaBackwards uses its own mappings and also needs a translatablerewriter for translation mappings
     public static final RewindMappingData MAPPINGS = new RewindMappingData("1.7.2", "1.6.4");
