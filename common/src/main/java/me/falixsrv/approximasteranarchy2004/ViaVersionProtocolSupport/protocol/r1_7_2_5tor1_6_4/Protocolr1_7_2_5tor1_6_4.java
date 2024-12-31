@@ -79,7 +79,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                         map(Types.INT); // entity id
                         handler(wrapper -> {
                             wrapper.user().get(PlayerInfoStorage.class).entityId = wrapper.get(Types.INT, 0);
-                            final String terrainType = wrapper.read(Types1_7_6.STRING); // level type
+                            final String terrainType = wrapper.read(Types.STRING); // level type
                             final short gameType = wrapper.read(Types.BYTE); // game mode
                             final byte dimension = wrapper.read(Types.BYTE); // dimension id
                             final short difficulty = wrapper.read(Types.BYTE); // difficulty
@@ -381,7 +381,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             }
         });
         this.registerClientbound(ClientboundPackets1_7_2.LEVEL_CHUNK, wrapper -> {
-            final Chunk chunk = wrapper.passthrough(Types1_7_6.getChunk(wrapper.user().getClientWorld(Protocolr1_6_4Tor1_7_2_5.class).getEnvironment()));
+            final Chunk chunk = wrapper.passthrough(Types1_7_6.getChunk(wrapper.user().getClientWorld(Protocolr1_7_2_5tor1_6_4.class).getEnvironment()));
             wrapper.user().get(ChunkTracker.class).trackAndRemap(chunk);
         });
         this.registerClientbound(ClientboundPackets1_6_4.CHUNK_BLOCKS_UPDATE, new PacketHandlers() {
@@ -563,16 +563,16 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                         startRain.write(Types.UNSIGNED_BYTE, (short) 7);
                         startRain.write(Types.FLOAT, 1.0f);
 
-                        wrapper.send(Protocolr1_6_4Tor1_7_2_5.class);
-                        startRain.send(Protocolr1_6_4Tor1_7_2_5.class);
+                        wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
+                        startRain.send(Protocolr1_7_2_5tor1_6_4.class);
                         wrapper.cancel();
                     } else if (gameState == 2) {
                         final PacketWrapper stopRain = PacketWrapper.create(ClientboundPackets1_7_2.GAME_EVENT, wrapper.user());
                         stopRain.write(Types.UNSIGNED_BYTE, (short) 7);
                         stopRain.write(Types.FLOAT, 0.0f);
 
-                        wrapper.send(Protocolr1_6_4Tor1_7_2_5.class);
-                        stopRain.send(Protocolr1_6_4Tor1_7_2_5.class);
+                        wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
+                        stopRain.send(Protocolr1_7_2_5tor1_6_4.class);
                         wrapper.cancel();
                     }
                 });
@@ -784,7 +784,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 
             final PacketWrapper respawn = PacketWrapper.create(ServerboundPackets1_6_4.CLIENT_COMMAND, wrapper.user());
             respawn.write(Types.BYTE, (byte) 0); // force respawn
-            respawn.sendToServer(Protocolr1_6_4Tor1_7_2_5.class);
+            respawn.sendToServer(Protocolr1_7_2_5tor1_6_4.class);
         });
         this.registerClientboundTransition(ClientboundLoginPackets.HELLO, ClientboundPackets1_6_4.SERVER_AUTH_DATA, new PacketHandlers() {
             @Override
@@ -860,7 +860,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             wrapper.cancel();
             final PacketWrapper pong = PacketWrapper.create(ClientboundStatusPackets.PONG_RESPONSE, wrapper.user());
             pong.write(Types.LONG, wrapper.read(Types.LONG)); // start time
-            pong.send(Protocolr1_6_4Tor1_7_2_5.class);
+            pong.send(Protocolr1_7_2_5tor1_6_4.class);
         });
         this.registerServerboundTransition(ServerboundLoginPackets.HELLO, ServerboundPackets1_6_4.CLIENT_PROTOCOL, wrapper -> {
             final HandshakeStorage handshakeStorage = wrapper.user().get(HandshakeStorage.class);
@@ -1038,7 +1038,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                     statistics.write(Types.STRING, entry.getKey()); // statistic name
                     statistics.write(Types.VAR_INT, entry.getIntValue()); // statistic value
                 }
-                statistics.send(Protocolr1_6_4Tor1_7_2_5.class);
+                statistics.send(Protocolr1_7_2_5tor1_6_4.class);
             }
             if (action != 0) {
                 wrapper.cancel();
@@ -1097,8 +1097,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 
     @Override
     public void init(UserConnection userConnection) {
-        userConnection.put(new PreNettySplitter(Protocolr1_6_4Tor1_7_2_5.class, ClientboundPackets1_6_4::getPacket));
-        userConnection.addClientWorld(Protocolr1_6_4Tor1_7_2_5.class, new ClientWorld());
+        userConnection.put(new PreNettySplitter(Protocolr1_7_2_5tor1_6_4.class, ClientboundPackets1_6_4::getPacket));
+        userConnection.addClientWorld(Protocolr1_7_2_5tor1_6_4.class, new ClientWorld());
 
         userConnection.put(new ProtocolMetadataStorage());
         userConnection.put(new PlayerInfoStorage());
@@ -1112,7 +1112,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                     if (ctx.channel().isWritable() && userConnection.getProtocolInfo().getClientState().equals(State.PLAY) && userConnection.get(PlayerInfoStorage.class).entityId != -1) {
                         final PacketWrapper disconnect = PacketWrapper.create(ServerboundPackets1_6_4.DISCONNECT, userConnection);
                         disconnect.write(Types1_6_4.STRING, "Quitting"); // reason
-                        disconnect.sendToServer(Protocolr1_6_4Tor1_7_2_5.class);
+                        disconnect.sendToServer(Protocolr1_7_2_5tor1_6_4.class);
                     }
 
                     super.close(ctx, promise);
