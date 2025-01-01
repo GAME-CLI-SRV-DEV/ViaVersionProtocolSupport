@@ -835,8 +835,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                     }
                 }
         );
-        this.cancelClientbound(ClientboundPackets1_6_4.SET_CREATIVE_MODE_SLOT);
-
+	    
         this.registerServerboundTransition(ServerboundHandshakePackets.CLIENT_INTENTION, null, wrapper -> {
             wrapper.cancel();
             wrapper.read(Types.VAR_INT); // protocol version
@@ -862,7 +861,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             pong.write(Types.LONG, wrapper.read(Types.LONG)); // start time
             pong.send(Protocolr1_7_2_5tor1_6_4.class);
         });
-        this.registerServerboundTransition(ServerboundLoginPackets.HELLO, ServerboundPackets1_6_4.CLIENT_PROTOCOL, wrapper -> {
+        this.registerServerboundTransition(ServerboundPackets1_6_4.CLIENT_PROTOCOL, ServerboundLoginPackets.HELLO, wrapper -> {
             final HandshakeStorage handshakeStorage = wrapper.user().get(HandshakeStorage.class);
 
             final String name = wrapper.read(Types.STRING); // user name
