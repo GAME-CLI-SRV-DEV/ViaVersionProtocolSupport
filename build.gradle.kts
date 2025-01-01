@@ -15,7 +15,7 @@ repositories {
     }
 }
 
-gradle.beforeProject {
+gradle.taskGraph.whenReady {
     logger.lifecycle("Copyright © 2015-2024, Approximaster Studios 2004. All Rights Reversed")
 }
 	dependencies {
