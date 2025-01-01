@@ -15,6 +15,9 @@ repositories {
     }
 }
 
+gradle.beforeProject {
+    logger.lifecycle("Copyright © 2015-2024, Approximaster Studios 2004. All Rights Reversed")
+}
 	dependencies {
 	      compileOnly("com.viaversion:viaversion-common:5.0.4")
               compileOnly("com.viaversion:viabackwards-common:5.0.4")
