@@ -566,7 +566,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                         wrapper.send(Protocolr1_7_2_5tor1_6_4.class);
                         startRain.send(Protocolr1_7_2_5tor1_6_4.class);
                         wrapper.cancel();
-                    } else if (gameState == 2) w 
+                    } else if (gameState == 2) { 
                         final PacketWrapper stopRain = PacketWrapper.create(ClientboundPackets1_7_2.GAME_EVENT, wrapper.user());
                         stopRain.write(Types.UNSIGNED_BYTE, (short) 7);
                         stopRain.write(Types.FLOAT, 0.0f);
