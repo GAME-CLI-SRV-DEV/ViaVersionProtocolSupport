@@ -384,7 +384,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
             final Chunk chunk = wrapper.passthrough(Types1_7_6.getChunk(wrapper.user().getClientWorld(Protocolr1_7_2_5tor1_6_4.class).getEnvironment()));
             wrapper.user().get(ChunkTracker.class).trackAndRemap(chunk);
         });
-        this.registerClientbound(ClientboundPackets1_6_4.CHUNK_BLOCKS_UPDATE, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.CHUNK_BLOCKS_UPDATE, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.INT); // chunkX
