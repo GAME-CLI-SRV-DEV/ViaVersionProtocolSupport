@@ -770,7 +770,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                     }
                 }, State.LOGIN, (PacketHandler) PacketWrapper::cancel
         );
-        this.registerClientboundTransition(ClientboundLoginPackets.LOGIN_FINISHED, ClientboundPackets1_6_4.SHARED_KEY, (PacketHandler) wrapper -> {
+        this.registerClientboundTransition(com.viaversion.viaversion.protocols.base.ClientboundLoginPackets.LOGIN_FINISHED, ClientboundPackets1_6_4.SHARED_KEY, (PacketHandler) wrapper -> {
             final ProtocolInfo info = wrapper.user().getProtocolInfo();
             final ProtocolMetadataStorage protocolMetadata = wrapper.user().get(ProtocolMetadataStorage.class);
             wrapper.read(Types.SHORT_BYTE_ARRAY); // shared secret
