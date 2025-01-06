@@ -551,7 +551,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                 });
             }
         });
-        this.registerClientbound(ClientboundPackets1_6_4.GAME_EVENT, new PacketHandlers() {
+        this.registerClientbound(ClientboundPackets1_7_2.GAME_EVENT, new PacketHandlers() {
             @Override
             public void register() {
                 map(Types.BYTE, Types.UNSIGNED_BYTE); // reason
