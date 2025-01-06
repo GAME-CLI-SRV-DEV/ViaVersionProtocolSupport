@@ -22,8 +22,8 @@ repositories {
 }
 
 	dependencies {
-	      compileOnly("com.viaversion:viaversion-common:5.0.4")
-              compileOnly("com.viaversion:viabackwards-common:5.0.4") 
+	      compileOnly("com.viaversion:viaversion-common:5.2.1-SNAPSHOT")
+              compileOnly("com.viaversion:viabackwards-common:5.2.0") 
               compileOnly("com.viaversion:viarewind-common:4.0.3")
               compileOnly("net.raphimc:ViaLegacy:3.0.6-SNAPSHOT") // main protocol
               // Fallback Protocol 시작지점
