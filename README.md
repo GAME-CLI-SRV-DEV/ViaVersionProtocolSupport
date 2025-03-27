@@ -32,7 +32,7 @@ ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.
 
 | Platform                     | Geyser Plugin Required           |
 |------------------------------|-----------------------------------|
-| ViaVersionProtocolSupport - Paper(RIP) | Geyser-Spigot                  |
+| ViaVersionProtocolSupport - Paper | Geyser-Spigot                  |
 | ViaVersionProtocolSupport - ViaProxy | Geyser-ViaProxy               |
 | ViaVersionProtocolSupport - Velocity | Geyser-Velocity               |
 
