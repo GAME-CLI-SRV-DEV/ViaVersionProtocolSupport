@@ -93,7 +93,6 @@ public interface VVPSPlatform {
 		    getLogger().severe("║ ViaVersion + ViaBackwards " + MINIMUM_VV_VERSION + "을 사용해주세요. 우리 플러그인은 아쉽게도 1.21.1 이상만 지원합니다.");
 		    getLogger().severe("║ ViaProxy를 사용하시는 경우에는:");
 		    getLogger().severe("║ ViaProxy: jars 폴더에 넣어주세요.(아직 미지원)");
-		    getLogger().severe("║ 비아버전프로토콜서포트가 종료되었습니다. 저건 이슈 넣지 마십쇼.");
 			getLogger().severe("║");
 			getLogger().severe("║ EN: ");
 			getLogger().severe("║ ");
@@ -108,8 +107,7 @@ public interface VVPSPlatform {
 		    getLogger().severe("║ You are using Outdated version of ViaVersion, Backwards, Rewind.                  ");
 		    getLogger().severe("║ Please use ViaVersion + ViaBackwards + Rewind " + MINIMUM_VV_VERSION + " We Only support 1.21.1 and above unfortunately");
 		    getLogger().severe("║ if you are using ViaProxy:");
-		    getLogger().severe("║ ViaProxy: put the jar in jars folder (Not Supported)");
-		    getLogger().severe("║ VVPS is now turned off. do not make issue about it.");			
+		    getLogger().severe("║ ViaProxy: put the jar in jars folder (Not Supported)");		
 		    getLogger().severe("╚═════════════════════════════에러 발생/ERROR OCCURRED═════════════════════════════════════╝");
             return true;
         }
