@@ -60,9 +60,9 @@ To install on legacy servers (1.4.4–1.6.4):
 
 - **Waterfall Support:** Not planned. Use Velocity or install VVPS on the backend servers.
 - **Transition from ProtocolSupportBungee:**
-  1. Install Velocity.
-  2. Download `ViaVersionProtocolSupportVelocity`.
-  3. Configure Velocity for use with 1.6.4–1.4.6 clients.
+  1. Install Velocity/Waterfall.
+  2. Download `ViaVersionProtocolSupportVelocity`, or use ViaProxy with BungeeViaProxy.
+  3. Configure Velocity/Waterfall for use with 1.6.4–1.4.6 clients.
 
 ---
 
