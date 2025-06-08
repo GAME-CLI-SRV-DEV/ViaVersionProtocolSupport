@@ -4,8 +4,6 @@
 
 ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.4, similar to what ProtocolSupport provided, and extends support to classic versions (c0.0.15–1.4.6), which ProtocolSupport did not cover. 
 
-> **Note:** Fallback support is limited to versions 1.0.0–1.6.4 and may not work with ViaProxy unless `Use-ViaLegacy` is disabled.
-
 ---
 
 ## Requirements
