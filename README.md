@@ -10,7 +10,7 @@ ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.
 
 ## Requirements
 
-- **Plugins:** ViaVersion, ViaBackwards, ViaRewind (conflicts are possible but required).
+- **Plugins:** ViaVersion, ViaBackwards, ViaRewind.
 - **Server:** Spigot 1.4.4–1.6.4 (VVPS-Spigot) or Paper 1.21.1 (VVPS-Paper).
 
 ---
