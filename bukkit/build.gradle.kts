@@ -29,6 +29,7 @@ repositories {
         compileOnly("com.viaversion:viabackwards-common:5.1.1")
         compileOnly("com.viaversion:viarewind-common:4.0.3")
         compileOnly("net.raphimc:ViaLegacy:3.0.4")
+            implementation(project(":common"))
 	    implementation(project(":standalone"))
 	    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
          compileOnly("com.google.guava:guava:17.0")
