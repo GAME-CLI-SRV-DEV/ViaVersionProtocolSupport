@@ -22,8 +22,6 @@ String filePath = "config.yml";
 File file = new File(filePath);
 
     public void onLoad() {
-	System.out.println("Please Ignore the warning from Bukkit");
-	System.out.println("We Use STDOUT. STDOUT FOREVER.");
 	System.out.println("Loading the Platform");
         Via.getManager().addEnableListener(VVPSBootstrap::new);
     }
@@ -60,7 +58,6 @@ File file = new File(filePath);
 		logger.severe("║                                                                   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ ViaVersionProtocolSupport is in beta. use with caution!           ");
-		logger.severe("║ ViaVersionProtocolSupport는 베타 버전입니다. 테스트 후 사용하세요.   ");
 		logger.severe("║                                                                   ");
 		logger.severe("║ https://github.com/GAME-CLI-SRV-DEV/ViaVersionProtocolSupport     ");
 		logger.severe("║                                                                   ");
