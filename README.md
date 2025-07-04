@@ -2,7 +2,9 @@
 
 ![ViaVersionProtocolSupport](https://github.com/user-attachments/assets/286e9bf8-63c5-4208-83e8-34afa77ac676)
 
-ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.4, similar to what ProtocolSupport provided, and extends support to classic versions (c0.0.15–1.4.6), which ProtocolSupport did not cover. 
+ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.4, similar to what ProtocolSupport provided, and extends support to classic versions (c0.0.15–1.4.6), which ProtocolSupport did not cover.
+
+it's Known as ProtocolSupport NeXT.
 
 ---
 
@@ -56,7 +58,7 @@ To install on legacy servers (1.4.4–1.6.4):
 
 ## BungeeCord and Waterfall Support
 
-- **Waterfall Support:** Not planned. Use Velocity or install VVPS on the backend servers.
+- **Waterfall Support:** install VVPS on the backend servers, or please use ViaProxy.
 - **Transition from ProtocolSupportBungee:**
   1. Install Velocity/Waterfall.
   2. Download `ViaVersionProtocolSupportVelocity`, or use ViaProxy with BungeeViaProxy.
@@ -68,13 +70,12 @@ To install on legacy servers (1.4.4–1.6.4):
 
 | MC Version                     | Status                             |
 |--------------------------------|-------------------------------------|
-| 15w31a–15w31b -> 1.8           | Requires ViaVersion                |
-| 1.7.2–1.7.5 -> 1.6.4           | 99% compatibility, fallback disabled |
-| 1.6.2 -> 1.6.4                 | Fully functional                   |
-| 1.6.2 -> 1.6.1                 | Fully functional                   |
-| 1.6.1 -> 1.5.0–1.5.2           | Fully functional                   |
-| 1.5.0–1.5.2                    | Available via ViaLegacy            |
-| 1.5.0 -> 1.4.6–1.4.7           | Fully functional                   |
+| 1.7.2–1.7.5 -> 1.6.4           | Work In Progress                   |
+| 1.6.2 -> 1.6.4                 | Work In Progress                   |
+| 1.6.2 -> 1.6.1                 | Work In Progress                   |
+| 1.6.1 -> 1.5.0–1.5.2           | Work In Progress                   |
+| 1.5.0–1.5.2                    | Work In Progress                   |
+| 1.5.0 -> 1.4.6–1.4.7           | Work In Progress                   |
 
 ---
 
@@ -105,7 +106,6 @@ Thanks to the original developers for their contributions!
 ## Special Thanks
 
 - [RaphiMC](https://github.com/RaphiMC) & [Lenni0451](https://github.com/Lenni0451): Developers of ViaLegacy (library API for VVPS protocol) and ViaProxy.
-- [lowercasebtw](https://github.com/lowercasebtw/): Creator of ViaSnapshot (requires AbstractProtocol).
 - [ViaBackwards](https://github.com/ViaVersion/ViaBackwards): Provided templates and platform code.
 - [ViaRewind](https://github.com/ViaVersion/ViaRewind): Supported compatibility between 1.7 and 1.8 for ViaLegacy.
 
