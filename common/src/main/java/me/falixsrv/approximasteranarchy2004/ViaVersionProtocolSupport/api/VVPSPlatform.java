@@ -61,6 +61,7 @@ public interface VVPSPlatform {
      // protocolManager.registerProtocol(new Protocolr1_2_1tor1_1(), LegacyProtocolVersion.r1_1, LegacyProtocolVersion.r1_2_1); 
      // protocolManager.registerProtocol(new Protocolr1_1tor1_0_1(), LegacyProtocolVersion.r1_0_1, LegacyProtocolVersion.r1_1)
      // 
+	getLogger().info("완료!");  
 
 	    // 간단히 설명하자면,
 	    // protocolmanager.registerProtocol(new 프로토콜매핑(), (ProtocolVersion/LegacyProtocolVersion).버전,(ProtocolVersion/LegacyProtocolVersion).버전); 
@@ -120,3 +121,4 @@ public interface VVPSPlatform {
     void off();
 
 }
+
