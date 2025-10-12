@@ -54,6 +54,7 @@ import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.EntityDataTy
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4; // from ViaLegacy, Modified for a backward compat
 import com.viaversion.viarewind.api.data.RewindMappingData;
+import com.viaversion.
 
 import java.util.List;
 import java.util.logging.Level;
@@ -71,6 +72,48 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 	    @Override
     protected void registerPackets() {
         super.registerPackets();
+
+		        this.registerClientboundTransition(ClientboundPackets1_7_2.LOGIN,
+                ClientboundPackets1_6_4.LOGIN, new PacketHandlers() {
+                    @Override
+                    public void register() {
+                        map(Types.INT); // entity id
+                        handler(wrapper -> {
+                            wrapper.user().get(PlayerInfoStorage.class).entityId = wrapper.get(Types.INT, 0);
+                            final String terrainType = wrapper.read(Types1_6_4.STRING); // level type
+                            final short gameType = wrapper.read(Types.BYTE); // game mode
+                            final byte dimension = wrapper.read(Types.BYTE); // dimension id
+                            final short difficulty = wrapper.read(Types.BYTE); // difficulty
+                            // wrapper.read(Types.BYTE); // world height (Not Used)
+                            final short maxPlayers = wrapper.read(Types.BYTE); // max players
+
+                            wrapper.write(Types.UNSIGNED_BYTE, gameType);
+                            wrapper.write(Types.BYTE, dimension);
+                            wrapper.write(Types.UNSIGNED_BYTE, difficulty);
+                            wrapper.write(Types.UNSIGNED_BYTE, maxPlayers);
+                            wrapper.write(Types.STRING, terrainType);
+                        });
+                        handler(wrapper -> {
+                            final byte dimensionId = wrapper.get(Types.BYTE, 0);
+                            wrapper.user().getClientWorld(Protocolr1_6_4Tor1_7_2_5.class).setEnvironment(dimensionId);
+
+                            wrapper.user().put(new ChunkTracker(wrapper.user()));
+                        });
+                    }
+                }, State.LOGIN, (PacketHandler) wrapper -> {
+                    ViaLegacy.getPlatform().getLogger().warning("Server skipped LOGIN state");
+                    final PacketWrapper sharedKey = PacketWrapper.create(ClientboundLoginPackets.HELLO, wrapper.user());
+                    sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
+                    sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
+                    wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = true;
+                    sharedKey.send(Protocolr1_6_4Tor1_7_2_5.class, false); // switch to play state
+                    wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = false;
+
+                    wrapper.setPacketType(ClientboundPackets1_6_4.LOGIN);
+                    wrapper.send(Protocolr1_6_4Tor1_7_2_5.class, false);
+                    wrapper.cancel();
+                }
+        );
     }
 
     
@@ -85,3 +128,4 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 		return itemRewriter;
 	}
 }
+
