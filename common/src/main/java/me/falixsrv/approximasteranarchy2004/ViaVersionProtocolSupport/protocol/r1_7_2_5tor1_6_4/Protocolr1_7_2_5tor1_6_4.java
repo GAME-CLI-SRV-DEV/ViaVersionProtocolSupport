@@ -73,8 +73,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
     protected void registerPackets() {
         super.registerPackets();
 
-		        this.registerClientboundTransition(ClientboundPackets1_7_2.LOGIN,
-                ClientboundPackets1_6_4.LOGIN, new PacketHandlers() {
+		        this.registerClientboundTransition(ClientboundPackets1_6_4.LOGIN,
+                ClientboundPackets1_7_2.LOGIN, new PacketHandlers() {
                     @Override
                     public void register() {
                         map(Types.INT); // entity id
@@ -95,7 +95,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                         });
                         handler(wrapper -> {
                             final byte dimensionId = wrapper.get(Types.BYTE, 0);
-                            wrapper.user().getClientWorld(Protocolr1_6_4Tor1_7_2_5.class).setEnvironment(dimensionId);
+                            wrapper.user().getClientWorld(Protocolr1_7_2_5Tor1_6_4.class).setEnvironment(dimensionId);
 
                             wrapper.user().put(new ChunkTracker(wrapper.user()));
                         });
@@ -106,7 +106,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
                     sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
                     sharedKey.write(Types.SHORT_BYTE_ARRAY, new byte[0]);
                     wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = true;
-                    sharedKey.send(Protocolr1_6_4Tor1_7_2_5.class, false); // switch to play state
+                    sharedKey.send(Protocolr1_7_2_5Tor1_6_4.class, false); // switch to play state
                     wrapper.user().get(ProtocolMetadataStorage.class).skipEncryption = false;
 
                     wrapper.setPacketType(ClientboundPackets1_6_4.LOGIN);
@@ -128,6 +128,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 		return itemRewriter;
 	}
 }
+
 
 
 
