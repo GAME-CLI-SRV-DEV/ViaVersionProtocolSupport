@@ -54,7 +54,7 @@ import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.EntityDataTy
 import net.raphimc.vialegacy.protocol.release.r1_7_6_10tor1_8.types.Types1_7_6;
 import me.falixsrv.approximasteranarchy2004.ViaVersionProtocolSupport.protocol.r1_7_2_5tor1_6_4.Rewriter.vvpsrew_item_1_7_2_5tor1_6_4; // from ViaLegacy, Modified for a backward compat
 import com.viaversion.viarewind.api.data.RewindMappingData;
-import com.viaversion.
+import com.viaversion.protocols.base.ClientboundLoginPackets;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -128,4 +128,5 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 		return itemRewriter;
 	}
 }
+
 
