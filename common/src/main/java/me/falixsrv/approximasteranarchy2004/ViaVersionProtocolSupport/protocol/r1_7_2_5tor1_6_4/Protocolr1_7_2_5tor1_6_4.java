@@ -73,8 +73,8 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
     protected void registerPackets() {
         super.registerPackets();
 
-		        this.registerClientboundTransition(ClientboundPackets1_6_4.LOGIN,
-                ClientboundPackets1_7_2.LOGIN, new PacketHandlers() {
+		        this.registerClientboundTransition(ClientboundPackets1_7_2.LOGIN,
+                ClientboundPackets1_6_4.LOGIN, new PacketHandlers() {
                     @Override
                     public void register() {
                         map(Types.INT); // entity id
@@ -128,6 +128,7 @@ public final class Protocolr1_7_2_5tor1_6_4 extends StatelessTransitionProtocol<
 		return itemRewriter;
 	}
 }
+
 
 
 
