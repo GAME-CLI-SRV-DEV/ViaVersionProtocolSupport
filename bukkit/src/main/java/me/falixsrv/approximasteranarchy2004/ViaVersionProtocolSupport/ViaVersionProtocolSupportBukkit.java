@@ -21,6 +21,7 @@ public class ViaVersionProtocolSupportBukkit extends JavaPlugin {
 String filePath = "config.yml";
 File file = new File(filePath);
 
+	@Override
     public void onLoad() {
 	System.out.println("Loading the Platform");
         Via.getManager().addEnableListener(() -> init());
@@ -73,7 +74,6 @@ File file = new File(filePath);
         }
 }
 	
-    @Override
 	public void init() {
     Component Prefix = Component.text()
     .append(Component.text("ViaVersion", NamedTextColor.AQUA))
@@ -86,11 +86,11 @@ File file = new File(filePath);
 	Bukkit.getServer().sendMessage(loaf);
     }
  
-    @Override
 	public void disable() {
 		getPluginLoader().disablePlugin(this);
 	}
 }
+
 
 
 
