@@ -23,7 +23,7 @@ File file = new File(filePath);
 
     public void onLoad() {
 	System.out.println("Loading the Platform");
-        Via.getManager().addEnableListener(() -> this.init());
+        Via.getManager().addEnableListener(() -> init());
     }
 
 	
@@ -67,5 +67,6 @@ File file = new File(filePath);
     Bukkit.getServer().sendMessage(message);
 }
 }
+
 
 
