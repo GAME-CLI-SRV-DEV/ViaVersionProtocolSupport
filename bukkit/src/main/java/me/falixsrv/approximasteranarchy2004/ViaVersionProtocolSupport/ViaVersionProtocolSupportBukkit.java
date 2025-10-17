@@ -65,8 +65,33 @@ File file = new File(filePath);
 		logger.severe("║ Copyright (C) 2015-2024, Approximaster Studios 2004, All Rights Reversed.");
 		logger.severe("╚═══════════════════════════════════════════════════════════════════════════╝");
     Bukkit.getServer().sendMessage(message);
+			 if (Via.getManager().getInjector().lateProtocolVersionSetting()) {
+            // Enable in the next tick
+            Via.getPlatform().runSync(this::init, 1);
+        } else {
+            init();
+        }
 }
+	
+    @Override
+	public void init() {
+    Component Prefix = Component.text()
+    .append(Component.text("ViaVersion", NamedTextColor.AQUA))
+    .append(Component.text("ProtocolSupport", NamedTextColor.GRAY))
+    .build();
+    Component loaf = Component.text()
+    .append(Prefix)
+    .append(Component.text("VVPS Is Loafed...", NamedTextColor.GREEN))
+    .build();
+	Bukkit.getServer().sendMessage(loaf);
+    }
+ 
+    @Override
+	public void disable() {
+		getPluginLoader().disablePlugin(this);
+	}
 }
+
 
 
 
