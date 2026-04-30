@@ -27,14 +27,13 @@ it's Known as ProtocolSupport NeXT.
 ## Bedrock Edition Support
 
 ### Direct Support:
-- **Supported:** Sponge platform with Geyser and Floodgate integration.
-- **Unsupported:** For Paper, BungeeCord, Velocity, and other platforms, use GeyserMC tailored to each platform.
 
 | Platform                     | Geyser Plugin Required           |
 |------------------------------|-----------------------------------|
 | ViaVersionProtocolSupport - Paper | Geyser-Spigot                  |
 | ViaVersionProtocolSupport - ViaProxy | Geyser-ViaProxy               |
 | ViaVersionProtocolSupport - Velocity | Geyser-Velocity               |
+| ViaVersionProtocolSupport - Sponge | Geyser-Sponge -> Link Your Server Via Velocity/Bungeecord |
 
 ---
 
