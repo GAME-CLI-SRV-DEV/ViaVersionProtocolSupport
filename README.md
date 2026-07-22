@@ -1,5 +1,8 @@
 # ViaVersionProtocolSupport
 
+> [!CAUTION]
+> Not Ready Yet.
+
 ![ViaVersionProtocolSupport](https://github.com/user-attachments/assets/286e9bf8-63c5-4208-83e8-34afa77ac676)
 
 ViaVersionProtocolSupport adds compatibility for Minecraft versions 1.4.6–1.6.4, similar to what ProtocolSupport provided, and extends support to classic versions (c0.0.15–1.4.6), which ProtocolSupport did not cover.
