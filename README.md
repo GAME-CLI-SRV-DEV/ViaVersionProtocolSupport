@@ -3,7 +3,7 @@
 > [!CAUTION]
 > This project ended up being crumbled up due to how hard the code even was.
 > RK_01 Was Right. this project could end up being crumble due to technical issue.
-> however in someday, i will work for this again.
+> however in someday, i will work for this again. Meanwhile you should Check out ViaPreNetty wich is even better than ProtocolSupport or this Project here: https://github.com/ViaVersionAddons/ViaPreNetty
 
 ![ViaVersionProtocolSupport](https://github.com/user-attachments/assets/286e9bf8-63c5-4208-83e8-34afa77ac676)
 
